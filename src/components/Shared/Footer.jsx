@@ -4,15 +4,9 @@ import {
     FiMapPin,
     FiPhone,
 } from "react-icons/fi";
-import {
-    FaFacebookF,
-    FaGithub,
-    FaLinkedinIn,
-    FaXTwitter,
-} from "react-icons/fa6";
-
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const socialLinks = [];
 
     return (
         <footer className="border-t border-slate-800 bg-slate-950">
@@ -32,7 +26,7 @@ const Footer = () => {
                     <div className="lg:col-span-1">
 
                         <a
-                            href="#"
+                            href="/"
                             className="inline-block"
                         >
                             <h3 className="text-2xl font-bold tracking-tight text-slate-100">
@@ -51,49 +45,26 @@ const Footer = () => {
 
                         {/* Social Links */}
 
-                        <div className="mt-6 flex items-center gap-3">
+                        {socialLinks.length > 0 && (
+                            <div className="mt-6 flex items-center gap-3">
+                                {socialLinks.map((social) => {
+                                    const Icon = social.icon;
 
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
-                            >
-                                <FaLinkedinIn className="h-4 w-4" />
-                            </a>
-
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Facebook"
-                                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
-                            >
-                                <FaFacebookF className="h-4 w-4" />
-                            </a>
-
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="X"
-                                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
-                            >
-                                <FaXTwitter className="h-4 w-4" />
-                            </a>
-
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
-                            >
-                                <FaGithub className="h-4 w-4" />
-                            </a>
-
-                        </div>
+                                    return (
+                                        <a
+                                            key={social.label}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={social.label}
+                                            className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
+                                        >
+                                            <Icon className="h-4 w-4" />
+                                        </a>
+                                    );
+                                })}
+                            </div>
+                        )}
 
                     </div>
 
@@ -111,7 +82,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#about"
+                                    href="/#about"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     About Us
@@ -120,7 +91,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Services
@@ -129,7 +100,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#tech"
+                                    href="/#tech"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Technologies
@@ -138,7 +109,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#team"
+                                    href="/#team"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Our Team
@@ -147,7 +118,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#faq"
+                                    href="/#faq"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     FAQ
@@ -156,7 +127,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#contact"
+                                    href="/#contact"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Contact
@@ -181,7 +152,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Web Development
@@ -190,7 +161,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Mobile App Development
@@ -199,7 +170,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Enterprise Products
@@ -208,7 +179,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Digital Marketing
@@ -217,7 +188,7 @@ const Footer = () => {
 
                             <li>
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     UX Design
@@ -281,7 +252,7 @@ const Footer = () => {
                         {/* CTA */}
 
                         <a
-                            href="#contact"
+                            href="/#contact"
                             className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-300"
                         >
                             Start a Conversation
@@ -306,14 +277,14 @@ const Footer = () => {
                     <div className="flex items-center gap-5">
 
                         <a
-                            href="#"
+                            href="/privacy-policy"
                             className="text-slate-500 transition-colors hover:text-cyan-400"
                         >
                             Privacy Policy
                         </a>
 
                         <a
-                            href="#"
+                            href="/terms-and-conditions"
                             className="text-slate-500 transition-colors hover:text-cyan-400"
                         >
                             Terms & Conditions

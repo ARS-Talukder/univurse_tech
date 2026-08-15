@@ -7,8 +7,13 @@ import {
     FiSend,
 } from "react-icons/fi";
 
+const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
     const [sending, setSending] = useState(false);
+    const [status, setStatus] = useState(null);
 
     // =========================
     // Send Email
@@ -18,26 +23,37 @@ const Contact = () => {
         event.preventDefault();
 
         setSending(true);
+        setStatus(null);
+
+        if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+            setStatus({
+                type: "error",
+                message: "Contact form is not configured yet. Please email us directly.",
+            });
+
+            setSending(false);
+            return;
+        }
 
         try {
-            const result = await emailjs.sendForm(
-                "service_u7470p9",
-                "template_jwtn2kd",
+            await emailjs.sendForm(
+                emailServiceId,
+                emailTemplateId,
                 event.target,
-                "7WU59zuk4z2MC1HSv"
+                emailPublicKey
             );
-
-            console.log("Email sent:", result.text);
 
             event.target.reset();
 
-            alert("Message sent successfully!");
-        } catch (error) {
-            console.error("EmailJS Error:", error);
-
-            alert(
-                "Failed to send the message. Please try again."
-            );
+            setStatus({
+                type: "success",
+                message: "Message sent successfully. We will get back to you soon.",
+            });
+        } catch {
+            setStatus({
+                type: "error",
+                message: "Failed to send the message. Please email us directly or try again.",
+            });
         } finally {
             setSending(false);
         }
@@ -273,12 +289,24 @@ const Contact = () => {
 
                             {/* Submit */}
 
-                            <div className="flex justify-end pt-2">
+                            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+
+                                {status && (
+                                    <p
+                                        role="status"
+                                        className={`text-sm leading-6 ${status.type === "success"
+                                            ? "text-emerald-400"
+                                            : "text-red-400"
+                                            }`}
+                                    >
+                                        {status.message}
+                                    </p>
+                                )}
 
                                 <button
                                     type="submit"
                                     disabled={sending}
-                                    className="group inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 hover:bg-cyan-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
+                                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 hover:bg-cyan-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                                 >
                                     {sending
                                         ? "Sending..."
