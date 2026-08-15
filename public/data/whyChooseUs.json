@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "why_business_first",
+        "title": "Business-First Thinking",
+        "description": "We focus on real business challenges first, then build technology that solves them with clear purpose and measurable value."
+    },
+    {
+        "_id": "why_modern_technology",
+        "title": "Modern Technology",
+        "description": "We use modern technology stacks to create reliable, maintainable, and future-ready digital solutions."
+    },
+    {
+        "_id": "why_custom_solutions",
+        "title": "Custom-Built Solutions",
+        "description": "Every business is different, so we build solutions around your specific requirements, workflows, users, and goals."
+    },
+    {
+        "_id": "why_scalable_architecture",
+        "title": "Scalable Architecture",
+        "description": "Our systems are designed with growth in mind, allowing your products and operations to scale as your business evolves."
+    },
+    {
+        "_id": "why_reliable_secure",
+        "title": "Reliable & Secure",
+        "description": "We prioritize dependable architecture, data integrity, performance, and security for technology your business can trust."
+    },
+    {
+        "_id": "why_long_term_partnership",
+        "title": "Long-Term Partnership",
+        "description": "We build for the long run, supporting continuous improvement as your technology, users, and business needs grow."
+    }
+]

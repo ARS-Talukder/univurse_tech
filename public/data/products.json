@@ -1,0 +1,89 @@
+[
+    {
+        "group": "Digital Commerce & EdTech Platforms",
+        "groupDescription": "Explore our core software products across digital commerce and education technology.",
+        "icon": "book",
+        "color": "cyan",
+        "products": [
+            {
+                "title": "Learning Management System",
+                "subtitle": "Interactive Learning & Talent Development Engine",
+                "technology": "MERN Stack",
+                "category": "EdTech",
+                "description": "A scalable learning management system engineered for academies and enterprise training. Features dynamic course authoring, automated assessments, and real-time student analytics.",
+                "core": "MongoDB · Express · React · Node",
+                "demo": "#"
+            },
+            {
+                "title": "Enterprise E-Commerce Platform",
+                "subtitle": "High-Throughput Digital Retail Ecosystem",
+                "technology": "MERN Stack",
+                "category": "Commerce",
+                "description": "Designed for high concurrency and zero-friction checkout. Includes custom inventory syncing, secure payment gateways, and automated order fulfillment pipelines.",
+                "core": "React · Node.js · Stripe · Redis",
+                "demo": "#"
+            }
+        ]
+    },
+    {
+        "group": "Health & Operations Logistics",
+        "groupDescription": "Technology designed to simplify healthcare requests and operational logistics.",
+        "icon": "heart",
+        "color": "indigo",
+        "products": [
+            {
+                "title": "Medicine Request & Order App",
+                "subtitle": "Real-Time Pharmaceutical Request & Order Engine",
+                "technology": "Android Studio (Native)",
+                "category": "Healthcare",
+                "description": "A native mobile application facilitating fast, reliable prescription requests and fulfillment tracking with offline capability and real-time inventory alerts.",
+                "core": "Java/Kotlin · REST API · SQLite",
+                "demo": "#"
+            },
+            {
+                "title": "Meal Management System",
+                "subtitle": "Automated Dining & Ledger Tracking Software",
+                "technology": "MERN Stack",
+                "category": "Dining Ops",
+                "description": "Streamlines mass dining operations, meal scheduling, and hostel/corporate cafeteria ledgers—reducing food waste and eliminating accounting errors.",
+                "core": "Express · Node · MongoDB · React",
+                "demo": "#"
+            }
+        ]
+    },
+    {
+        "group": "Facility & Lifestyle Automation",
+        "groupDescription": "Operational platforms for property, fitness, and personal-care businesses.",
+        "icon": "home",
+        "color": "violet",
+        "products": [
+            {
+                "title": "Flat Management System",
+                "subtitle": "Property Operations Suite",
+                "technology": "ASP.NET + React",
+                "category": "Property",
+                "description": "Multi-unit property platform handling utility billing, tenant management, maintenance requests, and payment tracking.",
+                "core": "ASP.NET Core · React + Vite",
+                "demo": "#"
+            },
+            {
+                "title": "Gym Management System",
+                "subtitle": "Membership Operations Platform",
+                "technology": "ASP.NET + SQL",
+                "category": "Fitness",
+                "description": "Robust software featuring automated recurring billing, trainer scheduling, access logs, and retention analytics.",
+                "core": "ASP.NET Core · React · SQL",
+                "demo": "#"
+            },
+            {
+                "title": "Salon Operations Suite",
+                "subtitle": "Smart Scheduling Engine",
+                "technology": "MERN Stack",
+                "category": "Salon & Spa",
+                "description": "Real-time appointment booking, staff allocation, inventory tracking, and client history profiles that eliminate scheduling friction.",
+                "core": "Node · React · MongoDB",
+                "demo": "#"
+            }
+        ]
+    }
+]

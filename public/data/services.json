@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "Web Development",
+        "shortTitle": "Web Development",
+        "description": "Modern, responsive, and scalable websites and web applications built around your business goals.",
+        "features": [
+            "Business Websites",
+            "E-Commerce Platforms",
+            "Custom Web Applications",
+            "Responsive & Modern UI"
+        ],
+        "icon": "web"
+    },
+    {
+        "id": 2,
+        "title": "Mobile App Development",
+        "shortTitle": "Mobile Apps",
+        "description": "Reliable mobile applications designed to deliver smooth experiences and support real business needs.",
+        "features": [
+            "Android Applications",
+            "Business Apps",
+            "Custom Mobile Solutions",
+            "API Integration"
+        ],
+        "icon": "mobile"
+    },
+    {
+        "id": 3,
+        "title": "Enterprise Product",
+        "shortTitle": "Enterprise Solutions",
+        "description": "Complete software products designed to improve business operations, automate workflows, and support long-term growth.",
+        "features": [
+            "Business Management Systems",
+            "Custom Enterprise Software",
+            "Workflow Automation",
+            "Scalable Architecture"
+        ],
+        "icon": "enterprise"
+    },
+    {
+        "id": 4,
+        "title": "Digital Marketing",
+        "shortTitle": "Digital Marketing",
+        "description": "Digital strategies that help businesses build their online presence, reach the right audience, and grow.",
+        "features": [
+            "Social Media Marketing",
+            "Search Engine Optimization",
+            "Content Strategy",
+            "Online Advertising"
+        ],
+        "icon": "marketing"
+    },
+    {
+        "id": 5,
+        "title": "UX Design",
+        "shortTitle": "UX Design",
+        "description": "Thoughtful user experiences designed to make digital products intuitive, engaging, and easy to use.",
+        "features": [
+            "User Experience Design",
+            "User Research",
+            "Wireframing & Prototyping",
+            "Usability Optimization"
+        ],
+        "icon": "ux"
+    }
+]
