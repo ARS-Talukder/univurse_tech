@@ -65,7 +65,7 @@
                 "category": "Property",
                 "description": "A flat management platform with admin tools for flats, tenants, bill generation, and reports, plus a tenant portal for current bills, bill history, PDF downloads, and payment requests.",
                 "core": "ASP.NET Core · React + Vite",
-                "demo": "https://flat-management-demo.vercel.app/",
+                "demo": "https://e-flat.pro.bd/",
                 "demoLabel": "Open Live Demo",
                 "demoNote": "Login required for admin and tenant dashboards."
             },

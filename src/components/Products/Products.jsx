@@ -28,6 +28,7 @@ const colorClasses = {
         button: "text-violet-400 hover:text-violet-300",
     },
 };
+
 const Products = () => {
     const [productsData, setProductsData] = useState([]);
     const [loading, setLoading] = useState(true);
