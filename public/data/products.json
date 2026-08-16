@@ -42,12 +42,13 @@
             },
             {
                 "title": "Meal Management System",
-                "subtitle": "Automated Dining & Ledger Tracking Software",
+                "subtitle": "Bachelor Mess Meal Tracking Portal",
                 "technology": "MERN Stack",
                 "category": "Dining Ops",
-                "description": "Streamlines mass dining operations, meal scheduling, and hostel/corporate cafeteria ledgers—reducing food waste and eliminating accounting errors.",
+                "description": "A hostel and bachelor mess management system with member email sign-in, designed to help mess managers organize meal operations and member access.",
                 "core": "Express · Node · MongoDB · React",
-                "demo": "#"
+                "demo": "https://rahim-aust.github.io/hostel_mess-meal-management-system/",
+                "demoLabel": "Open Live Demo"
             }
         ]
     },
@@ -59,12 +60,14 @@
         "products": [
             {
                 "title": "Flat Management System",
-                "subtitle": "Property Operations Suite",
+                "subtitle": "Apartment Admin & Billing Dashboard",
                 "technology": "ASP.NET + React",
                 "category": "Property",
-                "description": "Multi-unit property platform handling utility billing, tenant management, maintenance requests, and payment tracking.",
+                "description": "A flat management platform with admin tools for flats, tenants, bill generation, and reports, plus a tenant portal for current bills, bill history, PDF downloads, and payment requests.",
                 "core": "ASP.NET Core · React + Vite",
-                "demo": "#"
+                "demo": "https://e-flat.pro.bd/",
+                "demoLabel": "Open Live Demo",
+                "demoNote": "Login required for admin and tenant dashboards."
             },
             {
                 "title": "Gym Management System",

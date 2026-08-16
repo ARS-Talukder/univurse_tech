@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 
+const slogans = [
+    "real business problems.",
+    "daily work challenges.",
+    "slow manual processes.",
+    "complex team workflows.",
+    "growth and scaling needs.",
+];
+
 const Banner = () => {
+    const [activeSlogan, setActiveSlogan] = useState(0);
+
+    useEffect(() => {
+        const sloganTimer = window.setInterval(() => {
+            setActiveSlogan((current) => (current + 1) % slogans.length);
+        }, 2600);
+
+        return () => window.clearInterval(sloganTimer);
+    }, []);
+
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden border-b border-slate-800/60 pt-20">
             {/* Background Glow */}
@@ -58,9 +77,16 @@ const Banner = () => {
                         className="max-w-5xl"
                     >
                         Software platforms engineered to solve{" "}
-                        <span className="gradient-text">
-                            real operational bottlenecks.
-                        </span>
+                        <motion.span
+                            key={slogans[activeSlogan]}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -18 }}
+                            transition={{ duration: 0.45 }}
+                            className="inline-block gradient-text"
+                        >
+                            {slogans[activeSlogan]}
+                        </motion.span>
                     </motion.h1>
 
                     {/* Description */}

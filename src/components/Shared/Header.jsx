@@ -6,10 +6,10 @@ const Header = () => {
     const [open, setOpen] = useState(false);
 
     const links = [
-        { name: "Services", href: "#services" },
-        { name: "Our Products", href: "#products" },
-        { name: "Tech Stack", href: "#tech" },
-        { name: "About Us", href: "#about" },
+        { name: "Services", href: "/#services" },
+        { name: "Our Products", href: "/#products" },
+        { name: "Tech Stack", href: "/#tech" },
+        { name: "About Us", href: "/#about" },
     ];
     return (
         <header className="fixed top-0 left-0 w-full z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
@@ -45,7 +45,7 @@ const Header = () => {
 
                 {/* Button */}
                 <a
-                    href="#contact"
+                    href="/#contact"
                     className="hidden lg:block primary-btn"
                 >
                     Contact Us →
@@ -75,7 +75,7 @@ const Header = () => {
                             </a>
                         ))}
 
-                        <a href="#contact" className="primary-btn">
+                        <a href="/#contact" className="primary-btn">
                             Contact Us →
                         </a>
                     </div>

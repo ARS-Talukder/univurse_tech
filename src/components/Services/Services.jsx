@@ -177,10 +177,13 @@ const Services = () => {
 
                                 {/* Bottom */}
                                 <div className="mt-auto pt-7">
-                                    <button className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300">
-                                        Learn More
+                                    <a
+                                        href="/#contact"
+                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
+                                    >
+                                        Discuss Service
                                         <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         );

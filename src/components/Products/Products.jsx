@@ -28,6 +28,7 @@ const colorClasses = {
         button: "text-violet-400 hover:text-violet-300",
     },
 };
+
 const Products = () => {
     const [productsData, setProductsData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -195,13 +196,28 @@ const Products = () => {
                                                     Core: {product.core}
                                                 </span>
 
-                                                <a
-                                                    href={product.demo}
-                                                    className={`shrink-0 text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
-                                                >
-                                                    View Demo
-                                                    <FiArrowUpRight />
-                                                </a>
+                                                {product.demo && product.demo !== "#" && product.demoStatus !== "unavailable" ? (
+                                                    <a
+                                                        href={product.demo}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={`shrink-0 text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
+                                                    >
+                                                        {product.demoLabel || "View Demo"}
+                                                        <FiArrowUpRight />
+                                                    </a>
+                                                ) : product.demoStatus === "unavailable" ? (
+                                                    <span
+                                                        title={product.demoNote}
+                                                        className="shrink-0 text-xs font-semibold text-amber-300"
+                                                    >
+                                                        {product.demoLabel || "Preview Updating"}
+                                                    </span>
+                                                ) : (
+                                                    <span className="shrink-0 text-xs font-semibold text-slate-500">
+                                                        Demo Coming Soon
+                                                    </span>
+                                                )}
 
                                             </div>
                                         </div>
