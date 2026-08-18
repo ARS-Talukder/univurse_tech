@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
     FiChevronLeft,
@@ -146,106 +147,66 @@ const MeetOurTeam = () => {
 
             <div className="container mx-auto px-5">
 
-
-                {/* =========================
-                    Section Header
-                ========================= */}
-
-                <div className="max-w-3xl mx-auto text-center mb-16">
-
-                    <span className="section-subtitle">
+                {/* Section Header */}
+                <motion.div
+                    className="max-w-4xl mx-auto text-center mb-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Meet Our Team
-                    </span>
+                    </motion.span>
 
-                    <h2>
-
+                    <motion.h2
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
                         The People Behind{" "}
-
                         <span className="gradient-text">
                             Univurse Tech
                         </span>
+                    </motion.h2>
 
-                    </h2>
-
-                    <p className="mt-6 max-w-2xl mx-auto">
-
+                    <motion.p
+                        className="mt-6 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
                         Meet the people who bring together
                         technology, creativity, and business
                         thinking to build meaningful digital
                         solutions.
+                    </motion.p>
+                </motion.div>
 
-                    </p>
-
-                </div>
-
-
-                {/* =========================
-                    Slider
-                ========================= */}
-
+                {/* Slider */}
                 <div className="relative">
-
-
-                    {/* =========================
-                        Left Arrow
-                    ========================= */}
-
+                    {/* Left Arrow */}
                     <button
                         type="button"
                         onClick={handlePrevious}
                         aria-label="Previous team member"
-                        className="
-                            absolute
-                            left-0
-                            lg:-left-4
-
-                            top-1/2
-                            -translate-y-1/2
-
-                            z-20
-
-                            w-11
-                            h-11
-
-                            flex
-                            items-center
-                            justify-center
-
-                            rounded-full
-
-                            border
-                            border-slate-800
-
-                            bg-slate-950
-
-                            text-slate-400
-
-                            hover:text-cyan-400
-                            hover:border-cyan-400/40
-                            hover:bg-slate-900
-
-                            transition-all
-                            duration-300
-                        "
+                        className="absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 hover:bg-slate-900 transition-all duration-300"
                     >
 
                         <FiChevronLeft className="w-5 h-5" />
 
                     </button>
 
-
-                    {/* =========================
-                        Cards
-                    ========================= */}
-
-                    <div className="
-                        relative
-                        h-[430px]
-
-                        flex
-                        items-center
-                        justify-center
-                    ">
+                    {/* Cards */}
+                    <div className="relative h-[430px] flex items-center justify-center">
 
                         {team.map((member, index) => {
 
@@ -294,50 +255,14 @@ const MeetOurTeam = () => {
                                 <div
                                     key={member._id}
 
-                                    className={`
-                                        group
-                                        absolute
-
-                                        w-[280px]
-                                        sm:w-[300px]
-
-                                        rounded-2xl
-
-                                        border
-
-                                        overflow-hidden
-
-                                        transition-all
-                                        duration-700
-                                        ease-in-out
-
-                                        hover:-translate-y-2
-    hover:border-cyan-400/40
-    hover:bg-slate-900
-    hover:shadow-xl
-    hover:shadow-cyan-500/30 
+                                    className={`group absolute w-[280px] sm:w-[300px] rounded-2xl border overflow-hidden transition-all duration-700 ease-in-out hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-slate-900 hover:shadow-xl hover:shadow-cyan-500/30 
 
                                         ${isActive
                                             ? `
-                                                    bg-slate-950
-
-                                                    border-cyan-400/50
-
-                                                    scale-105
-
-                                                    opacity-100
-
-                                                    shadow-2xl
-                                                    shadow-cyan-500/10
+                                                    bg-slate-950 border-cyan-400/50 scale-105 opacity-100 shadow-2xl shadow-cyan-500/10
                                                 `
                                             : `
-                                                    bg-slate-900/40
-
-                                                    border-slate-800
-
-                                                    scale-90
-
-                                                    opacity-40
+                                                    bg-slate-900/40 border-slate-800 scale-90 opacity-40
                                                 `
                                         }
                                     `}
@@ -363,21 +288,9 @@ const MeetOurTeam = () => {
                                     }}
                                 >
 
+                                    {/* Image */}
 
-                                    {/* =========================
-                                        Image
-                                    ========================= */}
-
-                                    <div
-                                        className="
-                                            group
-                                            relative
-
-                                            h-[330px]
-
-                                            overflow-hidden
-                                        "
-                                    >
+                                    <div className="group relative h-[330px] overflow-hidden">
 
                                         <img
                                             src={
@@ -390,36 +303,18 @@ const MeetOurTeam = () => {
                                                 member.name
                                             }
 
-                                            className="
-                                                w-full
-                                                h-full
-
-                                                object-cover
-
-                                                transition-transform
-                                                duration-700
-                                            "
+                                            className="w-full h-full object-cover transition-transform duration-700"
                                         />
 
 
                                         {/* Gradient */}
 
                                         <div
-                                            className="
-                                                absolute
-                                                inset-0
-
-                                                bg-gradient-to-t
-                                                from-slate-950
-                                                via-transparent
-                                                to-transparent
-                                            "
+                                            className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"
                                         />
 
 
-                                        {/* =========================
-                                            LinkedIn
-                                        ========================= */}
+                                        {/* LinkedIn */}
 
                                         {member.linkedin && (
 
@@ -434,22 +329,7 @@ const MeetOurTeam = () => {
 
                                                 aria-label={`${member.name} LinkedIn`}
 
-                                                className="
-                                                    absolute
-
-                                                    left-4
-                                                    bottom-8
-
-                                                    flex
-                                                    items-center
-                                                    justify-center
-
-                                                    text-slate-950
-
-                                                    translate-y-0 bg-slate-200  hover:bg-slate-400
-                                                    transition-all
-                                                    duration-300
-                                                "
+                                                className="absolute left-4 bottom-8 flex items-center justify-center text-slate-950 translate-y-0 bg-slate-200 hover:bg-slate-400 transition-all duration-300"
                                             >
 
                                                 <FaLinkedin className="w-8 h-8 text-blue-600" />
@@ -461,45 +341,12 @@ const MeetOurTeam = () => {
                                     </div>
 
 
-                                    {/* =========================
-                                        Name
-                                    ========================= */}
+                                    {/*Name*/}
 
-                                    <div className="
-                                        relative
-                                        z-10
-
-                                        -mt-7
-
-                                        mx-5
-
-                                        rounded-xl
-
-                                        border
-                                        border-cyan-400/30
-
-                                        bg-slate-950
-
-                                        px-4
-                                        py-3
-
-                                        text-center
-
-                                        shadow-xl
-                                        shadow-black/30
-                                    ">
+                                    <div className="relative z-10 -mt-7 mx-5 rounded-xl border border-cyan-400/30 bg-slate-950 px-4 py-3 text-center shadow-xl shadow-black/30">
 
                                         <h5
-                                            className={`
-                                                text-base
-                                                sm:text-lg
-
-                                                font-semibold
-
-                                                transition-colors
-                                                duration-300
-                                                
-
+                                            className={`text-base sm:text-lg font-semibold transition-colors duration-300
                                                 ${isActive
                                                     ? "text-cyan-400"
                                                     : "text-slate-300"
@@ -512,18 +359,8 @@ const MeetOurTeam = () => {
                                         </h5>
 
 
-                                        <p className="
-                                            mt-1
-
-                                            text-xs
-                                            sm:text-sm
-                                            font-bold
-
-                                            text-slate-500
-                                        ">
-
+                                        <p className="mt-1 text-xs sm:text-sm font-bold text-slate-500">
                                             {member.designation}
-
                                         </p>
 
                                     </div>
@@ -538,47 +375,13 @@ const MeetOurTeam = () => {
                     </div>
 
 
-                    {/* =========================
-                        Right Arrow
-                    ========================= */}
+                    {/*Right Arrow*/}
 
                     <button
                         type="button"
                         onClick={handleNext}
                         aria-label="Next team member"
-                        className="
-                            absolute
-                            right-0
-                            lg:-right-4
-
-                            top-1/2
-                            -translate-y-1/2
-
-                            z-20
-
-                            w-11
-                            h-11
-
-                            flex
-                            items-center
-                            justify-center
-
-                            rounded-full
-
-                            border
-                            border-slate-800
-
-                            bg-slate-950
-
-                            text-slate-400
-
-                            hover:text-cyan-400
-                            hover:border-cyan-400/40
-                            hover:bg-slate-900
-
-                            transition-all
-                            duration-300
-                        "
+                        className="absolute right-0 lg:-right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 hover:bg-slate-900 transition-all duration-300"
                     >
 
                         <FiChevronRight className="w-5 h-5" />
@@ -589,45 +392,17 @@ const MeetOurTeam = () => {
                 </div>
 
 
-                {/* =========================
-                    Mobile Controls
-                ========================= */}
+                {/*Mobile Controls*/}
 
                 <div className="md:hidden mt-8">
 
-                    <div className="
-                        flex
-                        items-center
-                        justify-center
-                        gap-4
-                    ">
+                    <div className="flex items-center justify-cen ">
 
                         <button
                             type="button"
                             onClick={handlePrevious}
                             aria-label="Previous team member"
-                            className="
-                                w-10
-                                h-10
-
-                                flex
-                                items-center
-                                justify-center
-
-                                rounded-full
-
-                                border
-                                border-slate-800
-
-                                bg-slate-950
-
-                                text-slate-400
-
-                                hover:text-cyan-400
-                                hover:border-cyan-400/40
-
-                                transition-all
-                            "
+                            className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
                         >
 
                             <FiChevronLeft />
@@ -635,11 +410,7 @@ const MeetOurTeam = () => {
                         </button>
 
 
-                        <span className="
-                            text-xs
-                            font-mono
-                            text-slate-600
-                        ">
+                        <span className="text-xs font-mono text-slate-600">
 
                             {String(
                                 (activeIndex % team.length) + 1
@@ -658,28 +429,7 @@ const MeetOurTeam = () => {
                             type="button"
                             onClick={handleNext}
                             aria-label="Next team member"
-                            className="
-                                w-10
-                                h-10
-
-                                flex
-                                items-center
-                                justify-center
-
-                                rounded-full
-
-                                border
-                                border-slate-800
-
-                                bg-slate-950
-
-                                text-slate-400
-
-                                hover:text-cyan-400
-                                hover:border-cyan-400/40
-
-                                transition-all
-                            "
+                            className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
                         >
 
                             <FiChevronRight />

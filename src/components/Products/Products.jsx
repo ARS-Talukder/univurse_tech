@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiArrowUpRight, FiBookOpen, FiHeart, FiHome, } from "react-icons/fi";
 const iconMap = {
@@ -98,22 +99,46 @@ const Products = () => {
             <div className="container">
 
                 {/* Section Header */}
-                <div className="max-w-3xl mb-20">
-                    <span className="section-subtitle">
+                <motion.div
+                    className="max-w-4xl mb-20 mx-auto text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Our Products & Solutions
-                    </span>
+                    </motion.span>
 
-                    <h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
                         Software Solutions That Move{" "}
                         <span className="gradient-text">
                             Business Forward
                         </span>
-                    </h2>
+                    </motion.h2>
 
-                    <p className="mt-6 max-w-2xl">
-                        Explore our core software products built to simplify operations, improve efficiency, and help businesses grow.
-                    </p>
-                </div>
+                    <motion.p
+                        className="mt-6 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
+                        Explore our core software products built to simplify operations,
+                        improve efficiency, and help businesses grow.
+                    </motion.p>
+                </motion.div>
 
                 {/* Product Groups */}
                 <div className="space-y-24">

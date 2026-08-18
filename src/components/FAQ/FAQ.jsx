@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
     FiChevronDown,
@@ -8,10 +9,7 @@ const FAQ = () => {
     const [loading, setLoading] = useState(true);
     const [activeId, setActiveId] = useState(null);
 
-    // =========================
     // Fetch FAQs
-    // =========================
-
     useEffect(() => {
         const fetchFAQs = async () => {
             try {
@@ -34,20 +32,14 @@ const FAQ = () => {
         fetchFAQs();
     }, []);
 
-    // =========================
     // Toggle FAQ
-    // =========================
-
     const handleToggle = (id) => {
         setActiveId((current) =>
             current === id ? null : id
         );
     };
 
-    // =========================
     // Loading
-    // =========================
-
     if (loading) {
         return (
             <section className="py-24">
@@ -82,34 +74,50 @@ const FAQ = () => {
         <section id="faq" className="py-24 overflow-hidden">
             <div className="container mx-auto px-5">
 
-                {/* =========================
-                    Section Header
-                ========================= */}
+                {/*Section Header*/}
 
-                <div className="max-w-3xl mx-auto text-center mb-14">
-
-                    <span className="section-subtitle">
+                <motion.div
+                    className="max-w-4xl mx-auto text-center mb-14"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Frequently Asked Questions
-                    </span>
+                    </motion.span>
 
-                    <h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
                         Answers to Your{" "}
                         <span className="gradient-text">
                             Questions
                         </span>
-                    </h2>
+                    </motion.h2>
 
-                    <p className="mt-6 max-w-2xl mx-auto">
-                        Find answers to some of the most
-                        common questions about our services,
-                        solutions, and development process.
-                    </p>
+                    <motion.p
+                        className="mt-6 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
+                        Find answers to some of the most common questions
+                        about our services, solutions, and development process.
+                    </motion.p>
+                </motion.div>
 
-                </div>
-
-                {/* =========================
-                    FAQ List
-                ========================= */}
+                {/*FAQ List*/}
 
                 <div className="max-w-4xl mx-auto space-y-4">
 
@@ -120,38 +128,15 @@ const FAQ = () => {
                         return (
                             <div
                                 key={faq._id}
-                                className={`
-                                    group
-
-                                    rounded-2xl
-
-                                    border
-
-                                    overflow-hidden
-
-                                    transition-all
-                                    duration-300
-
+                                className={`group rounded-2xl border overflow-hidden transition-all duration-300
                                     ${isOpen
-                                        ? `
-                                                border-cyan-400/40
-                                                bg-slate-900
-                                                shadow-lg
-                                                shadow-cyan-500/5
-                                            `
-                                        : `
-                                                border-slate-800
-                                                bg-slate-950/70
-                                                hover:border-cyan-400/30
-                                                hover:bg-slate-900/70
-                                            `
+                                        ? `border-cyan-400/40 bg-slate-900 shadow-lg shadow-cyan-500/5`
+                                        : `border-slate-800 bg-slate-950/70 hover:border-cyan-400/30 hover:bg-slate-900/70`
                                     }
                                 `}
                             >
 
-                                {/* =========================
-                                    Question
-                                ========================= */}
+                                {/*Question*/}
 
                                 <button
                                     type="button"
@@ -160,35 +145,13 @@ const FAQ = () => {
                                             faq._id
                                         )
                                     }
-                                    className="
-                                        w-full
-
-                                        flex
-                                        items-center
-                                        gap-4
-
-                                        text-left
-
-                                        px-5
-                                        sm:px-7
-                                        py-5
-
-                                        cursor-pointer
-                                    "
+                                    className="w-full flex items-center gap-4 text-left px-5 sm:px-7 py-5 cursor-pointer"
                                 >
 
                                     {/* Number */}
 
                                     <span
-                                        className={`
-                                            shrink-0
-
-                                            text-xs
-                                            font-mono
-
-                                            transition-colors
-                                            duration-300
-
+                                        className={`shrink-0 text-xs font-mono transition-colors duration-300
                                             ${isOpen
                                                 ? "text-cyan-400"
                                                 : "text-slate-600"
@@ -203,16 +166,7 @@ const FAQ = () => {
                                     {/* Question */}
 
                                     <span
-                                        className={`
-                                            flex-1
-
-                                            text-sm
-                                            sm:text-base
-
-                                            font-medium
-
-                                            transition-colors
-                                            duration-300
+                                        className={`flex-1 text-sm sm:text-base font-medium transition-colors duration-300
 
                                             ${isOpen
                                                 ? "text-cyan-400"
@@ -226,36 +180,11 @@ const FAQ = () => {
                                     {/* Icon */}
 
                                     <span
-                                        className={`
-                                            shrink-0
-
-                                            w-8
-                                            h-8
-
-                                            flex
-                                            items-center
-                                            justify-center
-
-                                            rounded-full
-
-                                            border
-
-                                            transition-all
-                                            duration-300
+                                        className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300
 
                                             ${isOpen
-                                                ? `
-                                                        rotate-180
-                                                        border-cyan-400/30
-                                                        bg-cyan-400/10
-                                                        text-cyan-400
-                                                    `
-                                                : `
-                                                        border-slate-800
-                                                        text-slate-500
-                                                        group-hover:border-cyan-400/30
-                                                        group-hover:text-cyan-400
-                                                    `
+                                                ? `rotate-180 border-cyan-400/30 bg-cyan-400/10 text-cyan-400`
+                                                : `border-slate-800 text-slate-500 group-hover:border-cyan-400/30 group-hover:text-cyan-400`
                                             }
                                         `}
                                     >
@@ -264,18 +193,10 @@ const FAQ = () => {
 
                                 </button>
 
-                                {/* =========================
-                                    Answer
-                                ========================= */}
+                                {/*Answer*/}
 
                                 <div
-                                    className={`
-                                        grid
-
-                                        transition-all
-                                        duration-300
-                                        ease-in-out
-
+                                    className={`grid transition-all duration-300 ease-in-out
                                         ${isOpen
                                             ? "grid-rows-[1fr]"
                                             : "grid-rows-[0fr]"
@@ -285,22 +206,8 @@ const FAQ = () => {
 
                                     <div className="overflow-hidden">
 
-                                        <div className="
-                                            px-5
-                                            sm:px-7
-                                            pb-6
-
-                                            pl-14
-                                            sm:pl-[4.5rem]
-                                        ">
-                                            <p className="
-                                                text-sm
-                                                leading-7
-
-                                                text-slate-400
-
-                                                max-w-3xl
-                                            ">
+                                        <div className="px-5 sm:px-7 pb-6 pl-14 sm:pl-[4.5rem]">
+                                            <p className="text-sm leading-7 text-slate-400 max-w-3xl">
                                                 {faq.answer}
                                             </p>
                                         </div>

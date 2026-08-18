@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { DiNodejs, DiMongodb } from "react-icons/di";
 import { FaReact, FaLaravel, FaPython, FaSketch } from "react-icons/fa";
@@ -134,23 +135,46 @@ const Technology = () => {
             <div className="container">
 
                 {/* Section Header */}
-                <div className="max-w-3xl mx-auto text-center mb-10">
-                    <span className="section-subtitle">
+                <motion.div
+                    className="max-w-4xl mx-auto text-center mb-10"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Technologies
-                    </span>
+                    </motion.span>
 
-                    <h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
                         Technologies We{" "}
                         <span className="gradient-text">
                             Work With
                         </span>
-                    </h2>
+                    </motion.h2>
 
-                    <p className="mt-5">
+                    <motion.p
+                        className="mt-5 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
                         We use modern and reliable technologies to build
                         scalable digital products and business solutions.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
                 {/* Category Tabs */}
                 <div className="flex justify-center mb-14">

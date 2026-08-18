@@ -91,7 +91,7 @@ const Services = () => {
 
                 {/* Section Header */}
                 <motion.div
-                    className="max-w-3xl mb-16"
+                    className="max-w-4xl mb-16 mx-auto text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
@@ -120,7 +120,7 @@ const Services = () => {
                     </motion.h2>
 
                     <motion.p
-                        className="mt-6 max-w-2xl"
+                        className="mt-6 max-w-2xl text-center mx-auto"
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false }}
