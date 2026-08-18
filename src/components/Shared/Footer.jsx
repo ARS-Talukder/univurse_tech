@@ -4,6 +4,7 @@ import {
     FiMapPin,
     FiPhone,
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const socialLinks = [];
@@ -276,19 +277,19 @@ const Footer = () => {
 
                     <div className="flex items-center gap-5">
 
-                        <a
-                            href="/privacy-policy"
+                        <Link
+                            to="/privacy-policy"
                             className="text-slate-500 transition-colors hover:text-cyan-400"
                         >
                             Privacy Policy
-                        </a>
+                        </Link>
 
-                        <a
-                            href="/terms-and-conditions"
+                        <Link
+                            to="/terms-and-conditions"
                             className="text-slate-500 transition-colors hover:text-cyan-400"
                         >
                             Terms & Conditions
-                        </a>
+                        </Link>
 
                     </div>
 
