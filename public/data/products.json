@@ -1,11 +1,24 @@
 [
     {
+        "_id": "1",
         "group": "Digital Commerce & EdTech Platforms",
         "groupDescription": "Explore our core software products across digital commerce and education technology.",
         "icon": "book",
         "color": "cyan",
-        "products": [
+        "items": [
             {
+                "_id": "1",
+                "title": "E-Commerce Website & Platform",
+                "subtitle": "High-Throughput Digital Retail Ecosystem",
+                "technology": "MERN Stack",
+                "category": "Commerce",
+                "description": "Designed for smooth shopping from product discovery to checkout. Includes advanced search, inventory management, product management, real-time order tracking and automated order management.",
+                "core": "React · Node.js · Stripe · Redis",
+                "demo": "https://click-pick.netlify.app/",
+                "demoLabel": "Live Demo"
+            },
+            {
+                "_id": "2",
                 "title": "Learning Management System",
                 "subtitle": "Interactive Learning & Talent Development Engine",
                 "technology": "MERN Stack",
@@ -13,34 +26,18 @@
                 "description": "A scalable learning management system engineered for academies and enterprise training. Features dynamic course authoring, automated assessments, and real-time student analytics.",
                 "core": "MongoDB · Express · React · Node",
                 "demo": "#"
-            },
-            {
-                "title": "Enterprise E-Commerce Platform",
-                "subtitle": "High-Throughput Digital Retail Ecosystem",
-                "technology": "MERN Stack",
-                "category": "Commerce",
-                "description": "Designed for high concurrency and zero-friction checkout. Includes custom inventory syncing, secure payment gateways, and automated order fulfillment pipelines.",
-                "core": "React · Node.js · Stripe · Redis",
-                "demo": "#"
             }
         ]
     },
     {
+        "_id": "2",
         "group": "Health & Operations Logistics",
         "groupDescription": "Technology designed to simplify healthcare requests and operational logistics.",
         "icon": "heart",
         "color": "indigo",
-        "products": [
+        "items": [
             {
-                "title": "Medicine Request & Order App",
-                "subtitle": "Real-Time Pharmaceutical Request & Order Engine",
-                "technology": "Android Studio (Native)",
-                "category": "Healthcare",
-                "description": "A native mobile application facilitating fast, reliable prescription requests and fulfillment tracking with offline capability and real-time inventory alerts.",
-                "core": "Java/Kotlin · REST API · SQLite",
-                "demo": "#"
-            },
-            {
+                "_id": "1",
                 "title": "Meal Management System",
                 "subtitle": "Bachelor Mess Meal Tracking Portal",
                 "technology": "MERN Stack",
@@ -48,17 +45,29 @@
                 "description": "A hostel and bachelor mess management system with member email sign-in, designed to help mess managers organize meal operations and member access.",
                 "core": "Express · Node · MongoDB · React",
                 "demo": "https://rahim-aust.github.io/hostel_mess-meal-management-system/",
-                "demoLabel": "Open Live Demo"
+                "demoLabel": "Live Demo"
+            },
+            {
+                "_id": "2",
+                "title": "Medicine Request & Order App",
+                "subtitle": "Real-Time Pharmaceutical Request & Order Engine",
+                "technology": "Android Studio (Native)",
+                "category": "Healthcare",
+                "description": "A native mobile application facilitating fast, reliable prescription requests and fulfillment tracking with offline capability and real-time inventory alerts.",
+                "core": "Java/Kotlin · REST API · SQLite",
+                "demo": "#"
             }
         ]
     },
     {
+        "_id": "3",
         "group": "Facility & Lifestyle Automation",
         "groupDescription": "Operational platforms for property, fitness, and personal-care businesses.",
         "icon": "home",
         "color": "violet",
-        "products": [
+        "items": [
             {
+                "_id": "1",
                 "title": "Flat Management System",
                 "subtitle": "Apartment Admin & Billing Dashboard",
                 "technology": "ASP.NET + React",
@@ -66,10 +75,22 @@
                 "description": "A flat management platform with admin tools for flats, tenants, bill generation, and reports, plus a tenant portal for current bills, bill history, PDF downloads, and payment requests.",
                 "core": "ASP.NET Core · React + Vite",
                 "demo": "https://e-flat.pro.bd/",
-                "demoLabel": "Open Live Demo",
+                "demoLabel": "Live Demo",
                 "demoNote": "Login required for admin and tenant dashboards."
             },
             {
+                "_id": "2",
+                "title": "Salon Operations Suite",
+                "subtitle": "Smart Scheduling Engine",
+                "technology": "MERN Stack",
+                "category": "Salon & Spa",
+                "description": "Real-time appointment booking, staff allocation, inventory tracking, and client history profiles that eliminate scheduling friction.",
+                "core": "Node · React · MongoDB",
+                "demo": "https://the-golden-style.web.app/",
+                "demoLabel": "Live Demo"
+            },
+            {
+                "_id": "3",
                 "title": "Gym Management System",
                 "subtitle": "Membership Operations Platform",
                 "technology": "ASP.NET + SQL",
@@ -77,14 +98,44 @@
                 "description": "Robust software featuring automated recurring billing, trainer scheduling, access logs, and retention analytics.",
                 "core": "ASP.NET Core · React · SQL",
                 "demo": "#"
+            }
+        ]
+    },
+    {
+        "_id": "4",
+        "group": "Brand & Portfolio Experiences",
+        "groupDescription": "Modern websites built to showcase people, brands, businesses, and digital experiences.",
+        "icon": "globe",
+        "color": "cyan",
+        "items": [
+            {
+                "_id": "1",
+                "title": "Personal Portfolio Website",
+                "subtitle": "Professional Portfolio & Personal Brand",
+                "technology": "React + Vite",
+                "category": "Personal Portfolio",
+                "description": "A modern personal portfolio website designed to showcase skills, experience, projects, services, and professional achievements through a fast and engaging digital experience.",
+                "core": "React · Vite · Tailwind CSS",
+                "demo": "#"
             },
             {
-                "title": "Salon Operations Suite",
-                "subtitle": "Smart Scheduling Engine",
+                "_id": "2",
+                "title": "Company Portfolio Website",
+                "subtitle": "Corporate Website & Brand Experience",
                 "technology": "MERN Stack",
-                "category": "Salon & Spa",
-                "description": "Real-time appointment booking, staff allocation, inventory tracking, and client history profiles that eliminate scheduling friction.",
-                "core": "Node · React · MongoDB",
+                "category": "Company Website",
+                "description": "A professional company website built to present services, products, technologies, projects, and company information while creating a strong and trustworthy online presence.",
+                "core": "React · Node · MongoDB",
+                "demo": "#"
+            },
+            {
+                "_id": "3",
+                "title": "Business Portfolio Website",
+                "subtitle": "Business Showcase & Lead Generation",
+                "technology": "React + Vite",
+                "category": "Business Website",
+                "description": "A conversion-focused business website that highlights services, expertise, previous work, and key business information while helping potential customers connect with the brand.",
+                "core": "React · Vite · Tailwind CSS",
                 "demo": "#"
             }
         ]

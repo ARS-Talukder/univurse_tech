@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-    FiArrowUpRight,
-    FiGlobe,
-    FiSmartphone,
-    FiBriefcase,
-    FiTrendingUp,
-} from "react-icons/fi";
+import { FiArrowDownRight, FiGlobe, FiSmartphone, FiBriefcase, FiTrendingUp } from "react-icons/fi";
 import { CgIfDesign } from "react-icons/cg";
+import { useQuery } from "@tanstack/react-query";
+import Loading from "../Shared/Loading";
+import { useEffect, useState } from "react";
 
 const iconMap = {
     web: FiGlobe,
@@ -17,61 +13,56 @@ const iconMap = {
     ux: CgIfDesign,
 };
 
+const slogans = [
+    {
+        first: "We build,",
+        second: "Grow & Scale.",
+    },
+    {
+        first: "We Design",
+        second: "& Launch.",
+    },
+    {
+        first: "We Innovate",
+        second: "& Automate.",
+    },
+    {
+        first: "We Modernize",
+        second: "& Transform.",
+    },
+];
+
 const Services = () => {
-    const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [activeSlogan, setActiveSlogan] = useState(0);
 
     useEffect(() => {
-        const fetchServices = async () => {
-            try {
-                setLoading(true);
+        const sloganTimer = window.setInterval(() => {
+            setActiveSlogan((current) => (current + 1) % slogans.length);
+        }, 2600);
 
-                const response = await fetch("/data/services.json");
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch services");
-                }
-
-                const data = await response.json();
-
-                setServices(data);
-            } catch (error) {
-                console.error("Services fetch error:", error);
-                setError(true);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchServices();
+        return () => window.clearInterval(sloganTimer);
     }, []);
 
+    const { data: services, isLoading, isError, } = useQuery({
+        queryKey: ["services"],
+        queryFn: async () => {
+            const response = await fetch("/data/services.json");
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch services");
+            }
+
+            return response.json();
+        },
+    });
+
     /* Loading */
-    if (loading) {
-        return (
-            <section id="services">
-                <div className="container min-h-[400px] flex items-center justify-center">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce" />
-
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.15s" }}
-                        />
-
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.3s" }}
-                        />
-                    </div>
-                </div>
-            </section>
-        );
+    if (isLoading) {
+        return <Loading />;
     }
 
     /* Error */
-    if (error) {
+    if (isError) {
         return (
             <section id="services">
                 <div className="container min-h-[400px] flex items-center justify-center">
@@ -108,15 +99,24 @@ const Services = () => {
                     </motion.span>
 
                     <motion.h2
-                        initial={{ opacity: 0, y: 25 }}
+                        key={activeSlogan}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false }}
-                        transition={{ duration: 0.7, delay: 0.1 }}
                     >
-                        We Build,{" "}
-                        <span className="gradient-text">
-                            Grow & Scale
-                        </span>
+                        {slogans[activeSlogan].first}{" "}
+
+                        <motion.span
+                            key={activeSlogan}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.45 }}
+                            className="inline-block gradient-text"
+                        >
+                            {slogans[activeSlogan].second}
+                        </motion.span>
                     </motion.h2>
 
                     <motion.p
@@ -139,7 +139,7 @@ const Services = () => {
 
                         return (
                             <div
-                                key={service.id}
+                                key={service._id}
                                 className="group relative flex flex-col rounded-2xl border border-slate-800 bg-slate-950/70 p-6 hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300"
                             >
                                 {/* Number */}
@@ -182,7 +182,7 @@ const Services = () => {
                                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
                                     >
                                         Discuss Service
-                                        <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                        <FiArrowDownRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </a>
                                 </div>
                             </div>

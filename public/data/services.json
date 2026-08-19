@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "_id": 1,
         "title": "Web Development",
         "shortTitle": "Web Development",
         "description": "Modern, responsive, and scalable websites and web applications built around your business goals.",
@@ -13,7 +13,7 @@
         "icon": "web"
     },
     {
-        "id": 2,
+        "_id": 2,
         "title": "Mobile App Development",
         "shortTitle": "Mobile Apps",
         "description": "Reliable mobile applications designed to deliver smooth experiences and support real business needs.",
@@ -26,7 +26,7 @@
         "icon": "mobile"
     },
     {
-        "id": 3,
+        "_id": 3,
         "title": "Enterprise Product",
         "shortTitle": "Enterprise Solutions",
         "description": "Complete software products designed to improve business operations, automate workflows, and support long-term growth.",
@@ -39,7 +39,7 @@
         "icon": "enterprise"
     },
     {
-        "id": 4,
+        "_id": 4,
         "title": "Digital Marketing",
         "shortTitle": "Digital Marketing",
         "description": "Digital strategies that help businesses build their online presence, reach the right audience, and grow.",
@@ -52,7 +52,7 @@
         "icon": "marketing"
     },
     {
-        "id": 5,
+        "_id": 5,
         "title": "UX Design",
         "shortTitle": "UX Design",
         "description": "Thoughtful user experiences designed to make digital products intuitive, engaging, and easy to use.",

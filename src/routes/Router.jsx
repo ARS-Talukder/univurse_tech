@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Terms from "../pages/Terms";
 import RootLayout from "../layouts/RootLayout";
+import Loading from "../components/Shared/Loading";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
                 path: "/terms-and-conditions",
                 element: <Terms />,
             },
+            {
+                path: "/loading",
+                element: <Loading />,
+            }
         ],
     },
 ]);

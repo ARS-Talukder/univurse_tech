@@ -1,10 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FiArrowUpRight, FiBookOpen, FiHeart, FiHome, } from "react-icons/fi";
+import { FiArrowRight, FiBookOpen, FiHeart, FiHome, FiGlobe } from "react-icons/fi";
+import Loading from "../Shared/Loading";
+
 const iconMap = {
     book: FiBookOpen,
     heart: FiHeart,
     home: FiHome,
+    globe: FiGlobe,
 };
 
 const colorClasses = {
@@ -30,64 +34,56 @@ const colorClasses = {
     },
 };
 
+const slogans = [
+    {
+        first: "Software Solutions That Move",
+        second: "Business Forward.",
+    },
+    {
+        first: "Digital Products That Drive",
+        second: "Real Growth.",
+    },
+    {
+        first: "Technology That Solves",
+        second: "Business Challenges.",
+    },
+];
+
 const Products = () => {
-    const [productsData, setProductsData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
+    const [activeSlogan, setActiveSlogan] = useState(0);
     useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                setLoading(true);
+        const sloganTimer = window.setInterval(() => {
+            setActiveSlogan((current) => (current + 1) % slogans.length);
+        }, 2600);
 
-                const response = await fetch("/data/products.json");
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch products");
-                }
-
-                const data = await response.json();
-
-                setProductsData(data);
-            } catch (error) {
-                console.error("Products fetch error:", error);
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchProducts();
+        return () => window.clearInterval(sloganTimer);
     }, []);
 
+    const { data: productsData, isLoading, isError } = useQuery({
+        queryKey: ["products"],
+        queryFn: async () => {
+            const response = await fetch("/data/products.json");
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch products");
+            }
+
+            return response.json();
+        },
+    });
+
     /* Loading */
-    if (loading) {
-        return (
-            <section id="products" className="bg-slate-950">
-                <div className="container min-h-[400px] flex items-center justify-center">
-                    <div className="flex items-center gap-2 text-cyan-400">
-                        <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce" />
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.15s" }}
-                        />
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.3s" }}
-                        />
-                    </div>
-                </div>
-            </section>
-        );
+    if (isLoading) {
+        return <Loading />;
     }
 
     /* Error */
-    if (error) {
+    if (isError) {
         return (
             <section id="products" className="bg-slate-950">
                 <div className="container min-h-[400px] flex items-center justify-center">
                     <p className="text-red-400">
-                        Failed to load products.
+                        Failed to load our products.
                     </p>
                 </div>
             </section>
@@ -117,15 +113,24 @@ const Products = () => {
                     </motion.span>
 
                     <motion.h2
-                        initial={{ opacity: 0, y: 25 }}
+                        key={activeSlogan}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false }}
-                        transition={{ duration: 0.7, delay: 0.1 }}
                     >
-                        Software Solutions That Move{" "}
-                        <span className="gradient-text">
-                            Business Forward
-                        </span>
+                        {slogans[activeSlogan].first}{" "}
+
+                        <motion.span
+                            key={activeSlogan}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.45 }}
+                            className="inline-block gradient-text"
+                        >
+                            {slogans[activeSlogan].second}
+                        </motion.span>
                     </motion.h2>
 
                     <motion.p
@@ -142,12 +147,12 @@ const Products = () => {
 
                 {/* Product Groups */}
                 <div className="space-y-24">
-                    {productsData.map((group) => {
-                        const Icon = iconMap[group.icon];
-                        const colors = colorClasses[group.color];
+                    {productsData.map((product) => {
+                        const Icon = iconMap[product.icon];
+                        const colors = colorClasses[product.color];
 
                         return (
-                            <div key={group.group}>
+                            <div key={product._id}>
 
                                 {/* Group Header */}
                                 <div className="flex items-start gap-4 mb-8">
@@ -159,10 +164,10 @@ const Products = () => {
                                     </div>
 
                                     <div>
-                                        <h3>{group.group}</h3>
+                                        <h3>{product.group}</h3>
 
                                         <p className="mt-2 max-w-2xl text-sm">
-                                            {group.groupDescription}
+                                            {product.groupDescription}
                                         </p>
                                     </div>
 
@@ -170,14 +175,14 @@ const Products = () => {
 
                                 {/* Products */}
                                 <div
-                                    className={`grid gap-6 ${group.products.length === 3
+                                    className={`grid gap-6 ${product.items.length === 3
                                         ? "lg:grid-cols-3"
                                         : "lg:grid-cols-2"
                                         }`}
                                 >
-                                    {group.products.map((product) => (
+                                    {product.items.map((item) => (
                                         <div
-                                            key={product.title}
+                                            key={item._id}
                                             className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-7 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300"
                                         >
                                             <div>
@@ -188,28 +193,28 @@ const Products = () => {
                                                     <span
                                                         className={`text-xs font-mono font-semibold px-2.5 py-1 rounded bg-slate-800 border border-slate-700 ${colors.technology}`}
                                                     >
-                                                        {product.technology}
+                                                        {item.technology}
                                                     </span>
 
                                                     <span className="text-xs text-slate-500 font-mono">
-                                                        {product.category}
+                                                        {item.category}
                                                     </span>
 
                                                 </div>
 
                                                 {/* Title */}
                                                 <h4 className={`transition-colors ${colors.hover}`}>
-                                                    {product.title}
+                                                    {item.title}
                                                 </h4>
 
                                                 {/* Subtitle */}
                                                 <p className="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                                                    {product.subtitle}
+                                                    {item.subtitle}
                                                 </p>
 
                                                 {/* Description */}
                                                 <p className="mt-5 text-sm leading-7 text-slate-300">
-                                                    {product.description}
+                                                    {item.description}
                                                 </p>
 
                                             </div>
@@ -218,26 +223,19 @@ const Products = () => {
                                             <div className="mt-7 pt-5 border-t border-slate-800 flex items-center justify-between gap-4">
 
                                                 <span className="text-xs font-mono text-slate-500">
-                                                    Core: {product.core}
+                                                    Core: {item.core}
                                                 </span>
 
-                                                {product.demo && product.demo !== "#" && product.demoStatus !== "unavailable" ? (
+                                                {item.demo !== "#" ? (
                                                     <a
-                                                        href={product.demo}
+                                                        href={item.demo}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className={`shrink-0 text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
                                                     >
-                                                        {product.demoLabel || "View Demo"}
-                                                        <FiArrowUpRight />
+                                                        {item.demoLabel || "Live Demo"}
+                                                        <FiArrowRight />
                                                     </a>
-                                                ) : product.demoStatus === "unavailable" ? (
-                                                    <span
-                                                        title={product.demoNote}
-                                                        className="shrink-0 text-xs font-semibold text-amber-300"
-                                                    >
-                                                        {product.demoLabel || "Preview Updating"}
-                                                    </span>
                                                 ) : (
                                                     <span className="shrink-0 text-xs font-semibold text-slate-500">
                                                         Demo Coming Soon
