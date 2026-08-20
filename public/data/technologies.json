@@ -95,6 +95,12 @@
             "color": "#61DAFB"
         },
         {
+            "_id": "tech_mobile_androidstudio",
+            "name": "Android Studio",
+            "icon": "androidstudio",
+            "color": "#50b054"
+        },
+        {
             "_id": "tech_mobile_kotlin",
             "name": "Kotlin",
             "icon": "kotlin",

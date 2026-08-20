@@ -1,42 +1,42 @@
 [
     {
         "_id": "faq_001",
-        "question": "What services does Univurse Tech provide?",
-        "answer": "We provide Web Development, Mobile App Development, Enterprise Product Development, Digital Marketing, and UX Design solutions tailored to business needs."
+        "question": "Who is Univurse Tech?",
+        "answer": "Univurse Tech is a software development company that helps building modern, scalable, and business-driven digital solutions. We help startups, businesses, and organizations to use the right technology to solve real business problems, improve operations, and create long-term digital growth."
     },
     {
         "_id": "faq_002",
-        "question": "Can you build a custom web application for my business?",
-        "answer": "Yes. We develop custom web applications based on your business requirements, workflows, users, and scalability needs."
+        "question": "What services does Univurse Tech offer?",
+        "answer": "We provide Web Development, Mobile App Development, Enterprise Product Development, Digital Marketing, and UX Design solutions tailored to business needs."
     },
     {
         "_id": "faq_003",
-        "question": "Do you develop mobile applications?",
-        "answer": "Yes. We build modern mobile applications for Android and cross-platform solutions using technologies such as Flutter and React Native."
+        "question": "Can you build custom websites, applications, and software for my business?",
+        "answer": "Absolutely. We build custom digital solutions based on your business needs, goals, workflows, users, and future growth."
     },
     {
         "_id": "faq_004",
-        "question": "Do you provide UI/UX design services?",
-        "answer": "Yes. We design intuitive and user-focused digital experiences, from wireframes and prototypes to polished interfaces."
+        "question": "Can you work with our existing system or application?",
+        "answer": "Of course. We can work with existing applications and systems for improvements, integrations, new features, optimization, and modernization."
     },
     {
         "_id": "faq_005",
-        "question": "Can you develop enterprise-level software?",
-        "answer": "Yes. We build scalable enterprise products designed around complex business processes, integrations, security, and long-term growth."
+        "question": "How quickly can I get started?",
+        "answer": "You can get started as soon as you’re ready."
     },
     {
         "_id": "faq_006",
-        "question": "Do you provide digital marketing services?",
-        "answer": "Yes. Our digital marketing services help businesses improve their online presence, reach the right audience, and grow their digital visibility."
+        "question": "How do we start a project?",
+        "answer": "You can contact us. Share your idea, requirements, or business challenge with us, and we’ll discuss your needs, suggest the right approach, and then get started on your project."
     },
     {
         "_id": "faq_007",
-        "question": "Can you work with our existing system or application?",
-        "answer": "Yes. We can work with existing applications and systems for improvements, integrations, new features, optimization, and modernization."
+        "question": "How is pricing structured?",
+        "answer": "Our pricing is based on your project’s features, and development requirements. After understanding your needs, we provide a clear project estimate before development starts."
     },
     {
         "_id": "faq_008",
-        "question": "How do we start a project with Univurse Tech?",
-        "answer": "You can contact us with your project idea or business requirements. We will discuss your goals, understand the scope, and recommend a suitable solution."
+        "question": "Why choose Univurse Tech over other providers?",
+        "answer": "We focus on practical, scalable solutions built around your business needs. From design and development to deployment, we combine modern technology, clear communication, and long-term thinking to deliver products. We work closely with our clients, stay focused on their goals, and provide continuous support to help their digital products grow and succeed."
     }
 ]
