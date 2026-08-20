@@ -4,14 +4,16 @@
         "name": "MD ABDUR RAHMAN",
         "designation": "Co-Founder & MD",
         "image": "md_abdur_rahman",
-        "linkedin": "https://www.linkedin.com/in/md-abdur-rahman-20339a241/"
+        "linkedin": "https://www.linkedin.com/in/md-abdur-rahman-20339a241/",
+        "portfolio": "https://md-abdur-rahman.web.app/"
     },
     {
         "_id": "team_002",
         "name": "Abdur Rahim",
-        "designation": "Co-Founder & Director",
+        "designation": "Founder & Director",
         "image": "abdur_rahim",
-        "linkedin": "https://www.linkedin.com/in/abdur-rahim-austcse019/"
+        "linkedin": "https://www.linkedin.com/in/abdur-rahim-austcse019/",
+        "portfolio": "https://adrahim.netlify.app/"
     },
     {
         "_id": "team_003",

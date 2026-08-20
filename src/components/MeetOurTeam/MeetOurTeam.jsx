@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiGlobe } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 
 // Team images
@@ -21,7 +21,7 @@ import Loading from "../Shared/Loading";
 const imageMap = {
     abdur_rahim: abdurRahim,
     md_abdur_rahman: mdAbdurRahman,
-    asif_iftekhar_fahim:asifIftekharFahim,
+    asif_iftekhar_fahim: asifIftekharFahim,
     md_zaed_hassan_shams: mdZaedHassanShams,
     nirjoy_debnath: nirjoyDebnath,
     mafuj_ahammad: mafujAhammad,
@@ -279,29 +279,59 @@ const MeetOurTeam = () => {
                                         />
 
 
-                                        {/* LinkedIn */}
+                                        {/* Social Links */}
 
-                                        {member.linkedin && (
+                                        <div className="absolute left-4 bottom-8 flex items-center gap-2">
 
-                                            <a
-                                                href={
-                                                    member.linkedin
-                                                }
+                                            {/* LinkedIn */}
 
-                                                target="_blank"
+                                            {member.linkedin && (
 
-                                                rel="noopener noreferrer"
+                                                <a
+                                                    href={
+                                                        member.linkedin
+                                                    }
 
-                                                aria-label={`${member.name} LinkedIn`}
+                                                    target="_blank"
 
-                                                className="absolute left-4 bottom-8 flex items-center justify-center text-slate-950 translate-y-0 bg-slate-200 hover:bg-slate-400 transition-all duration-300"
-                                            >
+                                                    rel="noopener noreferrer"
 
-                                                <FaLinkedin className="w-8 h-8 text-blue-600" />
+                                                    aria-label={`${member.name} LinkedIn`}
 
-                                            </a>
+                                                    className="flex items-center justify-center"
+                                                >
 
-                                        )}
+                                                    <FaLinkedin className="w-9 h-9 text-blue-600 hover:text-blue-800 transition-all duration-300" />
+
+                                                </a>
+
+                                            )}
+
+                                            {/* Portfolio */}
+
+                                            {member.portfolio && (
+
+                                                <a
+                                                    href={
+                                                        member.portfolio
+                                                    }
+
+                                                    target="_blank"
+
+                                                    rel="noopener noreferrer"
+
+                                                    aria-label={`${member.name} Portfolio`}
+
+                                                    className="flex items-center justify-center"
+                                                >
+
+                                                    <FiGlobe className="w-9 h-9 text-cyan-400 hover:text-blue-800 transition-all duration-300" />
+
+                                                </a>
+
+                                            )}
+
+                                        </div>
 
                                     </div>
 
