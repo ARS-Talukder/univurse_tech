@@ -1,17 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import {
-    FiMail,
-    FiMapPin,
-    FiPhone,
-    FiSend,
-} from "react-icons/fi";
+import { FiMail, FiMapPin, FiPhone, FiSend } from "react-icons/fi";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import toast from "react-hot-toast";
 
-const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const emailServiceId = "service_u7470p9";
+const emailTemplateId = "template_jwtn2kd";
+const emailPublicKey = "7WU59zuk4z2MC1HSv";
 
 const Contact = () => {
     const [sending, setSending] = useState(false);
@@ -24,10 +20,19 @@ const Contact = () => {
         setSending(true);
         setStatus(null);
 
+        const toastId = toast.loading("Sending your message...");
+
         if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+            const message =
+                "Contact form is not configured yet. Please email us directly.";
+
             setStatus({
                 type: "error",
-                message: "Contact form is not configured yet. Please email us directly.",
+                message,
+            });
+
+            toast.error(message, {
+                id: toastId,
             });
 
             setSending(false);
@@ -44,14 +49,30 @@ const Contact = () => {
 
             event.target.reset();
 
+            const message =
+                "Message sent successfully. We will get back to you soon.";
+
             setStatus({
                 type: "success",
-                message: "Message sent successfully. We will get back to you soon.",
+                message,
             });
-        } catch {
+
+            toast.success("Message sent successfully!", {
+                id: toastId,
+            });
+        } catch (error) {
+            console.error("Email sending error:", error);
+
+            const message =
+                "Failed to send the message. Please email us directly or try again.";
+
             setStatus({
                 type: "error",
-                message: "Failed to send the message. Please email us directly or try again.",
+                message,
+            });
+
+            toast.error("Failed to send the message.", {
+                id: toastId,
             });
         } finally {
             setSending(false);
@@ -155,7 +176,7 @@ const Contact = () => {
                                         </p>
 
                                         <p className="mt-1 text-sm text-slate-300 group-hover:text-cyan-400 transition-colors">
-                                            univurse.tech@gmail.com
+                                            contact@univursetech.pro.bd
                                         </p>
                                     </div>
                                 </a>

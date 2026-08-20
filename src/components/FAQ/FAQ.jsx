@@ -1,36 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
     FiChevronDown,
 } from "react-icons/fi";
+import Loading from "../Shared/Loading";
 
 const FAQ = () => {
-    const [faqs, setFaqs] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [activeId, setActiveId] = useState(null);
 
-    // Fetch FAQs
-    useEffect(() => {
-        const fetchFAQs = async () => {
-            try {
-                const response = await fetch("/data/faq.json");
+    const { data: faqs, isLoading, isError } = useQuery({
+        queryKey: ["faqs"],
+        queryFn: async () => {
+            const response = await fetch("/data/faq.json");
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch FAQ data");
-                }
-
-                const data = await response.json();
-
-                setFaqs(data);
-            } catch (error) {
-                console.error("FAQ:", error);
-            } finally {
-                setLoading(false);
+            if (!response.ok) {
+                throw new Error("Failed to fetch FAQ data");
             }
-        };
 
-        fetchFAQs();
-    }, []);
+            return response.json();
+        },
+    });
 
     // Toggle FAQ
     const handleToggle = (id) => {
@@ -40,27 +30,17 @@ const FAQ = () => {
     };
 
     // Loading
-    if (loading) {
+    if (isLoading) {
+        return <Loading />
+    }
+
+    if (isError) {
         return (
-            <section className="py-24">
-                <div className="container mx-auto px-5">
-                    <div className="flex justify-center items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
-
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{
-                                animationDelay: "150ms",
-                            }}
-                        />
-
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{
-                                animationDelay: "300ms",
-                            }}
-                        />
-                    </div>
+            <section>
+                <div className="container min-h-[400px] flex items-center justify-center">
+                    <p className="text-red-400">
+                        Failed to load FAQ data.
+                    </p>
                 </div>
             </section>
         );

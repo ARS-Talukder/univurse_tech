@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import {
-    FiChevronLeft,
-    FiChevronRight,
-} from "react-icons/fi";
+import { useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 
 // Team images
 import abdurRahim from "../../assets/team/Abdur_Rahim.png";
 import mdAbdurRahman from "../../assets/team/MD_Abdur_Rahman.jpeg";
+import asifIftekharFahim from "../../assets/team/Asif_Iftekher_Fahim.png";
 import mdZaedHassanShams from "../../assets/team/Md_Zaed_Hassan_Shams.png";
 import nirjoyDebnath from "../../assets/team/Nirjoy_Debnath.png";
 import mafujAhammad from "../../assets/team/Mafuj_Ahammad.png";
 import aurunaveMollikRuddra from "../../assets/team/Aurunave_Mollik_Ruddra.png";
 import azizurRahman from "../../assets/team/Azizur_Rahman.png";
 import mdRiazUddin from "../../assets/team/Md_Riaz_Uddin.png";
+import { useQuery } from "@tanstack/react-query";
+import Loading from "../Shared/Loading";
 
 
 // Image Map
 const imageMap = {
     abdur_rahim: abdurRahim,
     md_abdur_rahman: mdAbdurRahman,
+    asif_iftekhar_fahim:asifIftekharFahim,
     md_zaed_hassan_shams: mdZaedHassanShams,
     nirjoy_debnath: nirjoyDebnath,
     mafuj_ahammad: mafujAhammad,
@@ -31,52 +32,20 @@ const imageMap = {
 
 
 const MeetOurTeam = () => {
-
-    const [team, setTeam] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const { data: team, isLoading, isError } = useQuery({
+        queryKey: ["team"],
+        queryFn: async () => {
+            const response = await fetch("/data/team.json");
 
-    // Fetch team data
-    useEffect(() => {
-
-        const fetchTeam = async () => {
-
-            try {
-
-                const response = await fetch(
-                    "/data/team.json"
-                );
-
-                if (!response.ok) {
-                    throw new Error(
-                        "Failed to fetch team data"
-                    );
-                }
-
-                const data = await response.json();
-
-                setTeam(data);
-
-            } catch (error) {
-
-                console.error(
-                    "Meet Our Team:",
-                    error
-                );
-
-            } finally {
-
-                setLoading(false);
-
+            if (!response.ok) {
+                throw new Error("Failed to fetch team data");
             }
-        };
 
-        fetchTeam();
-
-    }, []);
-
+            return response.json();
+        },
+    });
 
     // Previous
     const handlePrevious = () => {
@@ -87,7 +56,6 @@ const MeetOurTeam = () => {
 
     };
 
-
     // Next
     const handleNext = () => {
 
@@ -97,44 +65,33 @@ const MeetOurTeam = () => {
 
     };
 
+    const handleSwipe = (offsetX) => {
+        const swipeThreshold = 50;
+
+        if (offsetX < -swipeThreshold) {
+            handleNext();
+        } else if (offsetX > swipeThreshold) {
+            handlePrevious();
+        }
+    };
+
 
     // Loading
-    if (loading) {
-
-        return (
-
-            <section className="py-24">
-
-                <div className="container mx-auto px-5 text-center">
-
-                    <div className="flex justify-center items-center gap-1">
-
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
-
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{
-                                animationDelay: "150ms",
-                            }}
-                        />
-
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{
-                                animationDelay: "300ms",
-                            }}
-                        />
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        );
-
+    if (isLoading) {
+        return <Loading />
     }
 
+    if (isError) {
+        return (
+            <section className="py-24">
+                <div className="container mx-auto px-5 min-h-[300px] flex items-center justify-center">
+                    <p className="text-red-400">
+                        Failed to load team data.
+                    </p>
+                </div>
+            </section>
+        );
+    }
 
     if (!team.length) {
         return null;
@@ -206,7 +163,15 @@ const MeetOurTeam = () => {
                     </button>
 
                     {/* Cards */}
-                    <div className="relative h-[430px] flex items-center justify-center">
+                    <motion.div
+                        className="relative h-[430px] flex items-center justify-center touch-pan-y"
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.15}
+                        onDragEnd={(event, info) => {
+                            handleSwipe(info.offset.x);
+                        }}
+                    >
 
                         {team.map((member, index) => {
 
@@ -372,7 +337,7 @@ const MeetOurTeam = () => {
 
                         })}
 
-                    </div>
+                    </motion.div>
 
 
                     {/*Right Arrow*/}
@@ -387,62 +352,8 @@ const MeetOurTeam = () => {
                         <FiChevronRight className="w-5 h-5" />
 
                     </button>
-
-
                 </div>
-
-
-                {/*Mobile Controls*/}
-
-                <div className="md:hidden mt-8">
-
-                    <div className="flex items-center justify-cen ">
-
-                        <button
-                            type="button"
-                            onClick={handlePrevious}
-                            aria-label="Previous team member"
-                            className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
-                        >
-
-                            <FiChevronLeft />
-
-                        </button>
-
-
-                        <span className="text-xs font-mono text-slate-600">
-
-                            {String(
-                                (activeIndex % team.length) + 1
-                            ).padStart(2, "0")}
-
-                            {" / "}
-
-                            {String(
-                                team.length
-                            ).padStart(2, "0")}
-
-                        </span>
-
-
-                        <button
-                            type="button"
-                            onClick={handleNext}
-                            aria-label="Next team member"
-                            className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
-                        >
-
-                            <FiChevronRight />
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
             </div>
-
         </section>
 
     );

@@ -1,9 +1,5 @@
-import {
-    FiArrowUpRight,
-    FiMail,
-    FiMapPin,
-    FiPhone,
-} from "react-icons/fi";
+import { FiArrowUpRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -221,7 +217,7 @@ const Footer = () => {
                                 <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
 
                                 <span className="text-sm text-slate-400 transition-colors group-hover:text-cyan-400">
-                                    univurse.tech@gmail.com
+                                    contact@univursetech.pro.bd
                                 </span>
                             </a>
 
@@ -238,13 +234,28 @@ const Footer = () => {
                                 </span>
                             </a>
 
+                            {/* WhatsApp */}
+
+                            <a
+                                href="https://wa.me/8801845503651"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-start gap-3"
+                            >
+                                <FaWhatsapp className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+
+                                <span className="text-sm text-slate-400 transition-colors group-hover:text-cyan-400">
+                                    +880 1845 503651
+                                </span>
+                            </a>
+
                             {/* Location */}
 
                             <div className="flex items-start gap-3">
                                 <FiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
 
                                 <span className="text-sm text-slate-400">
-                                    Bangladesh
+                                    Dhaka, Bangladesh
                                 </span>
                             </div>
 

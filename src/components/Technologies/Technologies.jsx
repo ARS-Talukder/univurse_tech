@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DiNodejs, DiMongodb } from "react-icons/di";
-import { FaReact, FaLaravel, FaPython, FaSketch } from "react-icons/fa";
-import { SiFirebase, SiMysql } from "react-icons/si";
+import { FaReact, FaLaravel, FaPython, FaSketch, FaAndroid } from "react-icons/fa";
+import { IoLogoFirebase } from "react-icons/io5";
 import { TbBrandJavascript, TbBrandKotlin, TbBrandAdobeXd } from "react-icons/tb";
 import { DiDjango, DiRedis } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi"; import { TbBrandCSharp, TbBrandNextjs } from "react-icons/tb";
 import { AiOutlineDotNet } from "react-icons/ai";
 import { GiArtificialIntelligence } from "react-icons/gi";
-import { SiFastapi } from "react-icons/si";
 import { IoLogoAngular } from "react-icons/io";
-import { SiTypescript, SiFlutter } from "react-icons/si";
+import { SiTypescript, SiFlutter, SiMysql, SiFastapi } from "react-icons/si";
 import { GrOracle } from "react-icons/gr";
 import { PiFileSqlDuotone, PiFigmaLogoFill } from "react-icons/pi";
+import Loading from "../Shared/Loading";
+import { useQuery } from "@tanstack/react-query";
 
 const categories = [
     "Frontend",
@@ -43,13 +44,14 @@ const iconMap = {
     // Mobile
     flutter: SiFlutter,
     reactnative: FaReact,
+    androidstudio: FaAndroid,
     kotlin: TbBrandKotlin,
 
     // Databases
     mysql: SiMysql,
     mongodb: DiMongodb,
     postgresql: BiLogoPostgresql,
-    firebase: SiFirebase,
+    firebase: IoLogoFirebase,
     oracle: GrOracle,
     mssql: PiFileSqlDuotone,
     redis: DiRedis,
@@ -61,59 +63,27 @@ const iconMap = {
 };
 
 const Technology = () => {
-    const [technologies, setTechnologies] = useState({});
     const [activeCategory, setActiveCategory] = useState("Backend");
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [activeTechnology, setActiveTechnology] = useState(null);
 
-    useEffect(() => {
-        const fetchTechnologies = async () => {
-            try {
-                setLoading(true);
+    const { data: technologies, isLoading, isError } = useQuery({
+        queryKey: ["technologies"],
+        queryFn: async () => {
+            const response = await fetch("/data/technologies.json");
 
-                const response = await fetch("/data/technologies.json");
-
-                if (!response.ok) {
-                    throw new Error("Failed to fetch technologies");
-                }
-
-                const data = await response.json();
-
-                setTechnologies(data);
-            } catch (error) {
-                console.error("Technology fetch error:", error);
-                setError(true);
-            } finally {
-                setLoading(false);
+            if (!response.ok) {
+                throw new Error("Failed to fetch technologies");
             }
-        };
 
-        fetchTechnologies();
-    }, []);
+            return response.json();
+        },
+    });
 
-    if (loading) {
-        return (
-            <section id="technology">
-                <div className="container min-h-[400px] flex items-center justify-center">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce" />
-
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.15s" }}
-                        />
-
-                        <span
-                            className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "0.3s" }}
-                        />
-                    </div>
-                </div>
-            </section>
-        );
+    if (isLoading) {
+        return <Loading />;
     }
 
-    if (error) {
+    if (isError) {
         return (
             <section id="technology">
                 <div className="container min-h-[400px] flex items-center justify-center">
@@ -209,28 +179,47 @@ const Technology = () => {
                         return (
                             <div
                                 key={technology._id}
-                                className="relative group w-[calc(50%-8px)] sm:w-[180px] h-32 flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900/50 hover:border-cyan-400/40 hover:bg-slate-900 hover:-translate-y-1 transition-all duration-300"
+                                onClick={() =>
+                                    setActiveTechnology(
+                                        activeTechnology === technology._id
+                                            ? null
+                                            : technology._id
+                                    )
+                                }
+                                className="relative group w-[calc(50%-8px)] sm:w-[180px] h-32 flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900/50 hover:border-cyan-400/40 hover:bg-slate-900 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                             >
-                                {/* Tooltip */}
+                                {/* Technology Name */}
                                 <div
-                                    className="absolute left-1/2 bottom-full -translate-x-1/2 mb-3 px-4 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm font-medium whitespace-nowrap opacity-0 invisible scale-95 group-hover:opacity-100 group-hover:visible group-hover:scale-100 transition-all duration-200 z-50 pointer-events-none"
+                                    className={`
+            absolute left-1/2 bottom-full -translate-x-1/2 mb-3
+            px-4 py-2 rounded-lg
+            bg-slate-950 border border-slate-700
+            text-white text-sm font-medium
+            whitespace-nowrap
+            transition-all duration-200
+            z-50 pointer-events-none
+
+            opacity-0 invisible scale-95
+            group-hover:opacity-100 group-hover:visible group-hover:scale-100
+
+            ${activeTechnology === technology._id
+                                            ? "max-sm:opacity-100 max-sm:visible max-sm:scale-100"
+                                            : ""
+                                        }
+        `}
                                 >
                                     {technology.name}
                                 </div>
 
-                                {/* Technology Card */}
-                                <div
-                                    className="h-32 flex items-center justify-center rounded-xl"
-                                >
-                                    {Icon && (
-                                        <Icon
-                                            className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
-                                            style={{
-                                                color: technology.color,
-                                            }}
-                                        />
-                                    )}
-                                </div>
+                                {/* Technology Icon */}
+                                {Icon && (
+                                    <Icon
+                                        className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                                        style={{
+                                            color: technology.color,
+                                        }}
+                                    />
+                                )}
                             </div>
                         );
                     })}

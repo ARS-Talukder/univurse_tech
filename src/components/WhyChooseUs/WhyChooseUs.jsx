@@ -1,34 +1,49 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Loading from "../Shared/Loading";
+import { useQuery } from "@tanstack/react-query";
+
+
+const slogans = [
+    {
+        first: "Built for Your",
+        second: "Next Move.",
+    },
+    {
+        first: "Ready for",
+        second: "Your Growth.",
+    },
+    {
+        first: "Better Tech?",
+        second: "Univurse Tech",
+    },
+];
 
 const WhyChooseUs = () => {
-    const [reasons, setReasons] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeSlogan, setActiveSlogan] = useState(0);
 
-    // Fetch reasons
     useEffect(() => {
-        const fetchReasons = async () => {
-            try {
-                const response = await fetch("/data/whyChooseUs.json");
+        const sloganTimer = window.setInterval(() => {
+            setActiveSlogan((current) => (current + 1) % slogans.length);
+        }, 2600);
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch Why Choose Us data");
-                }
-
-                const data = await response.json();
-
-                setReasons(data);
-            } catch (error) {
-                console.error("Why Choose Us:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchReasons();
+        return () => window.clearInterval(sloganTimer);
     }, []);
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const { data: reasons, isLoading, isError } = useQuery({
+        queryKey: ["whyChooseUs"],
+        queryFn: async () => {
+            const response = await fetch("/data/whyChooseUs.json");
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch Why Choose Us data");
+            }
+
+            return response.json();
+        },
+    });
 
     // Previous
     const handlePrevious = () => {
@@ -40,21 +55,31 @@ const WhyChooseUs = () => {
         setActiveIndex((current) => current + 1);
     };
 
-    if (loading) {
+    const handleSwipe = (offsetX) => {
+        const swipeThreshold = 50;
+
+        if (offsetX < -swipeThreshold) {
+            // Swipe left → next
+            handleNext();
+        }
+
+        if (offsetX > swipeThreshold) {
+            // Swipe right → previous
+            handlePrevious();
+        }
+    };
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    if (isError) {
         return (
-            <section className="py-24">
-                <div className="container mx-auto px-5 text-center">
-                    <div className="flex justify-center items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce" />
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "150ms" }}
-                        />
-                        <span
-                            className="w-2 h-2 rounded-full bg-cyan-400 animate-bounce"
-                            style={{ animationDelay: "300ms" }}
-                        />
-                    </div>
+            <section>
+                <div className="container min-h-[400px] flex items-center justify-center">
+                    <p className="text-red-400">
+                        Failed to load Why Choose Us data.
+                    </p>
                 </div>
             </section>
         );
@@ -87,15 +112,24 @@ const WhyChooseUs = () => {
                     </motion.span>
 
                     <motion.h2
-                        initial={{ opacity: 0, y: 25 }}
+                        key={activeSlogan}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false }}
-                        transition={{ duration: 0.7, delay: 0.1 }}
                     >
-                        Built for Your{" "}
-                        <span className="gradient-text">
-                            Next Move
-                        </span>
+                        {slogans[activeSlogan].first}{" "}
+
+                        <motion.span
+                            key={activeSlogan}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.45 }}
+                            className="inline-block gradient-text"
+                        >
+                            {slogans[activeSlogan].second}
+                        </motion.span>
                     </motion.h2>
 
                     <motion.p
@@ -125,7 +159,15 @@ const WhyChooseUs = () => {
                     </button>
 
                     {/* Cards */}
-                    <div className="relative h-[370px] flex items-center justify-center">
+                    <motion.div
+                        className="relative h-[370px] flex items-center justify-center touch-pan-y"
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.15}
+                        onDragEnd={(event, info) => {
+                            handleSwipe(info.offset.x);
+                        }}
+                    >
 
                         {reasons.map((reason, index) => {
                             const total = reasons.length;
@@ -205,7 +247,7 @@ const WhyChooseUs = () => {
                                 </div>
                             );
                         })}
-                    </div>
+                    </motion.div>
 
                     {/* Right Arrow */}
                     <button
@@ -217,37 +259,6 @@ const WhyChooseUs = () => {
                         <FiChevronRight className="w-5 h-5" />
                     </button>
 
-                </div>
-
-                {/* Mobile */}
-                <div className="md:hidden mt-8">
-                    <div className="flex items-center justify-center gap-4">
-
-                        <button
-                            type="button"
-                            onClick={handlePrevious}
-                            aria-label="Previous reason"
-                            className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
-                        >
-                            <FiChevronLeft />
-                        </button>
-
-                        <span className="text-xs font-mono text-slate-600">
-                            {String(activeIndex + 1).padStart(2, "0")}
-                            {" / "}
-                            {String(reasons.length).padStart(2, "0")}
-                        </span>
-
-                        <button
-                            type="button"
-                            onClick={handleNext}
-                            aria-label="Next reason"
-                            className=" w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 bg-slate-950 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
-                        >
-                            <FiChevronRight />
-                        </button>
-
-                    </div>
                 </div>
 
             </div>
