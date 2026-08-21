@@ -1,34 +1,38 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import {
-    FiMail,
-    FiMapPin,
-    FiPhone,
-    FiSend,
-} from "react-icons/fi";
+import { FiMail, FiMapPin, FiPhone, FiSend } from "react-icons/fi";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import toast from "react-hot-toast";
 
-const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const emailServiceId = "service_u7470p9";
+const emailTemplateId = "template_jwtn2kd";
+const emailPublicKey = "7WU59zuk4z2MC1HSv";
 
 const Contact = () => {
     const [sending, setSending] = useState(false);
     const [status, setStatus] = useState(null);
 
-    // =========================
     // Send Email
-    // =========================
-
     const sendMail = async (event) => {
         event.preventDefault();
 
         setSending(true);
         setStatus(null);
 
+        const toastId = toast.loading("Sending your message...");
+
         if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+            const message =
+                "Contact form is not configured yet. Please email us directly.";
+
             setStatus({
                 type: "error",
-                message: "Contact form is not configured yet. Please email us directly.",
+                message,
+            });
+
+            toast.error(message, {
+                id: toastId,
             });
 
             setSending(false);
@@ -45,14 +49,30 @@ const Contact = () => {
 
             event.target.reset();
 
+            const message =
+                "Message sent successfully. We will get back to you soon.";
+
             setStatus({
                 type: "success",
-                message: "Message sent successfully. We will get back to you soon.",
+                message,
             });
-        } catch {
+
+            toast.success("Message sent successfully!", {
+                id: toastId,
+            });
+        } catch (error) {
+            console.error("Email sending error:", error);
+
+            const message =
+                "Failed to send the message. Please email us directly or try again.";
+
             setStatus({
                 type: "error",
-                message: "Failed to send the message. Please email us directly or try again.",
+                message,
+            });
+
+            toast.error("Failed to send the message.", {
+                id: toastId,
             });
         } finally {
             setSending(false);
@@ -65,25 +85,47 @@ const Contact = () => {
 
                 {/* Section Header */}
 
-                <div className="max-w-3xl mx-auto text-center mb-16">
-
-                    <span className="section-subtitle">
+                <motion.div
+                    className="max-w-4xl mx-auto text-center mb-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
                         Contact Us
-                    </span>
+                    </motion.span>
 
-                    <h2>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
                         Let's Build Something{" "}
                         <span className="gradient-text">
                             Great Together
                         </span>
-                    </h2>
+                    </motion.h2>
 
-                    <p className="mt-6 max-w-2xl mx-auto">
-                        Need a website, mobile app, enterprise solution, or digital marketing support?
-                        Tell us what you need, and let's build the right solution together.
-                    </p>
-
-                </div>
+                    <motion.p
+                        className="mt-6 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
+                        Need a website, mobile app, enterprise solution, or digital
+                        marketing support? Tell us what you need, and let's build the
+                        right solution together.
+                    </motion.p>
+                </motion.div>
 
                 {/* Contact Content */}
 
@@ -116,7 +158,7 @@ const Contact = () => {
 
                             {/* Contact Details */}
 
-                            <div className="mt-10 space-y-5">
+                            <div className="mt-10 space-y-4">
 
                                 {/* Email */}
 
@@ -134,7 +176,7 @@ const Contact = () => {
                                         </p>
 
                                         <p className="mt-1 text-sm text-slate-300 group-hover:text-cyan-400 transition-colors">
-                                            univurse.tech@gmail.com
+                                            contact@univursetech.pro.bd
                                         </p>
                                     </div>
                                 </a>
@@ -160,6 +202,52 @@ const Contact = () => {
                                     </div>
                                 </a>
 
+                                {/* WhatsApp */}
+
+                                <a
+                                    href="https://wa.me/8801845503651"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-center gap-4"
+                                >
+                                    <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-cyan-400 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/10 transition-all duration-300">
+                                        <FaWhatsapp className="w-5 h-5" />
+                                    </div>
+
+                                    <div>
+                                        <p className="text-xs text-slate-500">
+                                            WhatsApp
+                                        </p>
+
+                                        <p className="mt-1 text-sm text-slate-300 group-hover:text-cyan-400 transition-colors">
+                                            +880 1845 503651
+                                        </p>
+                                    </div>
+                                </a>
+
+                                {/* LinkedIn */}
+
+                                <a
+                                    href="https://www.linkedin.com/company/univurse-tech/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-center gap-4"
+                                >
+                                    <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-cyan-400 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/10 transition-all duration-300">
+                                        <FaLinkedin className="w-5 h-5" />
+                                    </div>
+
+                                    <div>
+                                        <p className="text-xs text-slate-500">
+                                            LinkedIn
+                                        </p>
+
+                                        <p className="mt-1 text-sm text-slate-300 group-hover:text-cyan-400 transition-colors">
+                                            Univurse Tech
+                                        </p>
+                                    </div>
+                                </a>
+
                                 {/* Location */}
 
                                 <div className="group flex items-center gap-4">
@@ -173,7 +261,7 @@ const Contact = () => {
                                         </p>
 
                                         <p className="mt-1 text-sm text-slate-300">
-                                            Bangladesh
+                                            Dhaka, Bangladesh
                                         </p>
                                     </div>
                                 </div>
@@ -182,7 +270,7 @@ const Contact = () => {
 
                             {/* Bottom */}
 
-                            <div className="mt-10 pt-6 border-t border-slate-800">
+                            <div className="mt-6 pt-2 border-t border-slate-800">
                                 <p className="text-xs leading-6 text-slate-500">
                                     We usually respond within 12 hours.
                                 </p>

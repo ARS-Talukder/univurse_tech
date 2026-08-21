@@ -2,57 +2,66 @@
     {
         "_id": "team_001",
         "name": "MD ABDUR RAHMAN",
-        "designation": "Co-Founder & COO",
+        "designation": "Co-Founder & MD",
         "image": "md_abdur_rahman",
-        "linkedin": "https://www.linkedin.com/in/md-abdur-rahman-20339a241/"
+        "linkedin": "https://www.linkedin.com/in/md-abdur-rahman-20339a241/",
+        "portfolio": "https://md-abdur-rahman.web.app/"
     },
     {
         "_id": "team_002",
         "name": "Abdur Rahim",
-        "designation": "Founder & CEO",
+        "designation": "Founder & Director",
         "image": "abdur_rahim",
-        "linkedin": "https://www.linkedin.com/in/abdur-rahim-austcse019/"
+        "linkedin": "https://www.linkedin.com/in/abdur-rahim-austcse019/",
+        "portfolio": "https://adrahim.netlify.app/"
     },
     {
         "_id": "team_003",
+        "name": "Asif Iftekher Fahim",
+        "designation": "Full Stack Developer",
+        "image": "asif_iftekhar_fahim",
+        "linkedin": "https://www.linkedin.com/in/iftekherfahim27"
+    },
+    {
+        "_id": "team_004",
         "name": "Md Zaed Hassan Shams",
         "designation": "Software Developer",
         "image": "md_zaed_hassan_shams",
         "linkedin": "https://www.linkedin.com/in/md-zaed-hassan/"
     },
     {
-        "_id": "team_004",
+        "_id": "team_005",
         "name": "Nirjoy Debnath",
         "designation": "Full-Stack Developer",
         "image": "nirjoy_debnath",
         "linkedin": "https://www.linkedin.com/in/nirjoy-debnath-8978a5195/"
     },
     {
-        "_id": "team_005",
+        "_id": "team_006",
         "name": "Mafuj Ahammad",
         "designation": "Software Developer",
         "image": "mafuj_ahammad",
         "linkedin": "https://www.linkedin.com/in/mafuj-ahammad-903890201/"
     },
     {
-        "_id": "team_006",
-        "name": "Aurunave Mollik Ruddra",
-        "designation": "System Analyst & Security Engineer",
-        "image": "aurunave_mollik_ruddra",
-        "linkedin": "https://www.linkedin.com/in/i-amruddra/"
+        "_id": "team_007",
+        "name": "Md Riaz Uddin",
+        "designation": "Digital Marketing Specialist",
+        "image": "md_riaz_uddin",
+        "linkedin": "https://www.facebook.com/share/1BhDtQq45o/"
     },
     {
-        "_id": "team_007",
+        "_id": "team_008",
         "name": "Azizur Rahman",
         "designation": "UI/UX Designer",
         "image": "azizur_rahman",
         "linkedin": "https://www.linkedin.com/in/azizurrahmanux/"
     },
     {
-        "_id": "team_008",
-        "name": "Md Riaz Uddin",
-        "designation": "Digital Marketing Specialist",
-        "image": "md_riaz_uddin",
-        "linkedin": "https://www.facebook.com/share/1BhDtQq45o/"
+        "_id": "team_009",
+        "name": "Aurunave Mollik Ruddra",
+        "designation": "System Analyst & Security Engineer",
+        "image": "aurunave_mollik_ruddra",
+        "linkedin": "https://www.linkedin.com/in/i-amruddra/"
     }
 ]

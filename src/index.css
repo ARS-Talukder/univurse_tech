@@ -50,7 +50,7 @@ button {
 }
 
 section {
-  @apply py-20 md:py-28;
+  @apply py-20 md:py-24;
 }
 
 /* ==========================
@@ -78,7 +78,29 @@ section {
 }
 
 .primary-btn {
-  @apply px-3 py-2 rounded-xl bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300;
+  @apply px-3 py-2 rounded-xl text-slate-950 font-bold;
+
+  background: linear-gradient(90deg,
+      #22d3ee,
+      #a855f7,
+      #22d3ee);
+
+  background-size: 200% 100%;
+  animation: gradientMove 5s linear infinite;
+}
+
+.primary-btn:hover {
+  animation-duration: 3s;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .secondary-btn {

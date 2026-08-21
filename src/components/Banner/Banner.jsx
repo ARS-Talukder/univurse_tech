@@ -39,19 +39,7 @@ const Banner = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="
-    relative
-    inline-flex items-center gap-3
-    px-5 py-2.5
-    rounded-full
-    border border-cyan-400/40
-    bg-cyan-400/10
-    text-cyan-300
-    text-xs font-mono font-semibold
-    tracking-wide uppercase
-    mb-8
-    overflow-hidden
-  "
+                        className="relative inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 text-xs font-mono font-semibold tracking-wide uppercase mb-8 overflow-hidden"
                     >
                         {/* Blinking Glow */}
                         <span className="absolute inset-0 rounded-full bg-cyan-400/10 animate-pulse" />
@@ -97,9 +85,7 @@ const Banner = () => {
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="max-w-3xl mt-8 text-lg md:text-xl text-slate-300 leading-relaxed"
                     >
-                        From automated facility and health logistics to high-scale EdTech
-                        and E-Commerce—Univurse Tech delivers battle-tested, modular
-                        software systems that drive measurable long-term business growth.
+                        From idea to execution, Univurse Tech delivers smart, scalable software solutions that solve real problems, improves efficiency and help businesses move forward.
                     </motion.p>
 
                     {/* Buttons */}
