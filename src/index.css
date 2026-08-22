@@ -104,7 +104,78 @@ section {
 }
 
 .secondary-btn {
-  @apply px-6 py-3 rounded-xl border border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400;
+  @apply relative px-6 py-3 rounded-xl font-bold;
+
+  background: #020617;
+  color: transparent;
+  background-clip: padding-box;
+  z-index: 0;
+}
+
+/* Animated gradient border */
+.secondary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #22d3ee,
+    #a855f7,
+    #22d3ee
+  );
+  background-size: 200% 100%;
+  animation: gradientBorderMove 5s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Gradient text */
+.secondary-btn {
+  background-image: linear-gradient(
+    90deg,
+    #22d3ee,
+    #a855f7,
+    #22d3ee
+  );
+  background-size: 200% 100%;
+  animation: gradientTextMove 5s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.secondary-btn:hover {
+  animation-duration: 3s;
+}
+
+@keyframes gradientBorderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes gradientTextMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @plugin "daisyui";
