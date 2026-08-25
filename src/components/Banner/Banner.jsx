@@ -4,11 +4,14 @@ import { FiArrowRight } from "react-icons/fi";
 
 const slogans = [
     "real business problems.",
-    "daily work challenges.",
-    "slow manual processes.",
-    "complex team workflows.",
-    "growth and scaling needs.",
+    "business automation needs.",
+    "custom software challenges.",
+    "web application workflows.",
+    "digital growth goals.",
 ];
+
+const WHATSAPP_URL =
+    "https://wa.me/8801845503651?text=Hello%20Univurse%20Tech%2C%20I%20want%20to%20book%20an%20engineering%20call.";
 
 const Banner = () => {
     const [activeSlogan, setActiveSlogan] = useState(0);
@@ -85,7 +88,7 @@ const Banner = () => {
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="max-w-3xl mt-8 text-lg md:text-xl text-slate-300 leading-relaxed"
                     >
-                        From idea to execution, Univurse Tech delivers smart, scalable software solutions that solve real problems, improves efficiency and help businesses move forward.
+                        From idea to execution, Univurse Tech delivers custom software, web applications, mobile apps, and business automation solutions that improve efficiency and help businesses move forward.
                     </motion.p>
 
                     {/* Buttons */}
@@ -105,7 +108,9 @@ const Banner = () => {
                         </a>
 
                         <a
-                            href="#contact"
+                            href={WHATSAPP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="secondary-btn inline-flex items-center justify-center"
                         >
                             Book an Engineering Call

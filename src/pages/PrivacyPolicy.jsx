@@ -1,6 +1,26 @@
 import Footer from "../components/Shared/Footer";
 import Header from "../components/Shared/Header";
 import { useQuery } from "@tanstack/react-query";
+import Seo from "../components/SEO/Seo";
+
+const privacySeo = {
+    title: "Privacy Policy | Univurse Tech",
+    description:
+        "Read the Univurse Tech privacy policy, including how we collect, use, protect, and manage information shared through our website and service inquiries.",
+    canonical: "https://univursetech.vercel.app/privacy-policy",
+    schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Privacy Policy",
+        url: "https://univursetech.vercel.app/privacy-policy",
+        isPartOf: {
+            "@type": "WebSite",
+            name: "Univurse Tech",
+            url: "https://univursetech.vercel.app/",
+        },
+    },
+};
+
 const PrivacyPolicy = () => {
     const {data: privacyPolicy,isLoading,isError,} = useQuery({
         queryKey: ["privacy-policy"],
@@ -18,6 +38,7 @@ const PrivacyPolicy = () => {
     if (isLoading) {
         return (
             <>
+                <Seo {...privacySeo} />
                 <Header />
 
                 <main className="min-h-screen bg-slate-950 pt-10">
@@ -38,6 +59,7 @@ const PrivacyPolicy = () => {
     if (isError) {
         return (
             <>
+                <Seo {...privacySeo} />
                 <Header />
 
                 <main className="min-h-screen bg-slate-950 pt-10">
@@ -56,6 +78,7 @@ const PrivacyPolicy = () => {
     }
     return (
         <>
+            <Seo {...privacySeo} />
             <Header />
 
             <main className="min-h-screen bg-slate-950 pt-10">

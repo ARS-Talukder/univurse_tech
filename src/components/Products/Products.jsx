@@ -2,7 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiArrowRight, FiBookOpen, FiHeart, FiHome, FiGlobe } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Loading from "../Shared/Loading";
+import { createProductSlug } from "../../utils/productUtils";
 
 const iconMap = {
     book: FiBookOpen,
@@ -140,8 +142,9 @@ const Products = () => {
                         viewport={{ once: false }}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        Explore our core software products built to simplify operations,
-                        improve efficiency, and help businesses grow.
+                        Explore our custom software products for e-commerce,
+                        property management, education, healthcare, fitness,
+                        service businesses, and digital portfolio experiences.
                     </motion.p>
                 </motion.div>
 
@@ -203,9 +206,12 @@ const Products = () => {
                                                 </div>
 
                                                 {/* Title */}
-                                                <h4 className={`transition-colors ${colors.hover}`}>
-                                                    {item.title}
-                                                </h4>
+                                                <Link
+                                                    to={`/products/${createProductSlug(item.title)}`}
+                                                    className={`block transition-colors ${colors.hover}`}
+                                                >
+                                                    <h4>{item.title}</h4>
+                                                </Link>
 
                                                 {/* Subtitle */}
                                                 <p className="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
@@ -226,21 +232,31 @@ const Products = () => {
                                                     Core: {item.core}
                                                 </span>
 
-                                                {item.demo !== "#" ? (
-                                                    <a
-                                                        href={item.demo}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className={`shrink-0 text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
+                                                <div className="flex shrink-0 items-center gap-4">
+                                                    <Link
+                                                        to={`/products/${createProductSlug(item.title)}`}
+                                                        className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
                                                     >
-                                                        {item.demoLabel || "Live Demo"}
+                                                        Details
                                                         <FiArrowRight />
-                                                    </a>
-                                                ) : (
-                                                    <span className="shrink-0 text-xs font-semibold text-slate-500">
-                                                        Demo Coming Soon
-                                                    </span>
-                                                )}
+                                                    </Link>
+
+                                                    {item.demo !== "#" ? (
+                                                        <a
+                                                            href={item.demo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
+                                                        >
+                                                            {item.demoLabel || "Live Demo"}
+                                                            <FiArrowRight />
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-xs font-semibold text-slate-500">
+                                                            Demo Coming Soon
+                                                        </span>
+                                                    )}
+                                                </div>
 
                                             </div>
                                         </div>

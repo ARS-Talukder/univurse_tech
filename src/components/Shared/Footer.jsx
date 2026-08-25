@@ -1,9 +1,24 @@
 import { FiArrowUpRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { createProductSlug } from "../../utils/productUtils";
+
+const footerProducts = [
+    "E-Commerce Website & Platform",
+    "Flat Management System",
+    "Meal Management System",
+    "Salon Operations Suite",
+];
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-    const socialLinks = [];
+    const socialLinks = [
+        {
+            label: "Univurse Tech LinkedIn",
+            href: "https://www.linkedin.com/company/univurse-tech/",
+            icon: FaLinkedin,
+        },
+    ];
 
     return (
         <footer className="border-t border-slate-800 bg-slate-950">
@@ -14,13 +29,13 @@ const Footer = () => {
                     Main Footer
                 ========================= */}
 
-                <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-5">
 
                     {/* =========================
                         Company
                     ========================= */}
 
-                    <div className="lg:col-span-1">
+                    <div>
 
                         <a
                             href="/"
@@ -35,9 +50,9 @@ const Footer = () => {
                         </a>
 
                         <p className="mt-5 max-w-xs text-sm leading-7 text-slate-400">
-                            We build thoughtful digital experiences
-                            and technology solutions that help
-                            businesses grow, connect, and move forward.
+                            Univurse Tech is a software company in Bangladesh
+                            building custom software, web applications, mobile
+                            apps, and business automation solutions.
                         </p>
 
                         {/* Social Links */}
@@ -148,48 +163,48 @@ const Footer = () => {
                         <ul className="mt-5 space-y-3">
 
                             <li>
-                                <a
-                                    href="/#services"
+                                <Link
+                                    to="/services/web-development"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Web Development
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
-                                    href="/#services"
+                                <Link
+                                    to="/services/mobile-app-development"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Mobile App Development
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
-                                    href="/#services"
+                                <Link
+                                    to="/services/enterprise-product"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Enterprise Products
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
-                                    href="/#services"
+                                <Link
+                                    to="/services/digital-marketing"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     Digital Marketing
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a
-                                    href="/#services"
+                                <Link
+                                    to="/services/ux-design"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >
                                     UX Design
-                                </a>
+                                </Link>
                             </li>
 
                         </ul>
@@ -211,7 +226,7 @@ const Footer = () => {
                             {/* Email */}
 
                             <a
-                                href="mailto:univurse.tech@gmail.com"
+                                href="mailto:contact@univursetech.pro.bd"
                                 className="group flex items-start gap-3"
                             >
                                 <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
@@ -271,6 +286,58 @@ const Footer = () => {
 
                             <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </a>
+
+                    </div>
+
+                    {/* =========================
+                        Products
+                    ========================= */}
+
+                    <div>
+
+                        <h4 className="text-sm font-semibold text-slate-100">
+                            Products
+                        </h4>
+
+                        <ul className="mt-5 space-y-3">
+
+                            <li>
+                                <Link
+                                    to={`/products/${createProductSlug(footerProducts[0])}`}
+                                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                                >
+                                    E-Commerce Platform
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
+                                    to={`/products/${createProductSlug(footerProducts[1])}`}
+                                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                                >
+                                    Flat Management System
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
+                                    to={`/products/${createProductSlug(footerProducts[2])}`}
+                                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                                >
+                                    Meal Management
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
+                                    to={`/products/${createProductSlug(footerProducts[3])}`}
+                                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                                >
+                                    Salon Operations
+                                </Link>
+                            </li>
+
+                        </ul>
 
                     </div>
 

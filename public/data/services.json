@@ -3,12 +3,30 @@
         "_id": 1,
         "title": "Web Development",
         "shortTitle": "Web Development",
-        "description": "Modern, responsive, and scalable websites and web applications built around your business goals.",
+        "description": "Modern, responsive, and scalable business websites, e-commerce platforms, and web applications built around your goals.",
         "features": [
             "Business Websites",
             "E-Commerce Platforms",
             "Custom Web Applications",
             "Responsive & Modern UI"
+        ],
+        "problems": [
+            "Your website does not clearly explain your business.",
+            "Customers cannot easily find services, products, or contact details.",
+            "Your current website is slow, outdated, or difficult to update."
+        ],
+        "deliverables": [
+            "Responsive website or web application",
+            "Clean user interface",
+            "SEO-friendly page structure",
+            "Contact and lead generation flow",
+            "Deployment support"
+        ],
+        "benefits": [
+            "Improve business credibility",
+            "Make services easier to understand",
+            "Convert more visitors into leads",
+            "Support long-term digital growth"
         ],
         "icon": "web"
     },
@@ -16,12 +34,30 @@
         "_id": 2,
         "title": "Mobile App Development",
         "shortTitle": "Mobile Apps",
-        "description": "Reliable mobile applications designed to deliver smooth experiences and support real business needs.",
+        "description": "Reliable Android and mobile applications designed to deliver smooth experiences and support real business operations.",
         "features": [
             "Android Applications",
             "Business Apps",
             "Custom Mobile Solutions",
             "API Integration"
+        ],
+        "problems": [
+            "Your users need a faster way to access your business from mobile.",
+            "Manual mobile communication creates delays and missed updates.",
+            "Your team needs an app connected with business data and workflows."
+        ],
+        "deliverables": [
+            "Android or mobile app interface",
+            "User-friendly screens",
+            "API integration",
+            "Authentication flow",
+            "Testing and deployment guidance"
+        ],
+        "benefits": [
+            "Improve customer access",
+            "Reduce manual communication",
+            "Support business operations from mobile",
+            "Create a smoother user experience"
         ],
         "icon": "mobile"
     },
@@ -29,12 +65,30 @@
         "_id": 3,
         "title": "Enterprise Product",
         "shortTitle": "Enterprise Solutions",
-        "description": "Complete software products designed to improve business operations, automate workflows, and support long-term growth.",
+        "description": "Custom enterprise software products designed to improve operations, automate workflows, and support long-term growth.",
         "features": [
             "Business Management Systems",
             "Custom Enterprise Software",
             "Workflow Automation",
             "Scalable Architecture"
+        ],
+        "problems": [
+            "Your team depends on spreadsheets, paper records, or scattered tools.",
+            "Important reports and approvals take too much manual effort.",
+            "Your business needs software that matches its own workflow."
+        ],
+        "deliverables": [
+            "Custom admin dashboard",
+            "Role-based workflows",
+            "Database-backed operations",
+            "Reporting features",
+            "Scalable system architecture"
+        ],
+        "benefits": [
+            "Reduce repetitive work",
+            "Improve operational visibility",
+            "Keep records organized",
+            "Support growth with a maintainable system"
         ],
         "icon": "enterprise"
     },
@@ -42,12 +96,30 @@
         "_id": 4,
         "title": "Digital Marketing",
         "shortTitle": "Digital Marketing",
-        "description": "Digital strategies that help businesses build their online presence, reach the right audience, and grow.",
+        "description": "SEO, content, and digital marketing strategies that help businesses build presence, reach the right audience, and grow.",
         "features": [
             "Social Media Marketing",
             "Search Engine Optimization",
             "Content Strategy",
             "Online Advertising"
+        ],
+        "problems": [
+            "Your business is online but not reaching the right audience.",
+            "Your content does not clearly explain your value.",
+            "You need a stronger digital presence across search and social channels."
+        ],
+        "deliverables": [
+            "SEO direction",
+            "Content planning",
+            "Social media support",
+            "Campaign guidance",
+            "Performance-focused recommendations"
+        ],
+        "benefits": [
+            "Increase online visibility",
+            "Reach more relevant customers",
+            "Build clearer brand communication",
+            "Support long-term digital growth"
         ],
         "icon": "marketing"
     },
@@ -55,12 +127,30 @@
         "_id": 5,
         "title": "UX Design",
         "shortTitle": "UX Design",
-        "description": "Thoughtful user experiences designed to make digital products intuitive, engaging, and easy to use.",
+        "description": "Thoughtful UX design for websites, mobile apps, and software products that feel intuitive, engaging, and easy to use.",
         "features": [
             "User Experience Design",
             "User Research",
             "Wireframing & Prototyping",
             "Usability Optimization"
+        ],
+        "problems": [
+            "Users struggle to understand or complete important actions.",
+            "Your product screens feel confusing or inconsistent.",
+            "Your digital product needs a cleaner structure before development."
+        ],
+        "deliverables": [
+            "User flow planning",
+            "Wireframes and prototypes",
+            "Interface structure",
+            "Usability improvements",
+            "Design guidance for development"
+        ],
+        "benefits": [
+            "Make products easier to use",
+            "Reduce user confusion",
+            "Improve conversion and engagement",
+            "Create a clearer development direction"
         ],
         "icon": "ux"
     }

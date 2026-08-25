@@ -6,6 +6,8 @@ const Loading = () => {
                 width={500}
                 src={LoadingGif}
                 alt="Loading..."
+                loading="eager"
+                decoding="async"
                 className="w-[min(80vw,500px)]"
             />
         </div>

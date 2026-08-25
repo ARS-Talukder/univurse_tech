@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { FiArrowDownRight, FiGlobe, FiSmartphone, FiBriefcase, FiTrendingUp } from "react-icons/fi";
+import { FiArrowRight, FiGlobe, FiSmartphone, FiBriefcase, FiTrendingUp } from "react-icons/fi";
 import { CgIfDesign } from "react-icons/cg";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../Shared/Loading";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { createServiceSlug } from "../../utils/serviceUtils";
 
 const iconMap = {
     web: FiGlobe,
@@ -31,6 +33,9 @@ const slogans = [
         second: "& Transform.",
     },
 ];
+
+const WHATSAPP_URL =
+    "https://wa.me/8801845503651?text=Hello%20Univurse%20Tech%2C%20I%20want%20to%20discuss%20a%20service%20for%20my%20business.";
 
 const Services = () => {
     const [activeSlogan, setActiveSlogan] = useState(0);
@@ -126,9 +131,9 @@ const Services = () => {
                         viewport={{ once: false }}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        From websites and mobile applications to enterprise
-                        software and digital marketing, we provide the technology
-                        and expertise businesses need to grow online.
+                        From business websites and mobile apps to custom
+                        software, enterprise systems, SEO, and digital marketing,
+                        we provide the technology businesses need to grow online.
                     </motion.p>
                 </motion.div>
 
@@ -154,7 +159,9 @@ const Services = () => {
 
                                 {/* Title */}
                                 <h3 className="mt-6 text-xl group-hover:text-cyan-400 transition-colors">
-                                    {service.title}
+                                    <Link to={`/services/${createServiceSlug(service.title)}`}>
+                                        {service.title}
+                                    </Link>
                                 </h3>
 
                                 {/* Description */}
@@ -176,13 +183,22 @@ const Services = () => {
                                 </ul>
 
                                 {/* Bottom */}
-                                <div className="mt-auto pt-7">
-                                    <a
-                                        href="/#contact"
+                                <div className="mt-auto flex items-center justify-between gap-4 pt-7">
+                                    <Link
+                                        to={`/services/${createServiceSlug(service.title)}`}
                                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
                                     >
-                                        Discuss Service
-                                        <FiArrowDownRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                        Details
+                                        <FiArrowRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    </Link>
+
+                                    <a
+                                        href={WHATSAPP_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-400 hover:text-cyan-300"
+                                    >
+                                        Discuss
                                     </a>
                                 </div>
                             </div>

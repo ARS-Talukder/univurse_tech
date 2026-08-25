@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Terms from "../pages/Terms";
+import ProductDetails from "../pages/ProductDetails";
+import ServiceDetails from "../pages/ServiceDetails";
 import RootLayout from "../layouts/RootLayout";
 import Loading from "../components/Shared/Loading";
 
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
             {
                 path: "/terms-and-conditions",
                 element: <Terms />,
+            },
+            {
+                path: "/products/:slug",
+                element: <ProductDetails />,
+            },
+            {
+                path: "/services/:slug",
+                element: <ServiceDetails />,
             },
             {
                 path: "/loading",

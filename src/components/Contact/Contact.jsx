@@ -163,7 +163,7 @@ const Contact = () => {
                                 {/* Email */}
 
                                 <a
-                                    href="mailto:univurse.tech@gmail.com"
+                                    href="mailto:contact@univursetech.pro.bd"
                                     className="group flex items-center gap-4"
                                 >
                                     <div className="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-cyan-400 group-hover:border-cyan-400/40 group-hover:bg-cyan-400/10 transition-all duration-300">

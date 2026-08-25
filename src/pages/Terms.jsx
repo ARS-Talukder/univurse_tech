@@ -1,6 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
 import Footer from "../components/Shared/Footer";
 import Header from "../components/Shared/Header";
+import Seo from "../components/SEO/Seo";
+
+const termsSeo = {
+    title: "Terms and Conditions | Univurse Tech",
+    description:
+        "Read the Univurse Tech terms and conditions for website use, service inquiries, proposals, payments, intellectual property, and Bangladeshi law compliance.",
+    canonical: "https://univursetech.vercel.app/terms-and-conditions",
+    schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Terms and Conditions",
+        url: "https://univursetech.vercel.app/terms-and-conditions",
+        isPartOf: {
+            "@type": "WebSite",
+            name: "Univurse Tech",
+            url: "https://univursetech.vercel.app/",
+        },
+    },
+};
 
 const Terms = () => {
     const { data: terms, isLoading, isError, } = useQuery({
@@ -19,6 +38,7 @@ const Terms = () => {
     if (isLoading) {
         return (
             <>
+                <Seo {...termsSeo} />
                 <Header />
 
                 <main className="min-h-screen bg-slate-950 pt-10">
@@ -39,6 +59,7 @@ const Terms = () => {
     if (isError) {
         return (
             <>
+                <Seo {...termsSeo} />
                 <Header />
 
                 <main className="min-h-screen bg-slate-950 pt-10">
@@ -57,6 +78,7 @@ const Terms = () => {
     }
     return (
         <>
+            <Seo {...termsSeo} />
             <Header />
 
             <main className="min-h-screen bg-slate-950 pt-10">

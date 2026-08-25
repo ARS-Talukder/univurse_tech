@@ -53,6 +53,9 @@ const Header = () => {
 
                 {/* Mobile Button */}
                 <button
+                    type="button"
+                    aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={open}
                     className="lg:hidden text-3xl"
                     onClick={() => setOpen(!open)}
                 >

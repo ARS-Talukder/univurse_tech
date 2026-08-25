@@ -15,7 +15,24 @@
                 "description": "Designed for smooth shopping from product discovery to checkout. Includes advanced search, inventory management, product management, real-time order tracking and automated order management.",
                 "core": "React · Node.js · Stripe · Redis",
                 "demo": "https://click-pick.netlify.app/",
-                "demoLabel": "Live Demo"
+                "demoLabel": "Live Demo",
+                "problems": [
+                    "Businesses need a clear way to show products and receive online orders.",
+                    "Manual order tracking can create delays, missed updates, and customer confusion.",
+                    "Inventory and product management become harder as the business grows."
+                ],
+                "capabilities": [
+                    "Product browsing and search",
+                    "Product and inventory management",
+                    "Order tracking workflow",
+                    "Checkout-ready shopping experience"
+                ],
+                "benefits": [
+                    "Create a professional online selling channel",
+                    "Reduce manual retail work",
+                    "Improve customer shopping experience",
+                    "Support future e-commerce growth"
+                ]
             },
             {
                 "_id": "2",
@@ -25,7 +42,24 @@
                 "category": "EdTech",
                 "description": "A scalable learning management system engineered for academies and enterprise training. Features dynamic course authoring, automated assessments, and real-time student analytics.",
                 "core": "MongoDB · Express · React · Node",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Learning content is often scattered across files, messages, and manual records.",
+                    "Student progress becomes difficult to track without one central platform.",
+                    "Training teams need better control over courses, assessments, and reports."
+                ],
+                "capabilities": [
+                    "Course and lesson management",
+                    "Student enrollment workflow",
+                    "Assessment support",
+                    "Progress and analytics tracking"
+                ],
+                "benefits": [
+                    "Organize learning programs in one place",
+                    "Improve student visibility",
+                    "Reduce manual academic administration",
+                    "Support scalable online education"
+                ]
             }
         ]
     },
@@ -45,7 +79,24 @@
                 "description": "A hostel and bachelor mess management system with member email sign-in, designed to help mess managers organize meal operations and member access.",
                 "core": "Express · Node · MongoDB · React",
                 "demo": "https://rahim-aust.github.io/hostel_mess-meal-management-system/",
-                "demoLabel": "Live Demo"
+                "demoLabel": "Live Demo",
+                "problems": [
+                    "Mess meals and member activity are often tracked in notebooks or spreadsheets.",
+                    "Manual calculation creates confusion in monthly meal records.",
+                    "Members need clearer access to their mess information."
+                ],
+                "capabilities": [
+                    "Member email sign-in",
+                    "Meal tracking workflow",
+                    "Member record management",
+                    "Organized mess operation support"
+                ],
+                "benefits": [
+                    "Reduce manual mess management work",
+                    "Keep meal data organized",
+                    "Improve member transparency",
+                    "Make daily operations easier to manage"
+                ]
             },
             {
                 "_id": "2",
@@ -55,7 +106,24 @@
                 "category": "Healthcare",
                 "description": "A native mobile application facilitating fast, reliable prescription requests and fulfillment tracking with offline capability and real-time inventory alerts.",
                 "core": "Java/Kotlin · REST API · SQLite",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Medicine requests through calls and messages can be unclear or delayed.",
+                    "Patients and pharmacies need better order status visibility.",
+                    "Inventory updates are difficult to manage manually."
+                ],
+                "capabilities": [
+                    "Prescription request workflow",
+                    "Medicine order tracking",
+                    "Inventory alert support",
+                    "Offline-friendly mobile access"
+                ],
+                "benefits": [
+                    "Make medicine requests easier",
+                    "Improve communication between users and pharmacies",
+                    "Reduce order confusion",
+                    "Support faster healthcare coordination"
+                ]
             }
         ]
     },
@@ -76,7 +144,24 @@
                 "core": "ASP.NET Core · React + Vite",
                 "demo": "https://e-flat.pro.bd/",
                 "demoLabel": "Live Demo",
-                "demoNote": "Login required for admin and tenant dashboards."
+                "demoNote": "Login required for admin and tenant dashboards.",
+                "problems": [
+                    "Apartment billing is often managed through notebooks, Excel sheets, and messages.",
+                    "Tenant records, bill history, and payment status can become confusing.",
+                    "Admins need faster reporting and tenants need clearer bill access."
+                ],
+                "capabilities": [
+                    "Flat and tenant management",
+                    "Monthly bill generation",
+                    "Tenant portal and bill history",
+                    "PDF downloads, notifications, and payment requests"
+                ],
+                "benefits": [
+                    "Organize apartment operations",
+                    "Reduce billing mistakes",
+                    "Improve tenant communication",
+                    "Make reports and payment tracking clearer"
+                ]
             },
             {
                 "_id": "2",
@@ -87,7 +172,24 @@
                 "description": "Real-time appointment booking, staff allocation, inventory tracking, and client history profiles that eliminate scheduling friction.",
                 "core": "Node · React · MongoDB",
                 "demo": "https://the-golden-style.web.app/",
-                "demoLabel": "Live Demo"
+                "demoLabel": "Live Demo",
+                "problems": [
+                    "Salon appointments are often managed through calls, notes, and scattered messages.",
+                    "Staff schedules and client histories become difficult to track manually.",
+                    "Inventory and service flow need better daily visibility."
+                ],
+                "capabilities": [
+                    "Appointment booking",
+                    "Staff allocation",
+                    "Client history profiles",
+                    "Inventory and service tracking"
+                ],
+                "benefits": [
+                    "Improve salon scheduling",
+                    "Reduce missed bookings",
+                    "Create a smoother customer experience",
+                    "Help salon owners manage operations clearly"
+                ]
             },
             {
                 "_id": "3",
@@ -97,7 +199,24 @@
                 "category": "Fitness",
                 "description": "Robust software featuring automated recurring billing, trainer scheduling, access logs, and retention analytics.",
                 "core": "ASP.NET Core · React · SQL",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Gyms often track memberships, billing, and attendance manually.",
+                    "Trainer schedules and access logs can become hard to manage.",
+                    "Owners need better insight into member retention and operations."
+                ],
+                "capabilities": [
+                    "Membership management",
+                    "Recurring billing support",
+                    "Trainer scheduling",
+                    "Access logs and retention analytics"
+                ],
+                "benefits": [
+                    "Reduce manual gym administration",
+                    "Keep member records organized",
+                    "Improve trainer and billing workflows",
+                    "Support better fitness business decisions"
+                ]
             }
         ]
     },
@@ -116,7 +235,24 @@
                 "category": "Personal Portfolio",
                 "description": "A modern personal portfolio website designed to showcase skills, experience, projects, services, and professional achievements through a fast and engaging digital experience.",
                 "core": "React · Vite · Tailwind CSS",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Professionals often depend only on CV files or scattered social profiles.",
+                    "Skills, projects, and services are not always presented clearly.",
+                    "A weak online presence can reduce trust with clients or recruiters."
+                ],
+                "capabilities": [
+                    "Professional introduction",
+                    "Skills and experience sections",
+                    "Project showcase",
+                    "Contact and profile links"
+                ],
+                "benefits": [
+                    "Build a stronger personal brand",
+                    "Present work clearly",
+                    "Improve professional credibility",
+                    "Make it easier for people to connect"
+                ]
             },
             {
                 "_id": "2",
@@ -126,7 +262,24 @@
                 "category": "Company Website",
                 "description": "A professional company website built to present services, products, technologies, projects, and company information while creating a strong and trustworthy online presence.",
                 "core": "React · Node · MongoDB",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Companies can lose trust when their services are not presented clearly online.",
+                    "Potential clients need proof, contact details, and business information quickly.",
+                    "A weak website can make a good business look less professional."
+                ],
+                "capabilities": [
+                    "Company overview",
+                    "Services and product sections",
+                    "Project and technology showcase",
+                    "Contact and inquiry flow"
+                ],
+                "benefits": [
+                    "Improve business credibility",
+                    "Explain services clearly",
+                    "Support lead generation",
+                    "Create a stronger digital presence"
+                ]
             },
             {
                 "_id": "3",
@@ -136,7 +289,24 @@
                 "category": "Business Website",
                 "description": "A conversion-focused business website that highlights services, expertise, previous work, and key business information while helping potential customers connect with the brand.",
                 "core": "React · Vite · Tailwind CSS",
-                "demo": "#"
+                "demo": "#",
+                "problems": [
+                    "Many businesses depend only on social pages or word of mouth.",
+                    "Customers may not understand services, pricing direction, or previous work.",
+                    "Without a clear website, inquiries and trust can stay low."
+                ],
+                "capabilities": [
+                    "Business introduction",
+                    "Services overview",
+                    "Previous work showcase",
+                    "Lead generation and contact flow"
+                ],
+                "benefits": [
+                    "Make services easier to understand",
+                    "Build trust with customers",
+                    "Generate better inquiries",
+                    "Support long-term business growth"
+                ]
             }
         ]
     }

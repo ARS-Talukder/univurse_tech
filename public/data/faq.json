@@ -2,17 +2,17 @@
     {
         "_id": "faq_001",
         "question": "Who is Univurse Tech?",
-        "answer": "Univurse Tech is a software development company that helps building modern, scalable, and business-driven digital solutions. We help startups, businesses, and organizations to use the right technology to solve real business problems, improve operations, and create long-term digital growth."
+        "answer": "Univurse Tech is a software development company in Bangladesh that builds modern, scalable, and business-driven digital solutions. We help startups, businesses, and organizations use the right technology to solve real business problems, improve operations, and create long-term digital growth."
     },
     {
         "_id": "faq_002",
         "question": "What services does Univurse Tech offer?",
-        "answer": "We provide Web Development, Mobile App Development, Enterprise Product Development, Digital Marketing, and UX Design solutions tailored to business needs."
+        "answer": "We provide web development, mobile app development, custom software development, enterprise product development, digital marketing, SEO, and UX design solutions tailored to business needs."
     },
     {
         "_id": "faq_003",
         "question": "Can you build custom websites, applications, and software for my business?",
-        "answer": "Absolutely. We build custom digital solutions based on your business needs, goals, workflows, users, and future growth."
+        "answer": "Absolutely. We build custom websites, web applications, mobile apps, and software systems based on your business needs, goals, workflows, users, and future growth."
     },
     {
         "_id": "faq_004",
@@ -32,7 +32,7 @@
     {
         "_id": "faq_007",
         "question": "How is pricing structured?",
-        "answer": "Our pricing is based on your project’s features, and development requirements. After understanding your needs, we provide a clear project estimate before development starts."
+        "answer": "Our pricing is based on your project features, scope, timeline, and development requirements. After understanding your needs, we provide a clear project estimate before development starts."
     },
     {
         "_id": "faq_008",
