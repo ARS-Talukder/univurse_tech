@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-import Terms from "../pages/Terms";
-import ProductDetails from "../pages/ProductDetails";
-import ServiceDetails from "../pages/ServiceDetails";
 import RootLayout from "../layouts/RootLayout";
 import Loading from "../components/Shared/Loading";
+import {
+    HomePage,
+    PrivacyPolicyPage,
+    ProductDetailsPage,
+    ServiceDetailsPage,
+    TermsPage,
+} from "./LazyPages";
 
 const router = createBrowserRouter([
     {
@@ -13,27 +15,27 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
+                element: <HomePage />,
             },
             {
                 path: "/home",
-                element: <Home />,
+                element: <HomePage />,
             },
             {
                 path: "/privacy-policy",
-                element: <PrivacyPolicy />,
+                element: <PrivacyPolicyPage />,
             },
             {
                 path: "/terms-and-conditions",
-                element: <Terms />,
+                element: <TermsPage />,
             },
             {
                 path: "/products/:slug",
-                element: <ProductDetails />,
+                element: <ProductDetailsPage />,
             },
             {
                 path: "/services/:slug",
-                element: <ServiceDetails />,
+                element: <ServiceDetailsPage />,
             },
             {
                 path: "/loading",
