@@ -174,34 +174,37 @@ const ProductDetails = () => {
                                 </p>
 
                                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                                    {product.demo !== "#" ? (
-                                        <a
-                                            href={product.demo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="primary-btn inline-flex items-center justify-center gap-2"
-                                        >
-                                            Open Live Demo
-                                            <FiExternalLink />
-                                        </a>
+                                    {product.demo !== "#" && product.demo !== "details" ? (
+                                        <div>
+                                            <a
+                                                href={product.demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="primary-btn inline-flex items-center justify-center gap-2 mr-2"
+                                            >
+                                                Open Live Demo
+                                                <FiExternalLink />
+                                            </a>
+                                            <a
+                                                href={WHATSAPP_URL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="secondary-btn inline-flex items-center justify-center mt-2"
+                                            >
+                                                Request Similar Solution
+                                            </a>
+                                        </div>
                                     ) : (
                                         <a
-                                            href="/#contact"
+                                            href={WHATSAPP_URL}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="primary-btn inline-flex items-center justify-center gap-2"
                                         >
                                             Discuss This Product
                                             <FiArrowRight />
                                         </a>
                                     )}
-
-                                    <a
-                                        href={WHATSAPP_URL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="secondary-btn inline-flex items-center justify-center"
-                                    >
-                                        Request Similar Solution
-                                    </a>
                                 </div>
                             </div>
 
@@ -287,7 +290,7 @@ const ProductDetails = () => {
                                                 href={demo.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="mt-5 inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                                                className="primary-btn inline-flex items-center justify-center gap-2 mr-2 mt-3"
                                             >
                                                 Live Demo
                                                 <FiExternalLink />
