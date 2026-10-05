@@ -241,7 +241,7 @@ const Products = () => {
                                                         <FiArrowRight />
                                                     </Link>
 
-                                                    {item.demo !== "#" ? (
+                                                    {item.demo === "details" ? null : item.demo !== "#" ? (
                                                         <a
                                                             href={item.demo}
                                                             target="_blank"

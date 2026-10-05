@@ -95,7 +95,7 @@ const Banner = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false}}
+                        viewport={{ once: false }}
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="flex flex-col sm:flex-row gap-4 mt-10"
                     >
@@ -122,38 +122,26 @@ const Banner = () => {
                         initial={{ opacity: 0, y: 25 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-8"
+                        className="mt-16 pt-8 border-t border-slate-800/80 hidden lg:grid grid-cols-3 gap-8"
                     >
                         {/* Metric 1 */}
                         <div>
-                            <span className="block text-3xl font-extrabold text-white font-mono">
-                                7+
-                            </span>
-
-                            <span className="block text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">
-                                Enterprise-Ready Core Engines
+                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                                Built with Trust & Expertise
                             </span>
                         </div>
 
                         {/* Metric 2 */}
                         <div>
-                            <span className="block text-3xl font-extrabold text-cyan-400 font-mono">
-                                Multi-Stack
-                            </span>
-
-                            <span className="block text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">
-                                MERN · ASP.NET Core · Android
+                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                                Expert Team · Modern Solutions
                             </span>
                         </div>
 
                         {/* Metric 3 */}
                         <div>
-                            <span className="block text-3xl font-extrabold text-indigo-400 font-mono">
-                                99.99%
-                            </span>
-
-                            <span className="block text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">
-                                Architecture Uptime & Security
+                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                                Quality · Reliability · Long-Term Support
                             </span>
                         </div>
                     </motion.div>

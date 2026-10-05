@@ -1,13 +1,19 @@
 import { Outlet } from "react-router-dom";
-import ScrollToTop from "../components/Shared/ScrollToTop";
+// import ScrollToTop from "../components/Shared/ScrollToTop";
 import BackToTop from "../components/Shared/BackToTop";
 import WhatsAppChat from "../components/Shared/WhatsAppChat";
+import ScrollToHash from "../components/Shared/ScrollToHash";
 
 const RootLayout = () => {
     return (
         <>
-            <ScrollToTop />
+            {/* <ScrollToTop /> */}
+            <ScrollToHash />
+
+
             <Outlet />
+
+
             <WhatsAppChat />
             <BackToTop />
         </>

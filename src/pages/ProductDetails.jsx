@@ -254,6 +254,52 @@ const ProductDetails = () => {
                     </div>
                 </section>
 
+                {product.demos?.length > 0 && (
+                    <section className="bg-slate-900/40 my-12 py-10">
+                        <div className="container grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                            {product.demos.map((demo) => (
+                                <div
+                                    key={demo._id}
+                                    className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-950"
+                                >
+                                    {/* Image */}
+                                    <div className="aspect-video overflow-hidden">
+                                        <img
+                                            src={demo.image}
+                                            alt={demo.title}
+                                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-5">
+                                        <h3 className="text-xl font-semibold text-white">
+                                            {demo.title}
+                                        </h3>
+
+                                        <p className="mt-3 text-sm leading-6 text-slate-400">
+                                            {demo.description}
+                                        </p>
+
+                                        {/* Live Demo Button */}
+                                        {demo.url && demo.url !== "#" && (
+                                            <a
+                                                href={demo.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mt-5 inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                                            >
+                                                Live Demo
+                                                <FiExternalLink />
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
                 <section className="bg-slate-900/40">
                     <div className="container grid gap-8 lg:grid-cols-3">
                         {product.problems && (

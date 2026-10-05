@@ -230,12 +230,16 @@
             {
                 "_id": "1",
                 "title": "Personal Portfolio Website",
+                "type": "portfolio",
                 "subtitle": "Professional Portfolio & Personal Brand",
                 "technology": "React + Vite",
                 "category": "Personal Portfolio",
                 "description": "A modern personal portfolio website designed to showcase skills, experience, projects, services, and professional achievements through a fast and engaging digital experience.",
                 "core": "React · Vite · Tailwind CSS",
-                "demo": "#",
+                "demo": "details",
+                "demos": [
+                    
+                ],
                 "problems": [
                     "Professionals often depend only on CV files or scattered social profiles.",
                     "Skills, projects, and services are not always presented clearly.",
@@ -256,40 +260,23 @@
             },
             {
                 "_id": "2",
-                "title": "Company Portfolio Website",
-                "subtitle": "Corporate Website & Brand Experience",
-                "technology": "MERN Stack",
-                "category": "Company Website",
-                "description": "A professional company website built to present services, products, technologies, projects, and company information while creating a strong and trustworthy online presence.",
-                "core": "React · Node · MongoDB",
-                "demo": "#",
-                "problems": [
-                    "Companies can lose trust when their services are not presented clearly online.",
-                    "Potential clients need proof, contact details, and business information quickly.",
-                    "A weak website can make a good business look less professional."
-                ],
-                "capabilities": [
-                    "Company overview",
-                    "Services and product sections",
-                    "Project and technology showcase",
-                    "Contact and inquiry flow"
-                ],
-                "benefits": [
-                    "Improve business credibility",
-                    "Explain services clearly",
-                    "Support lead generation",
-                    "Create a stronger digital presence"
-                ]
-            },
-            {
-                "_id": "3",
                 "title": "Business Portfolio Website",
+                "type": "portfolio",
                 "subtitle": "Business Showcase & Lead Generation",
                 "technology": "React + Vite",
                 "category": "Business Website",
                 "description": "A conversion-focused business website that highlights services, expertise, previous work, and key business information while helping potential customers connect with the brand.",
                 "core": "React · Vite · Tailwind CSS",
-                "demo": "#",
+                "demo": "details",
+                "demos": [
+                    {
+                        "_id": "1",
+                        "title": "Travelling Website",
+                        "description": "A modern travelling website designed to showcase destinations, travel experiences, and tourism services.",
+                        "image": "https://res.cloudinary.com/muiuiwn5/image/upload/v1791219561/traveling.jpg",
+                        "url": "https://travelbookingapps.netlify.app/"
+                    }
+                ],
                 "problems": [
                     "Many businesses depend only on social pages or word of mouth.",
                     "Customers may not understand services, pricing direction, or previous work.",
