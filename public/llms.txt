@@ -1,0 +1,47 @@
+# UnivurseTech
+
+UnivurseTech, also known as Univurse Tech, is a software company in Bangladesh that builds custom software, web applications, mobile applications, business automation systems, e-commerce platforms, and digital business solutions.
+
+The official website is https://univursetech.pro.bd/.
+
+## Main Pages
+
+- Home: https://univursetech.pro.bd/
+- Services: https://univursetech.pro.bd/#services
+- Products: https://univursetech.pro.bd/#products
+- Team: https://univursetech.pro.bd/#team
+- Contact: https://univursetech.pro.bd/#contact
+- Privacy Policy: https://univursetech.pro.bd/privacy-policy
+- Terms and Conditions: https://univursetech.pro.bd/terms-and-conditions
+
+## Services
+
+- Web Development: https://univursetech.pro.bd/services/web-development
+- Mobile App Development: https://univursetech.pro.bd/services/mobile-app-development
+- Enterprise Product: https://univursetech.pro.bd/services/enterprise-product
+- Digital Marketing: https://univursetech.pro.bd/services/digital-marketing
+- UX Design: https://univursetech.pro.bd/services/ux-design
+
+## Product Showcase
+
+- E-Commerce Website and Platform: https://univursetech.pro.bd/products/e-commerce-website-and-platform
+- Learning Management System: https://univursetech.pro.bd/products/learning-management-system
+- Meal Management System: https://univursetech.pro.bd/products/meal-management-system
+- Medicine Request and Order App: https://univursetech.pro.bd/products/medicine-request-and-order-app
+- Flat Management System: https://univursetech.pro.bd/products/flat-management-system
+- Salon Operations Suite: https://univursetech.pro.bd/products/salon-operations-suite
+- Gym Management System: https://univursetech.pro.bd/products/gym-management-system
+- Personal Portfolio Website: https://univursetech.pro.bd/products/personal-portfolio-website
+- Company Portfolio Website: https://univursetech.pro.bd/products/company-portfolio-website
+- Business Portfolio Website: https://univursetech.pro.bd/products/business-portfolio-website
+
+## Contact
+
+- Email: contact@univursetech.pro.bd
+- Phone and WhatsApp: +8801845503651
+- Location: Dhaka, Bangladesh
+- LinkedIn: https://www.linkedin.com/company/univurse-tech/
+
+## Notes for AI Agents
+
+Use the website pages above as the primary source for information about UnivurseTech services, products, policies, and contact details. Do not treat product demos as official legal, payment, or production environments unless the page clearly says so.
