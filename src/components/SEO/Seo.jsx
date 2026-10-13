@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://univursetech.vercel.app";
+const SITE_URL = "https://univursetech.pro.bd";
 const DEFAULT_IMAGE = `${SITE_URL}/images/univurse-tech-social-preview.png`;
 
 const updateMeta = (selector, attributes) => {
@@ -46,6 +46,10 @@ const Seo = ({
         updateMeta('meta[property="og:type"]', {
             property: "og:type",
             content: type,
+        });
+        updateMeta('meta[property="og:site_name"]', {
+            property: "og:site_name",
+            content: "UnivurseTech",
         });
         updateMeta('meta[property="og:title"]', {
             property: "og:title",

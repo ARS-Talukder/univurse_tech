@@ -4,19 +4,20 @@ import { useQuery } from "@tanstack/react-query";
 import Seo from "../components/SEO/Seo";
 
 const privacySeo = {
-    title: "Privacy Policy | Univurse Tech",
+    title: "Privacy Policy | UnivurseTech",
     description:
-        "Read the Univurse Tech privacy policy, including how we collect, use, protect, and manage information shared through our website and service inquiries.",
-    canonical: "https://univursetech.vercel.app/privacy-policy",
+        "Read the UnivurseTech privacy policy, including how Univurse Tech collects, uses, protects, and manages information shared through our website and service inquiries.",
+    canonical: "https://univursetech.pro.bd/privacy-policy",
     schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "Privacy Policy",
-        url: "https://univursetech.vercel.app/privacy-policy",
+        url: "https://univursetech.pro.bd/privacy-policy",
         isPartOf: {
             "@type": "WebSite",
-            name: "Univurse Tech",
-            url: "https://univursetech.vercel.app/",
+            name: "UnivurseTech",
+            alternateName: "Univurse Tech",
+            url: "https://univursetech.pro.bd/",
         },
     },
 };

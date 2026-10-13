@@ -10,7 +10,7 @@ import {
     createServiceSlug,
 } from "../utils/serviceUtils";
 
-const SITE_URL = "https://univursetech.vercel.app";
+const SITE_URL = "https://univursetech.pro.bd";
 const WHATSAPP_URL =
     "https://wa.me/8801845503651?text=Hello%20Univurse%20Tech%2C%20I%20want%20to%20discuss%20a%20service%20for%20my%20business.";
 const CONTACT_EMAIL = "mailto:contact@univursetech.pro.bd";
@@ -103,7 +103,8 @@ const ServiceDetails = () => {
                 description: service.description,
                 provider: {
                     "@type": "Organization",
-                    name: "Univurse Tech",
+                    name: "UnivurseTech",
+                    alternateName: "Univurse Tech",
                     url: SITE_URL,
                 },
                 areaServed: ["Bangladesh", "Global"],
@@ -137,7 +138,7 @@ const ServiceDetails = () => {
     return (
         <>
             <Seo
-                title={`${service.title} | Univurse Tech`}
+                title={`${service.title} | UnivurseTech`}
                 description={metaDescription}
                 canonical={canonical}
                 schema={serviceSchema}

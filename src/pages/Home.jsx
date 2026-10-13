@@ -16,12 +16,17 @@ const homeSchema = {
     "@graph": [
         {
             "@type": "Organization",
-            "@id": "https://univursetech.vercel.app/#organization",
-            name: "Univurse Tech",
-            url: "https://univursetech.vercel.app/",
-            logo: "https://univursetech.vercel.app/favicon.svg",
+            "@id": "https://univursetech.pro.bd/#organization",
+            name: "UnivurseTech",
+            alternateName: [
+                "Univurse Tech",
+                "UnivurseTech Software Company",
+                "Univurse Tech Bangladesh",
+            ],
+            url: "https://univursetech.pro.bd/",
+            logo: "https://univursetech.pro.bd/favicon.svg",
             description:
-                "Univurse Tech builds custom software, web applications, mobile apps, business automation, e-commerce platforms, and digital solutions.",
+                "UnivurseTech is a software company in Bangladesh building custom software, web applications, mobile apps, business automation, e-commerce platforms, and digital solutions.",
             email: "contact@univursetech.pro.bd",
             telephone: "+8801845503651",
             address: {
@@ -37,7 +42,7 @@ const homeSchema = {
                 availableLanguage: ["English", "Bengali"],
             },
             sameAs: [
-                "https://www.linkedin.com/company/univurse-tech/posts",
+                "https://www.linkedin.com/company/univurse-tech/",
             ],
             founder: {
                 "@type": "Person",
@@ -56,20 +61,22 @@ const homeSchema = {
         },
         {
             "@type": "WebSite",
-            "@id": "https://univursetech.vercel.app/#website",
-            url: "https://univursetech.vercel.app/",
-            name: "Univurse Tech",
+            "@id": "https://univursetech.pro.bd/#website",
+            url: "https://univursetech.pro.bd/",
+            name: "UnivurseTech",
+            alternateName: "Univurse Tech",
             publisher: {
-                "@id": "https://univursetech.vercel.app/#organization",
+                "@id": "https://univursetech.pro.bd/#organization",
             },
         },
         {
             "@type": "ProfessionalService",
-            "@id": "https://univursetech.vercel.app/#service",
-            name: "Univurse Tech",
-            url: "https://univursetech.vercel.app/",
+            "@id": "https://univursetech.pro.bd/#service",
+            name: "UnivurseTech",
+            alternateName: "Univurse Tech",
+            url: "https://univursetech.pro.bd/",
             description:
-                "Software development and business automation services for companies that need reliable digital products.",
+                "Software development and business automation services in Bangladesh for companies that need reliable digital products.",
             areaServed: ["Bangladesh", "Global"],
             serviceType: [
                 "Custom Software Development",
@@ -82,14 +89,14 @@ const homeSchema = {
         },
         {
             "@type": "FAQPage",
-            "@id": "https://univursetech.vercel.app/#faq",
+            "@id": "https://univursetech.pro.bd/#faq",
             mainEntity: [
                 {
                     "@type": "Question",
                     name: "Who is Univurse Tech?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Univurse Tech is a software development company in Bangladesh that builds modern, scalable, and business-driven digital solutions.",
+                        text: "UnivurseTech, also known as Univurse Tech, is a software development company in Bangladesh that builds modern, scalable, and business-driven digital solutions.",
                     },
                 },
                 {
@@ -135,9 +142,9 @@ const Home = () => {
     return (
         <>
             <Seo
-                title="Univurse Tech | Software Company in Bangladesh"
-                description="Univurse Tech builds custom software, web applications, mobile apps, business automation, e-commerce platforms, and digital solutions for modern businesses in Bangladesh and beyond."
-                canonical="https://univursetech.vercel.app/"
+                title="UnivurseTech | Software Company in Bangladesh"
+                description="UnivurseTech, also known as Univurse Tech, is a software company in Bangladesh building custom software, web apps, mobile apps, business automation, e-commerce platforms, and digital solutions."
+                canonical="https://univursetech.pro.bd/"
                 schema={homeSchema}
             />
             <Header />
