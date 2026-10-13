@@ -10,7 +10,7 @@ import {
     flattenProductGroups,
 } from "../utils/productUtils";
 
-const SITE_URL = "https://univursetech.vercel.app";
+const SITE_URL = "https://univursetech.pro.bd";
 const WHATSAPP_URL =
     "https://wa.me/8801845503651?text=Hello%20Univurse%20Tech%2C%20I%20want%20to%20request%20a%20similar%20software%20solution.";
 
@@ -104,7 +104,8 @@ const ProductDetails = () => {
                 description: product.description,
                 creator: {
                     "@type": "Organization",
-                    name: "Univurse Tech",
+                    name: "UnivurseTech",
+                    alternateName: "Univurse Tech",
                     url: SITE_URL,
                 },
             },
@@ -137,7 +138,7 @@ const ProductDetails = () => {
     return (
         <>
             <Seo
-                title={`${product.title} | Univurse Tech`}
+                title={`${product.title} | UnivurseTech`}
                 description={metaDescription}
                 canonical={canonical}
                 schema={productSchema}

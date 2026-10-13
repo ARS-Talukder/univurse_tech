@@ -16,4 +16,4 @@ export const flattenProductGroups = (productGroups = []) =>
     );
 
 export const createProductMetaDescription = (product) =>
-    `${product.title} by Univurse Tech: ${product.description} Built with ${product.core} for ${product.category.toLowerCase()} operations.`;
+    `${product.title} by UnivurseTech, a software company in Bangladesh: ${product.description} Built with ${product.core} for ${product.category.toLowerCase()} operations.`;

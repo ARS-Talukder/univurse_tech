@@ -4,19 +4,20 @@ import Header from "../components/Shared/Header";
 import Seo from "../components/SEO/Seo";
 
 const termsSeo = {
-    title: "Terms and Conditions | Univurse Tech",
+    title: "Terms and Conditions | UnivurseTech",
     description:
-        "Read the Univurse Tech terms and conditions for website use, service inquiries, proposals, payments, intellectual property, and Bangladeshi law compliance.",
-    canonical: "https://univursetech.vercel.app/terms-and-conditions",
+        "Read the UnivurseTech terms and conditions for website use, service inquiries, proposals, payments, intellectual property, and Bangladeshi law compliance.",
+    canonical: "https://univursetech.pro.bd/terms-and-conditions",
     schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "Terms and Conditions",
-        url: "https://univursetech.vercel.app/terms-and-conditions",
+        url: "https://univursetech.pro.bd/terms-and-conditions",
         isPartOf: {
             "@type": "WebSite",
-            name: "Univurse Tech",
-            url: "https://univursetech.vercel.app/",
+            name: "UnivurseTech",
+            alternateName: "Univurse Tech",
+            url: "https://univursetech.pro.bd/",
         },
     },
 };

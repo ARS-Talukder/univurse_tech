@@ -6,4 +6,4 @@ export const createServiceSlug = (title) =>
         .replace(/^-+|-+$/g, "");
 
 export const createServiceMetaDescription = (service) =>
-    `${service.title} service by Univurse Tech: ${service.description} Built for businesses that need practical, scalable digital solutions.`;
+    `${service.title} service by UnivurseTech, a software company in Bangladesh: ${service.description} Built for businesses that need practical, scalable digital solutions.`;
