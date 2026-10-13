@@ -4,15 +4,15 @@ import { FiChevronLeft, FiChevronRight, FiGlobe } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 
 // Team images
-import abdurRahim from "../../assets/team/Abdur_Rahim.png";
-import mdAbdurRahman from "../../assets/team/MD_Abdur_Rahman.jpeg";
-import asifIftekharFahim from "../../assets/team/Asif_Iftekher_Fahim.png";
-import mdZaedHassanShams from "../../assets/team/Md_Zaed_Hassan_Shams.png";
-import nirjoyDebnath from "../../assets/team/Nirjoy_Debnath.png";
-import mafujAhammad from "../../assets/team/Mafuj_Ahammad.png";
-import aurunaveMollikRuddra from "../../assets/team/Aurunave_Mollik_Ruddra.png";
-import azizurRahman from "../../assets/team/Azizur_Rahman.png";
-import mdRiazUddin from "../../assets/team/Md_Riaz_Uddin.png";
+import abdurRahim from "../../assets/team/optimized/Abdur_Rahim.jpg";
+import mdAbdurRahman from "../../assets/team/optimized/MD_Abdur_Rahman.jpg";
+import asifIftekharFahim from "../../assets/team/optimized/Asif_Iftekher_Fahim.jpg";
+import mdZaedHassanShams from "../../assets/team/optimized/Md_Zaed_Hassan_Shams.jpg";
+import nirjoyDebnath from "../../assets/team/optimized/Nirjoy_Debnath.jpg";
+import mafujAhammad from "../../assets/team/optimized/Mafuj_Ahammad.jpg";
+import aurunaveMollikRuddra from "../../assets/team/optimized/Aurunave_Mollik_Ruddra.jpg";
+import azizurRahman from "../../assets/team/optimized/Azizur_Rahman.jpg";
+import mdRiazUddin from "../../assets/team/optimized/Md_Riaz_Uddin.jpg";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../Shared/Loading";
 
@@ -272,6 +272,10 @@ const MeetOurTeam = () => {
 
                                             decoding="async"
 
+                                            width="600"
+
+                                            height="720"
+
                                             className="w-full h-full object-cover transition-transform duration-700"
                                         />
 
@@ -344,7 +348,7 @@ const MeetOurTeam = () => {
 
                                     <div className="relative z-10 -mt-7 mx-5 rounded-xl border border-cyan-400/30 bg-slate-950 px-4 py-3 text-center shadow-xl shadow-black/30">
 
-                                        <h5
+                                        <h3
                                             className={`text-base sm:text-lg font-semibold transition-colors duration-300
                                                 ${isActive
                                                     ? "text-cyan-400"
@@ -355,10 +359,10 @@ const MeetOurTeam = () => {
 
                                             {member.name}
 
-                                        </h5>
+                                        </h3>
 
 
-                                        <p className="mt-1 text-xs sm:text-sm font-bold text-slate-500">
+                                        <p className="mt-1 text-xs sm:text-sm font-bold text-slate-400">
                                             {member.designation}
                                         </p>
 

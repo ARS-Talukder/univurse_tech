@@ -71,7 +71,7 @@ const Footer = () => {
                                             aria-label={social.label}
                                             className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-500 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-400"
                                         >
-                                            <Icon className="h-4 w-4" />
+                                            <Icon className="h-4 w-4" aria-hidden="true" />
                                         </a>
                                     );
                                 })}
@@ -229,7 +229,7 @@ const Footer = () => {
                                 href="mailto:contact@univursetech.pro.bd"
                                 className="group flex items-start gap-3"
                             >
-                                <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                                <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" aria-hidden="true" />
 
                                 <span className="text-sm text-slate-400 transition-colors group-hover:text-cyan-400">
                                     contact@univursetech.pro.bd
@@ -242,7 +242,7 @@ const Footer = () => {
                                 href="tel:+8801845503651"
                                 className="group flex items-start gap-3"
                             >
-                                <FiPhone className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                                <FiPhone className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" aria-hidden="true" />
 
                                 <span className="text-sm text-slate-400 transition-colors group-hover:text-cyan-400">
                                     +880 1845 503651
@@ -257,7 +257,7 @@ const Footer = () => {
                                 rel="noopener noreferrer"
                                 className="group flex items-start gap-3"
                             >
-                                <FaWhatsapp className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                                <FaWhatsapp className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" aria-hidden="true" />
 
                                 <span className="text-sm text-slate-400 transition-colors group-hover:text-cyan-400">
                                     +880 1845 503651
@@ -267,7 +267,7 @@ const Footer = () => {
                             {/* Location */}
 
                             <div className="flex items-start gap-3">
-                                <FiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                                <FiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" aria-hidden="true" />
 
                                 <span className="text-sm text-slate-400">
                                     Dhaka, Bangladesh
@@ -284,7 +284,10 @@ const Footer = () => {
                         >
                             Start a Conversation
 
-                            <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            <FiArrowUpRight
+                                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                aria-hidden="true"
+                            />
                         </a>
 
                     </div>

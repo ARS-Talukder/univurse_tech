@@ -154,7 +154,7 @@ const Services = () => {
 
                                 {/* Icon */}
                                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500/15 transition-colors">
-                                    <Icon className="w-6 h-6" />
+                                    <Icon className="w-6 h-6" aria-hidden="true" />
                                 </div>
 
                                 {/* Title */}
@@ -186,16 +186,21 @@ const Services = () => {
                                 <div className="mt-auto flex items-center justify-between gap-4 pt-7">
                                     <Link
                                         to={`/services/${createServiceSlug(service.title)}`}
+                                        aria-label={`View details for ${service.title}`}
                                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
                                     >
                                         Details
-                                        <FiArrowRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                        <FiArrowRight
+                                            aria-hidden="true"
+                                            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                        />
                                     </Link>
 
                                     <a
                                         href={WHATSAPP_URL}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={`Discuss ${service.title} service on WhatsApp`}
                                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-400 hover:text-cyan-300"
                                     >
                                         Discuss

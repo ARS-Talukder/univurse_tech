@@ -148,28 +148,30 @@ const Home = () => {
                 schema={homeSchema}
             />
             <Header />
-            <Banner />
-            <Suspense fallback={<SectionLoader />}>
-                <Services />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <Products />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <Technologies />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <WhyChooseUs />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <MeetOurTeam />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <FAQ />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-                <Contact />
-            </Suspense>
+            <main>
+                <Banner />
+                <Suspense fallback={<SectionLoader />}>
+                    <Services />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <Products />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <Technologies />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <WhyChooseUs />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <MeetOurTeam />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <FAQ />
+                </Suspense>
+                <Suspense fallback={<SectionLoader />}>
+                    <Contact />
+                </Suspense>
+            </main>
             <Footer />
         </>
     );

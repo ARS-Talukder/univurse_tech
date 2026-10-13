@@ -163,7 +163,7 @@ const Products = () => {
                                     <div
                                         className={`p-3 rounded-xl border ${colors.icon}`}
                                     >
-                                        <Icon className="w-6 h-6" />
+                                        <Icon className="w-6 h-6" aria-hidden="true" />
                                     </div>
 
                                     <div>
@@ -235,10 +235,11 @@ const Products = () => {
                                                 <div className="flex shrink-0 items-center gap-4">
                                                     <Link
                                                         to={`/products/${createProductSlug(item.title)}`}
+                                                        aria-label={`View details for ${item.title}`}
                                                         className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
                                                     >
                                                         Details
-                                                        <FiArrowRight />
+                                                        <FiArrowRight aria-hidden="true" />
                                                     </Link>
 
                                                     {item.demo === "details" ? null : item.demo !== "#" ? (
@@ -246,10 +247,11 @@ const Products = () => {
                                                             href={item.demo}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
+                                                            aria-label={`Open live demo for ${item.title}`}
                                                             className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
                                                         >
                                                             {item.demoLabel || "Live Demo"}
-                                                            <FiArrowRight />
+                                                            <FiArrowRight aria-hidden="true" />
                                                         </a>
                                                     ) : (
                                                         <span className="text-xs font-semibold text-slate-500">

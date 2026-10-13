@@ -101,9 +101,9 @@ const Terms = () => {
                                     key={term._id}
                                     className="border-b border-slate-800 pb-8 last:border-b-0"
                                 >
-                                    <h3 className="text-xl md:text-2xl">
+                                    <h2 className="text-xl md:text-2xl">
                                         {term.title}
-                                    </h3>
+                                    </h2>
 
                                     <p className="mt-4 leading-7 text-slate-400">
                                         {term.body}

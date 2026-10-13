@@ -19,11 +19,16 @@ const Header = () => {
                     <img
                         src={logo}
                         alt="Univurse Tech"
+                        width="64"
+                        height="64"
+                        fetchPriority="high"
                         className="h-14 w-auto"
                     />
 
                     <div>
-                        <h3>Univurse Tech</h3>
+                        <span className="block text-2xl font-bold leading-tight text-slate-100">
+                            Univurse Tech
+                        </span>
                         <p className="text-xs text-slate-400 tracking-widest uppercase">
                             Software Solutions
                         </p>
