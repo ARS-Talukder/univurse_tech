@@ -1,0 +1,278 @@
+import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { FiArrowRight, FiBookOpen, FiHeart, FiHome, FiGlobe } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import Loading from "../Shared/Loading";
+import { createProductSlug } from "../../utils/productUtils";
+
+const iconMap = {
+    book: FiBookOpen,
+    heart: FiHeart,
+    home: FiHome,
+    globe: FiGlobe,
+};
+
+const colorClasses = {
+    cyan: {
+        icon: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+        technology: "text-cyan-400",
+        hover: "group-hover:text-cyan-400",
+        button: "text-cyan-400 hover:text-cyan-300",
+    },
+
+    indigo: {
+        icon: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+        technology: "text-indigo-400",
+        hover: "group-hover:text-indigo-400",
+        button: "text-indigo-400 hover:text-indigo-300",
+    },
+
+    violet: {
+        icon: "bg-violet-500/10 text-violet-400 border-violet-500/20",
+        technology: "text-violet-400",
+        hover: "group-hover:text-violet-400",
+        button: "text-violet-400 hover:text-violet-300",
+    },
+};
+
+const slogans = [
+    {
+        first: "Software Solutions That Move",
+        second: "Business Forward.",
+    },
+    {
+        first: "Digital Products That Drive",
+        second: "Real Growth.",
+    },
+    {
+        first: "Technology That Solves",
+        second: "Business Challenges.",
+    },
+];
+
+const Products = () => {
+    const [activeSlogan, setActiveSlogan] = useState(0);
+    useEffect(() => {
+        const sloganTimer = window.setInterval(() => {
+            setActiveSlogan((current) => (current + 1) % slogans.length);
+        }, 2600);
+
+        return () => window.clearInterval(sloganTimer);
+    }, []);
+
+    const { data: productsData, isLoading, isError } = useQuery({
+        queryKey: ["products"],
+        queryFn: async () => {
+            const response = await fetch("/data/products.json");
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch products");
+            }
+
+            return response.json();
+        },
+    });
+
+    /* Loading */
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    /* Error */
+    if (isError) {
+        return (
+            <section id="products" className="bg-slate-950">
+                <div className="container min-h-[400px] flex items-center justify-center">
+                    <p className="text-red-400">
+                        Failed to load our products.
+                    </p>
+                </div>
+            </section>
+        );
+    }
+
+    return (
+        <section id="products" className="bg-slate-950">
+            <div className="container">
+
+                {/* Section Header */}
+                <motion.div
+                    className="max-w-4xl mb-20 mx-auto text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <motion.span
+                        className="section-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        Our Products & Solutions
+                    </motion.span>
+
+                    <motion.h2
+                        key={activeSlogan}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                    >
+                        {slogans[activeSlogan].first}{" "}
+
+                        <motion.span
+                            key={activeSlogan}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.45 }}
+                            className="inline-block gradient-text"
+                        >
+                            {slogans[activeSlogan].second}
+                        </motion.span>
+                    </motion.h2>
+
+                    <motion.p
+                        className="mt-6 max-w-2xl mx-auto"
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                    >
+                        Explore our custom software products for e-commerce,
+                        property management, education, healthcare, fitness,
+                        service businesses, and digital portfolio experiences.
+                    </motion.p>
+                </motion.div>
+
+                {/* Product Groups */}
+                <div className="space-y-24">
+                    {productsData.map((product) => {
+                        const Icon = iconMap[product.icon];
+                        const colors = colorClasses[product.color];
+
+                        return (
+                            <div key={product._id}>
+
+                                {/* Group Header */}
+                                <div className="flex items-start gap-4 mb-8">
+
+                                    <div
+                                        className={`p-3 rounded-xl border ${colors.icon}`}
+                                    >
+                                        <Icon className="w-6 h-6" aria-hidden="true" />
+                                    </div>
+
+                                    <div>
+                                        <h3>{product.group}</h3>
+
+                                        <p className="mt-2 max-w-2xl text-sm">
+                                            {product.groupDescription}
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                {/* Products */}
+                                <div
+                                    className={`grid gap-6 ${product.items.length === 3
+                                        ? "lg:grid-cols-3"
+                                        : "lg:grid-cols-2"
+                                        }`}
+                                >
+                                    {product.items.map((item) => (
+                                        <div
+                                            key={item._id}
+                                            className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-7 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300"
+                                        >
+                                            <div>
+
+                                                {/* Technology + Category */}
+                                                <div className="flex items-center justify-between gap-4 mb-5">
+
+                                                    <span
+                                                        className={`text-xs font-mono font-semibold px-2.5 py-1 rounded bg-slate-800 border border-slate-700 ${colors.technology}`}
+                                                    >
+                                                        {item.technology}
+                                                    </span>
+
+                                                    <span className="text-xs text-slate-500 font-mono">
+                                                        {item.category}
+                                                    </span>
+
+                                                </div>
+
+                                                {/* Title */}
+                                                <Link
+                                                    to={`/products/${createProductSlug(item.title)}`}
+                                                    className={`block transition-colors ${colors.hover}`}
+                                                >
+                                                    <h4>{item.title}</h4>
+                                                </Link>
+
+                                                {/* Subtitle */}
+                                                <p className="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                                                    {item.subtitle}
+                                                </p>
+
+                                                {/* Description */}
+                                                <p className="mt-5 text-sm leading-7 text-slate-300">
+                                                    {item.description}
+                                                </p>
+
+                                            </div>
+
+                                            {/* Footer */}
+                                            <div className="mt-7 pt-5 border-t border-slate-800 flex items-center justify-between gap-4">
+
+                                                <span className="text-xs font-mono text-slate-500">
+                                                    Core: {item.core}
+                                                </span>
+
+                                                <div className="flex shrink-0 items-center gap-4">
+                                                    <Link
+                                                        to={`/products/${createProductSlug(item.title)}`}
+                                                        aria-label={`View details for ${item.title}`}
+                                                        className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
+                                                    >
+                                                        Details
+                                                        <FiArrowRight aria-hidden="true" />
+                                                    </Link>
+
+                                                    {item.demo === "details" ? null : item.demo !== "#" ? (
+                                                        <a
+                                                            href={item.demo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            aria-label={`Open live demo for ${item.title}`}
+                                                            className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
+                                                        >
+                                                            {item.demoLabel || "Live Demo"}
+                                                            <FiArrowRight aria-hidden="true" />
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-xs font-semibold text-slate-500">
+                                                            Demo Coming Soon
+                                                        </span>
+                                                    )}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                            </div>
+                        );
+                    })}
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
+export default Products;

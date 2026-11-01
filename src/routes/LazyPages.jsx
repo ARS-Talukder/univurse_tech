@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import Loading from "../components/Shared/Loading";
+import ProductCategory from "../components/Products/ProductCategory";
 
 const Home = lazy(() => import("../pages/Home"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
@@ -34,6 +35,11 @@ export const TermsPage = () => (
 export const ProductDetailsPage = () => (
     <PageLoader>
         <ProductDetails />
+    </PageLoader>
+);
+export const ProductCategoryPage = () => (
+    <PageLoader>
+        <ProductCategory />
     </PageLoader>
 );
 

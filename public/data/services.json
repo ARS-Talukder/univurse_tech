@@ -94,37 +94,6 @@
     },
     {
         "_id": 4,
-        "title": "Digital Marketing",
-        "shortTitle": "Digital Marketing",
-        "description": "SEO, content, and digital marketing strategies that help businesses build presence, reach the right audience, and grow.",
-        "features": [
-            "Social Media Marketing",
-            "Search Engine Optimization",
-            "Content Strategy",
-            "Online Advertising"
-        ],
-        "problems": [
-            "Your business is online but not reaching the right audience.",
-            "Your content does not clearly explain your value.",
-            "You need a stronger digital presence across search and social channels."
-        ],
-        "deliverables": [
-            "SEO direction",
-            "Content planning",
-            "Social media support",
-            "Campaign guidance",
-            "Performance-focused recommendations"
-        ],
-        "benefits": [
-            "Increase online visibility",
-            "Reach more relevant customers",
-            "Build clearer brand communication",
-            "Support long-term digital growth"
-        ],
-        "icon": "marketing"
-    },
-    {
-        "_id": 5,
         "title": "UX Design",
         "shortTitle": "UX Design",
         "description": "Thoughtful UX design for websites, mobile apps, and software products that feel intuitive, engaging, and easy to use.",

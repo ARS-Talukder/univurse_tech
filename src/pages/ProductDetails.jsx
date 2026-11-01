@@ -145,17 +145,9 @@ const ProductDetails = () => {
             />
             <Header />
 
-            <main className="min-h-screen bg-slate-950 pt-28">
+            <main className="min-h-screen bg-slate-950 lg:pt-4">
                 <section className="border-b border-slate-800/60">
                     <div className="container">
-                        <Link
-                            to="/#products"
-                            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
-                        >
-                            <FiArrowLeft />
-                            Back to products
-                        </Link>
-
                         <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
                             <div>
                                 <span className="section-subtitle">

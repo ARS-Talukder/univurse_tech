@@ -1,10 +1,16 @@
+
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FiArrowRight, FiBookOpen, FiHeart, FiHome, FiGlobe } from "react-icons/fi";
+import {
+    FiArrowRight,
+    FiBookOpen,
+    FiHeart,
+    FiHome,
+    FiGlobe,
+} from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Loading from "../Shared/Loading";
-import { createProductSlug } from "../../utils/productUtils";
 
 const iconMap = {
     book: FiBookOpen,
@@ -16,23 +22,24 @@ const iconMap = {
 const colorClasses = {
     cyan: {
         icon: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
-        technology: "text-cyan-400",
+        accent: "text-cyan-400",
         hover: "group-hover:text-cyan-400",
-        button: "text-cyan-400 hover:text-cyan-300",
+        border: "group-hover:border-cyan-500/40",
+        glow: "group-hover:shadow-cyan-950/30",
     },
-
     indigo: {
         icon: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-        technology: "text-indigo-400",
+        accent: "text-indigo-400",
         hover: "group-hover:text-indigo-400",
-        button: "text-indigo-400 hover:text-indigo-300",
+        border: "group-hover:border-indigo-500/40",
+        glow: "group-hover:shadow-indigo-950/30",
     },
-
     violet: {
         icon: "bg-violet-500/10 text-violet-400 border-violet-500/20",
-        technology: "text-violet-400",
+        accent: "text-violet-400",
         hover: "group-hover:text-violet-400",
-        button: "text-violet-400 hover:text-violet-300",
+        border: "group-hover:border-violet-500/40",
+        glow: "group-hover:shadow-violet-950/30",
     },
 };
 
@@ -51,8 +58,16 @@ const slogans = [
     },
 ];
 
+const categorySlugMap = {
+    "1": "digital-commerce-edtech",
+    "2": "health-operations-logistics",
+    "3": "facility-lifestyle-automation",
+    "4": "brand-portfolio-experiences",
+};
+
 const Products = () => {
     const [activeSlogan, setActiveSlogan] = useState(0);
+
     useEffect(() => {
         const sloganTimer = window.setInterval(() => {
             setActiveSlogan((current) => (current + 1) % slogans.length);
@@ -61,7 +76,11 @@ const Products = () => {
         return () => window.clearInterval(sloganTimer);
     }, []);
 
-    const { data: productsData, isLoading, isError } = useQuery({
+    const {
+        data: productsData = [],
+        isLoading,
+        isError,
+    } = useQuery({
         queryKey: ["products"],
         queryFn: async () => {
             const response = await fetch("/data/products.json");
@@ -74,18 +93,16 @@ const Products = () => {
         },
     });
 
-    /* Loading */
     if (isLoading) {
         return <Loading />;
     }
 
-    /* Error */
     if (isError) {
         return (
             <section id="products" className="bg-slate-950">
-                <div className="container min-h-[400px] flex items-center justify-center">
+                <div className="container flex min-h-[400px] items-center justify-center">
                     <p className="text-red-400">
-                        Failed to load our products.
+                        Failed to load our product categories.
                     </p>
                 </div>
             </section>
@@ -93,183 +110,122 @@ const Products = () => {
     }
 
     return (
-        <section id="products" className="bg-slate-950">
+        <section id="products" className="bg-slate-950 py-20">
             <div className="container">
-
                 {/* Section Header */}
                 <motion.div
-                    className="max-w-4xl mb-20 mx-auto text-center"
+                    className="mx-auto mb-14 max-w-4xl text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7 }}
                 >
-                    <motion.span
-                        className="section-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Our Products & Solutions
-                    </motion.span>
+                    <span className="section-subtitle">
+                        Our Products &amp; Solutions
+                    </span>
 
                     <motion.h2
                         key={activeSlogan}
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.45 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
                     >
                         {slogans[activeSlogan].first}{" "}
-
-                        <motion.span
-                            key={activeSlogan}
-                            initial={{ opacity: 0, y: 18 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.45 }}
-                            className="inline-block gradient-text"
-                        >
+                        <span className="gradient-text">
                             {slogans[activeSlogan].second}
-                        </motion.span>
+                        </span>
                     </motion.h2>
 
                     <motion.p
-                        className="mt-6 max-w-2xl mx-auto"
-                        initial={{ opacity: 0, y: 25 }}
+                        className="mx-auto mt-6 max-w-2xl text-slate-300"
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.15 }}
                     >
-                        Explore our custom software products for e-commerce,
-                        property management, education, healthcare, fitness,
-                        service businesses, and digital portfolio experiences.
+                        Explore our software solutions by category. Choose a
+                        category to discover products, features, and available
+                        live demos.
                     </motion.p>
                 </motion.div>
 
-                {/* Product Groups */}
-                <div className="space-y-24">
-                    {productsData.map((product) => {
-                        const Icon = iconMap[product.icon];
-                        const colors = colorClasses[product.color];
+                {/* Four Category Cards */}
+                <div className="grid gap-6 sm:grid-cols-4">
+                    {productsData.map((category, index) => {
+                        const Icon = iconMap[category.icon] || FiGlobe;
+                        const colors =
+                            colorClasses[category.color] || colorClasses.cyan;
+
+                        const slug = categorySlugMap[category._id];
+
+                        if (!slug) {
+                            return null;
+                        }
 
                         return (
-                            <div key={product._id}>
-
-                                {/* Group Header */}
-                                <div className="flex items-start gap-4 mb-8">
-
-                                    <div
-                                        className={`p-3 rounded-xl border ${colors.icon}`}
-                                    >
-                                        <Icon className="w-6 h-6" aria-hidden="true" />
-                                    </div>
-
+                            <motion.div
+                                key={category._id}
+                                initial={{ opacity: 0, y: 25 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.15 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                }}
+                            >
+                                <Link
+                                    to={`/product-categories/${slug}`}
+                                    aria-label={`Explore ${category.group}`}
+                                    className={`group flex h-full min-h-[230px] flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-900 hover:shadow-xl ${colors.border} ${colors.glow}`}
+                                >
                                     <div>
-                                        <h3>{product.group}</h3>
+                                        <div className="mb-3 flex items-start justify-between gap-4">
+                                            <div
+                                                className={`rounded-xl border p-3 ${colors.icon}`}
+                                            >
+                                                <Icon
+                                                    className="h-5 w-5"
+                                                    aria-hidden="true"
+                                                />
+                                            </div>
 
-                                        <p className="mt-2 max-w-2xl text-sm">
-                                            {product.groupDescription}
+
+                                        </div>
+
+                                        <h4
+                                            className={`text-xl font-semibold text-white transition-colors sm:text-2xl ${colors.hover}`}
+                                        >
+                                            {category.group}
+                                        </h4>
+
+                                        <p className="mt-3 text-sm leading-7 text-slate-400">
+                                            {category.groupDescription}
                                         </p>
                                     </div>
 
-                                </div>
+                                    <div className="flex items-end justify-between mt-7">
+                                        <span className="rounded-full border border-slate-700 bg-slate-800/80 px-2 py-0.5 text-xs text-slate-400">
+                                            {category.items.length}{" "}
+                                            {category.items.length === 1
+                                                ? "product"
+                                                : "products"}
+                                        </span>
 
-                                {/* Products */}
-                                <div
-                                    className={`grid gap-6 ${product.items.length === 3
-                                        ? "lg:grid-cols-3"
-                                        : "lg:grid-cols-2"
-                                        }`}
-                                >
-                                    {product.items.map((item) => (
                                         <div
-                                            key={item._id}
-                                            className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-7 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300"
+                                            className={`inline-flex items-center gap-2 text-sm font-semibold ${colors.accent}`}
                                         >
-                                            <div>
-
-                                                {/* Technology + Category */}
-                                                <div className="flex items-center justify-between gap-4 mb-5">
-
-                                                    <span
-                                                        className={`text-xs font-mono font-semibold px-2.5 py-1 rounded bg-slate-800 border border-slate-700 ${colors.technology}`}
-                                                    >
-                                                        {item.technology}
-                                                    </span>
-
-                                                    <span className="text-xs text-slate-500 font-mono">
-                                                        {item.category}
-                                                    </span>
-
-                                                </div>
-
-                                                {/* Title */}
-                                                <Link
-                                                    to={`/products/${createProductSlug(item.title)}`}
-                                                    className={`block transition-colors ${colors.hover}`}
-                                                >
-                                                    <h4>{item.title}</h4>
-                                                </Link>
-
-                                                {/* Subtitle */}
-                                                <p className="mt-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                                                    {item.subtitle}
-                                                </p>
-
-                                                {/* Description */}
-                                                <p className="mt-5 text-sm leading-7 text-slate-300">
-                                                    {item.description}
-                                                </p>
-
-                                            </div>
-
-                                            {/* Footer */}
-                                            <div className="mt-7 pt-5 border-t border-slate-800 flex items-center justify-between gap-4">
-
-                                                <span className="text-xs font-mono text-slate-500">
-                                                    Core: {item.core}
-                                                </span>
-
-                                                <div className="flex shrink-0 items-center gap-4">
-                                                    <Link
-                                                        to={`/products/${createProductSlug(item.title)}`}
-                                                        aria-label={`View details for ${item.title}`}
-                                                        className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
-                                                    >
-                                                        Details
-                                                        <FiArrowRight aria-hidden="true" />
-                                                    </Link>
-
-                                                    {item.demo === "details" ? null : item.demo !== "#" ? (
-                                                        <a
-                                                            href={item.demo}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            aria-label={`Open live demo for ${item.title}`}
-                                                            className={`text-xs font-semibold inline-flex items-center gap-1 ${colors.button}`}
-                                                        >
-                                                            {item.demoLabel || "Live Demo"}
-                                                            <FiArrowRight aria-hidden="true" />
-                                                        </a>
-                                                    ) : (
-                                                        <span className="text-xs font-semibold text-slate-500">
-                                                            Demo Coming Soon
-                                                        </span>
-                                                    )}
-                                                </div>
-
-                                            </div>
+                                            Explore
+                                            <FiArrowRight
+                                                className="transition-transform duration-300 group-hover:translate-x-1"
+                                                aria-hidden="true"
+                                            />
                                         </div>
-                                    ))}
-                                </div>
-
-                            </div>
+                                    </div>
+                                </Link>
+                            </motion.div>
                         );
                     })}
                 </div>
-
             </div>
         </section>
     );
