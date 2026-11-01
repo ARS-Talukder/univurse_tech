@@ -125,7 +125,7 @@ const FAQ = () => {
                                             faq._id
                                         )
                                     }
-                                    className="w-full flex items-center gap-4 text-left px-5 sm:px-7 py-5 cursor-pointer"
+                                    className="w-full flex items-center gap-4 text-left px-5 sm:px-7 py-3 cursor-pointer"
                                 >
 
                                     {/* Number */}

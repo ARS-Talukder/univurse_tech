@@ -1,7 +1,7 @@
 [
     {
         "_id": "1",
-        "group": "E-commerce & EdTech Platforms",
+        "group": "E-commerce & EdTech",
         "groupDescription": "Explore our core software products across digital commerce and education technology.",
         "icon": "book",
         "color": "cyan",
@@ -65,7 +65,7 @@
     },
     {
         "_id": "2",
-        "group": "Health & Operations Logistics",
+        "group": "Health & Operations",
         "groupDescription": "Technology designed to simplify healthcare requests and operational logistics.",
         "icon": "heart",
         "color": "indigo",
@@ -129,7 +129,7 @@
     },
     {
         "_id": "3",
-        "group": "Facility & Lifestyle Automation",
+        "group": "Lifestyle Automation",
         "groupDescription": "Operational platforms for property, fitness, and personal-care businesses.",
         "icon": "home",
         "color": "violet",
@@ -222,7 +222,7 @@
     },
     {
         "_id": "4",
-        "group": "Brand & Portfolio Experiences",
+        "group": "Business & Portfolio",
         "groupDescription": "Modern websites built to showcase people, brands, businesses, and digital experiences.",
         "icon": "globe",
         "color": "cyan",
