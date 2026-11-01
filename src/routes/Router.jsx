@@ -8,6 +8,7 @@ import {
     ServiceDetailsPage,
     TermsPage,
 } from "./LazyPages";
+import ProductCategory from "../components/Products/ProductCategory";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/products/:slug",
                 element: <ProductDetailsPage />,
+            },
+            {
+                path: "/product-categories/:categorySlug",
+                element: <ProductCategory />,
             },
             {
                 path: "/services/:slug",
