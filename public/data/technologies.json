@@ -4,49 +4,57 @@
             "_id": "tech_backend_nodejs",
             "name": "Node.js",
             "icon": "node",
-            "color": "#339933"
+            "color": "#339933",
+            "lightColor": "#237A33"
         },
         {
             "_id": "tech_backend_laravel",
             "name": "Laravel",
             "icon": "laravel",
-            "color": "#FF2D20"
+            "color": "#FF2D20",
+            "lightColor": "#D6291E"
         },
         {
             "_id": "tech_backend_python",
             "name": "Python",
             "icon": "python",
-            "color": "#1868aa"
+            "color": "#1868aa",
+            "lightColor": "#155E95"
         },
         {
             "_id": "tech_backend_django",
             "name": "Django",
             "icon": "django",
-            "color": "#f8faf7"
+            "color": "#f8faf7",
+            "lightColor": "#092E20"
         },
         {
             "_id": "tech_backend_c#",
             "name": "C#",
             "icon": "csharp",
-            "color": "#f8faf7"
+            "color": "#f8faf7",
+            "lightColor": "#512BD4"
         },
         {
             "_id": "tech_backend_.net",
             "name": ".NET",
             "icon": "dotnet",
-            "color": "#5027d5"
+            "color": "#5027d5",
+            "lightColor": "#512BD4"
         },
         {
             "_id": "tech_backend_ai",
             "name": "AI",
             "icon": "ai",
-            "color": "#A855F7"
+            "color": "#A855F7",
+            "lightColor": "#7E22CE"
         },
         {
             "_id": "tech_backend_fastapi",
             "name": "FastAPI",
             "icon": "fastapi",
-            "color": "#05988a"
+            "color": "#05988a",
+            "lightColor": "#047F73"
         }
     ],
     "Frontend": [
@@ -54,31 +62,36 @@
             "_id": "tech_frontend_javascript",
             "name": "JavaScript",
             "icon": "javascript",
-            "color": "#F7DF1E"
+            "color": "#F7DF1E",
+            "lightColor": "#806200"
         },
         {
             "_id": "tech_frontend_reactjs",
             "name": "React.js",
             "icon": "react",
-            "color": "#61DAFB"
+            "color": "#61DAFB",
+            "lightColor": "#087EA4"
         },
         {
             "_id": "tech_frontend_nextjs",
             "name": "Next.js",
             "icon": "nextjs",
-            "color": "#FFFFFF"
+            "color": "#FFFFFF",
+            "lightColor": "#111827"
         },
         {
             "_id": "tech_frontend_angularjs",
             "name": "Angular JS",
             "icon": "angular",
-            "color": "#dd1b16"
+            "color": "#dd1b16",
+            "lightColor": "#B91C1C"
         },
         {
             "_id": "tech_frontend_typescript",
             "name": "TypeScript",
             "icon": "typescript",
-            "color": "#3178c6"
+            "color": "#3178c6",
+            "lightColor": "#235A97"
         }
     ],
     "Mobile": [
@@ -86,25 +99,29 @@
             "_id": "tech_mobile_flutter",
             "name": "Flutter",
             "icon": "flutter",
-            "color": "#02569B"
+            "color": "#02569B",
+            "lightColor": "#035A8D"
         },
         {
             "_id": "tech_mobile_reactnative",
             "name": "React Native",
             "icon": "reactnative",
-            "color": "#61DAFB"
+            "color": "#61DAFB",
+            "lightColor": "#087EA4"
         },
         {
             "_id": "tech_mobile_androidstudio",
             "name": "Android Studio",
             "icon": "androidstudio",
-            "color": "#50b054"
+            "color": "#50b054",
+            "lightColor": "#2E7D32"
         },
         {
             "_id": "tech_mobile_kotlin",
             "name": "Kotlin",
             "icon": "kotlin",
-            "color": "#7F52FF"
+            "color": "#7F52FF",
+            "lightColor": "#6D28D9"
         }
     ],
     "Databases": [
@@ -112,43 +129,50 @@
             "_id": "tech_database_mysql",
             "name": "MySQL",
             "icon": "mysql",
-            "color": "#5d87a1"
+            "color": "#5d87a1",
+            "lightColor": "#315E78"
         },
         {
             "_id": "tech_database_mongodb",
             "name": "MongoDB",
             "icon": "mongodb",
-            "color": "#47A248"
+            "color": "#47A248",
+            "lightColor": "#2E7D32"
         },
         {
             "_id": "tech_database_postgresql",
             "name": "PostgreSQL",
             "icon": "postgresql",
-            "color": "#4169E1"
+            "color": "#4169E1",
+            "lightColor": "#334E9C"
         },
         {
             "_id": "tech_database_firebase",
             "name": "Firebase",
             "icon": "firebase",
-            "color": "#FFCA28"
+            "color": "#FFCA28",
+            "lightColor": "#C2410C"
         },
         {
             "_id": "tech_database_oracle",
             "name": "Oracle",
             "icon": "oracle",
-            "color": "#F80000"
+            "color": "#F80000",
+            "lightColor": "#B91C1C"
         },
         {
             "_id": "tech_database_mssql",
             "name": "Microsoft SQL",
             "icon": "mssql",
-            "color": "#006ec4"
+            "color": "#006ec4",
+            "lightColor": "#005A9E"
         },
         {
             "_id": "tech_database_redis",
             "name": "Redis",
             "icon": "redis",
-            "color": "#912626"
+            "color": "#912626",
+            "lightColor": "#7F1D1D"
         }
     ],
     "UI/UX": [
@@ -156,19 +180,22 @@
             "_id": "tech_uiux_figma",
             "name": "Figma",
             "icon": "figma",
-            "color": "#f24e1e"
+            "color": "#f24e1e",
+            "lightColor": "#C2410C"
         },
         {
             "_id": "tech_uiux_sketch",
             "name": "Sketch",
             "icon": "sketch",
-            "color": "#F7B500"
+            "color": "#F7B500",
+            "lightColor": "#A16207"
         },
         {
             "_id": "tech_uiux_adobexd",
             "name": "Adobe XD",
             "icon": "adobexd",
-            "color": "#FF61F6"
+            "color": "#FF61F6",
+            "lightColor": "#BE185D"
         }
     ]
 }

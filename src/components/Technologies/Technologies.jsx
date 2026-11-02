@@ -214,9 +214,10 @@ const Technology = () => {
                                 {/* Technology Icon */}
                                 {Icon && (
                                     <Icon
-                                        className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                                        className="technology-icon w-14 h-14 transition-transform duration-300 group-hover:scale-110"
                                         style={{
-                                            color: technology.color,
+                                            "--technology-color": technology.color,
+                                            "--technology-color-light": technology.lightColor || technology.color,
                                         }}
                                     />
                                 )}

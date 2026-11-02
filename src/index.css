@@ -30,26 +30,26 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   color-scheme: light;
-  --theme-root: #f7f9fc;
-  --theme-surface: #eef3f8;
-  --theme-surface-raised: #ffffff;
-  --theme-border: #d7e0ea;
-  --theme-text: #0f172a;
+  --theme-root: #e9eef5;
+  --theme-surface: #e2e8f0;
+  --theme-surface-raised: #f4f7fa;
+  --theme-border: #c6d0dc;
+  --theme-text: #172033;
   --theme-text-muted: #526174;
-  --theme-grid: rgba(100, 116, 139, 0.12);
-  --color-slate-950: #f7f9fc;
-  --color-slate-900: #ffffff;
-  --color-slate-800: #e2e8f0;
-  --color-slate-700: #cbd5e1;
+  --theme-grid: rgba(71, 85, 105, 0.1);
+  --color-slate-950: #e9eef5;
+  --color-slate-900: #f4f7fa;
+  --color-slate-800: #d4dde8;
+  --color-slate-700: #bdc9d8;
   --color-slate-600: #64748b;
-  --color-slate-500: #64748b;
+  --color-slate-500: #5b6b7f;
   --color-slate-400: #475569;
-  --color-slate-300: #334155;
-  --color-slate-200: #1e293b;
-  --color-slate-100: #0f172a;
-  --color-cyan-300: #0e7490;
-  --color-cyan-400: #087f9c;
-  --color-cyan-500: #087f9c;
+  --color-slate-300: #344256;
+  --color-slate-200: #243247;
+  --color-slate-100: #172033;
+  --color-cyan-300: #0b7188;
+  --color-cyan-400: #06758e;
+  --color-cyan-500: #06758e;
   --color-blue-400: #2563eb;
   --color-indigo-400: #4f46e5;
   --color-violet-400: #7c3aed;
@@ -72,6 +72,14 @@ html[data-theme="light"] .bg-slate-950\/70 {
 
 html[data-theme="light"] .bg-slate-950\/90 {
   background-color: color-mix(in srgb, var(--theme-surface-raised) 92%, transparent);
+}
+
+.technology-icon {
+  color: var(--technology-color);
+}
+
+html[data-theme="light"] .technology-icon {
+  color: var(--technology-color-light);
 }
 
 /* ==========================
