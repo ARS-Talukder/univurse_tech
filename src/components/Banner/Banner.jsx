@@ -32,7 +32,7 @@ const Banner = () => {
             <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] rounded-full bg-violet-600/15 blur-[120px] pointer-events-none" />
 
             {/* Grid */}
-            <div className="absolute inset-0 opacity-50 pointer-events-none bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+            <div className="hero-grid absolute inset-0 pointer-events-none" />
 
             <div className="container relative z-10 mt-8">
                 <div className="max-w-5xl">

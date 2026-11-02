@@ -211,7 +211,7 @@ const MeetOurTeam = () => {
                                         />
 
                                         {/* Gradient */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
 
                                         {/* Social Links */}
                                         <div className="absolute left-3 bottom-5 flex items-center gap-2">

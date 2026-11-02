@@ -107,7 +107,7 @@ const ProductCategory = () => {
                 <Header />
                 <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
                     <div className="text-center">
-                        <h2 className="mb-3 text-2xl font-bold text-white">
+                        <h2 className="mb-3 text-2xl font-bold text-slate-100">
                             Unable to Load Products
                         </h2>
 
@@ -135,7 +135,7 @@ const ProductCategory = () => {
                 <Header />
                 <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
                     <div className="text-center">
-                        <h2 className="mb-3 text-3xl font-bold text-white">
+                        <h2 className="mb-3 text-3xl font-bold text-slate-100">
                             Category Not Found
                         </h2>
 
@@ -177,7 +177,7 @@ const ProductCategory = () => {
                                 />
                             </div>
 
-                            <p className="text-white font-bold lg:text-2xl">
+                            <p className="text-slate-100 font-bold lg:text-2xl">
                                 {category.group}
                             </p>
 
@@ -282,7 +282,7 @@ const ProductCategory = () => {
                         </div>
                     ) : (
                         <div className="rounded-2xl border border-slate-800 bg-slate-900/50 px-6 py-16 text-center">
-                            <h2 className="mb-3 text-xl font-semibold text-white">
+                            <h2 className="mb-3 text-xl font-semibold text-slate-100">
                                 No Products Yet
                             </h2>
 

@@ -157,7 +157,7 @@ const Technology = () => {
                                 className={`px-5 py-2.5 text-sm font-medium transition-all duration-300 border-r last:border-r-0 border-slate-700
                   ${activeCategory === category
                                         ? "bg-cyan-400 text-slate-950"
-                                        : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                                        : "text-slate-300 hover:bg-slate-800 hover:text-slate-100"
                                     }
                 `}
                             >
@@ -194,7 +194,7 @@ const Technology = () => {
             absolute left-1/2 bottom-full -translate-x-1/2 mb-3
             px-4 py-2 rounded-lg
             bg-slate-950 border border-slate-700
-            text-white text-sm font-medium
+            text-slate-100 text-sm font-medium
             whitespace-nowrap
             transition-all duration-200
             z-50 pointer-events-none

@@ -193,7 +193,7 @@ const Products = () => {
                                         </div>
 
                                         <h4
-                                            className={`text-xl font-semibold text-white transition-colors sm:text-2xl ${colors.hover}`}
+                                            className={`text-xl font-semibold text-slate-100 transition-colors sm:text-2xl ${colors.hover}`}
                                         >
                                             {category.group}
                                         </h4>
