@@ -93,7 +93,7 @@ const ProductCategory = () => {
         return (
             <>
                 <Header />
-                <main className="min-h-screen bg-slate-950">
+                <main className="min-h-screen bg-slate-950 text-slate-100 transition-colors duration-200">
                     <Loading />
                 </main>
                 <Footer />
@@ -105,7 +105,7 @@ const ProductCategory = () => {
         return (
             <>
                 <Header />
-                <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
+                <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100 transition-colors duration-200">
                     <div className="text-center">
                         <h2 className="mb-3 text-2xl font-bold text-slate-100">
                             Unable to Load Products
@@ -133,7 +133,7 @@ const ProductCategory = () => {
         return (
             <>
                 <Header />
-                <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
+                <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100 transition-colors duration-200">
                     <div className="text-center">
                         <h2 className="mb-3 text-3xl font-bold text-slate-100">
                             Category Not Found
@@ -161,7 +161,7 @@ const ProductCategory = () => {
         <>
             <Header />
 
-            <main className="min-h-screen bg-slate-950 py-16 sm:py-20">
+            <main className="min-h-screen bg-slate-950 py-16 text-slate-100 transition-colors duration-200 sm:py-20">
                 <div className="container mx-auto px-4">
                     {/* Category Header */}
                     <motion.div

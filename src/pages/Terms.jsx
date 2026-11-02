@@ -42,7 +42,7 @@ const Terms = () => {
                 <Seo {...termsSeo} />
                 <Header />
 
-                <main className="min-h-screen bg-slate-950 pt-10">
+                <main className="min-h-screen bg-slate-950 pt-10 text-slate-100 transition-colors duration-200">
                     <section className="border-b border-slate-800/60">
                         <div className="container max-w-4xl">
                             <p className="text-slate-400">
@@ -63,7 +63,7 @@ const Terms = () => {
                 <Seo {...termsSeo} />
                 <Header />
 
-                <main className="min-h-screen bg-slate-950 pt-10">
+                <main className="min-h-screen bg-slate-950 pt-10 text-slate-100 transition-colors duration-200">
                     <section className="border-b border-slate-800/60">
                         <div className="container max-w-4xl">
                             <p className="text-red-400">
@@ -82,7 +82,7 @@ const Terms = () => {
             <Seo {...termsSeo} />
             <Header />
 
-            <main className="min-h-screen bg-slate-950 pt-10">
+            <main className="min-h-screen bg-slate-950 pt-10 text-slate-100 transition-colors duration-200">
                 <section className="border-b border-slate-800/60">
                     <div className="container max-w-4xl">
                         <span className="section-subtitle">

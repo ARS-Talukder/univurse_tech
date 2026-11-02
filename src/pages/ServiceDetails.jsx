@@ -39,7 +39,7 @@ const ServiceDetails = () => {
         return (
             <>
                 <Header />
-                <main className="min-h-screen bg-slate-950 pt-28">
+                <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">
                     <section>
                         <div className="container">
                             <p className="text-red-400">
@@ -66,7 +66,7 @@ const ServiceDetails = () => {
                     canonical={`${SITE_URL}/services/${slug || ""}`}
                 />
                 <Header />
-                <main className="min-h-screen bg-slate-950 pt-28">
+                <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">
                     <section>
                         <div className="container max-w-3xl">
                             <Link
@@ -145,7 +145,7 @@ const ServiceDetails = () => {
             />
             <Header />
 
-            <main className="min-h-screen bg-slate-950 pt-28">
+            <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">
                 <section className="border-b border-slate-800/60">
                     <div className="container max-w-5xl">
                         <Link

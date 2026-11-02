@@ -38,7 +38,7 @@ const ProductDetails = () => {
         return (
             <>
                 <Header />
-                <main className="min-h-screen bg-slate-950 pt-28">
+                <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">
                     <section>
                         <div className="container">
                             <p className="text-red-400">
@@ -64,7 +64,7 @@ const ProductDetails = () => {
                     canonical={`${SITE_URL}/products/${slug || ""}`}
                 />
                 <Header />
-                <main className="min-h-screen bg-slate-950 pt-28">
+                <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">
                     <section>
                         <div className="container max-w-3xl">
                             <Link
@@ -145,7 +145,7 @@ const ProductDetails = () => {
             />
             <Header />
 
-            <main className="min-h-screen bg-slate-950 lg:pt-4">
+            <main className="min-h-screen bg-slate-950 text-slate-100 transition-colors duration-200 lg:pt-4">
                 <section className="border-b border-slate-800/60">
                     <div className="container">
                         <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
@@ -273,7 +273,7 @@ const ProductDetails = () => {
 
                                     {/* Content */}
                                     <div className="p-5">
-                                        <h3 className="text-xl font-semibold text-white">
+                                        <h3 className="text-xl font-semibold text-slate-100">
                                             {demo.title}
                                         </h3>
 
