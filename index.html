@@ -17,12 +17,9 @@
     (() => {
       const storageKey = "univurse-theme";
       const savedTheme = localStorage.getItem(storageKey);
-      const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark";
       const theme = savedTheme === "light" || savedTheme === "dark"
         ? savedTheme
-        : systemTheme;
+        : "dark";
 
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;

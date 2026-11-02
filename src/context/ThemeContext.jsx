@@ -9,9 +9,7 @@ const getInitialTheme = () => {
         return documentTheme;
     }
 
-    return window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark";
+    return "dark";
 };
 
 const applyTheme = (theme) => {
