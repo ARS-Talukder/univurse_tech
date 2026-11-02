@@ -13,6 +13,23 @@
   <meta name="description"
     content="UnivurseTech, also known as Univurse Tech, is a software company in Bangladesh building custom software, web apps, mobile apps, business automation, e-commerce platforms, and digital solutions." />
   <meta name="theme-color" content="#020617" />
+  <script>
+    (() => {
+      const storageKey = "univurse-theme";
+      const savedTheme = localStorage.getItem(storageKey);
+      const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark";
+      const theme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : systemTheme;
+
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", theme === "dark" ? "#020617" : "#f8fafc");
+    })();
+  </script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="UnivurseTech" />
   <meta property="og:url" content="https://univursetech.pro.bd/" />
