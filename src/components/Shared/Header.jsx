@@ -16,21 +16,21 @@ const Header = () => {
         <header className="fixed top-0 left-0 w-full z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
             <div className="container h-20 flex items-center justify-between">
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-3">
+                <a href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
                     <img
                         src={logo}
                         alt="Univurse Tech"
                         width="64"
                         height="64"
                         fetchPriority="high"
-                        className="h-14 w-auto"
+                        className="h-10 w-auto shrink-0 sm:h-14"
                     />
 
-                    <div>
-                        <span className="block text-2xl font-bold leading-tight text-slate-100">
+                    <div className="min-w-0">
+                        <span className="block whitespace-nowrap text-lg font-bold leading-tight text-slate-100 sm:text-2xl">
                             Univurse Tech
                         </span>
-                        <p className="text-xs text-slate-400 tracking-widest uppercase">
+                        <p className="hidden text-xs uppercase tracking-widest text-slate-400 sm:block">
                             Software Solutions
                         </p>
                     </div>
@@ -49,7 +49,7 @@ const Header = () => {
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-3">
+                <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                     <ThemeToggle />
 
                     <a

@@ -191,15 +191,6 @@ const Footer = () => {
 
                             <li>
                                 <Link
-                                    to="/services/digital-marketing"
-                                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
-                                >
-                                    Digital Marketing
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
                                     to="/services/ux-design"
                                     className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
                                 >

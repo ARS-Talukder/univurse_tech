@@ -85,7 +85,7 @@ const Technology = () => {
 
     if (isError) {
         return (
-            <section id="technology">
+            <section id="tech">
                 <div className="container min-h-[400px] flex items-center justify-center">
                     <p className="text-red-400">
                         Unable to load technologies.

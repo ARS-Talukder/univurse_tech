@@ -24,7 +24,7 @@ const termsSeo = {
 
 const Terms = () => {
     const { data: terms, isLoading, isError, } = useQuery({
-        queryKey: ["privacy-policy"],
+        queryKey: ["terms-and-conditions"],
         queryFn: async () => {
             const res = await fetch("/data/terms.json");
 

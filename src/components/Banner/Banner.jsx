@@ -122,25 +122,25 @@ const Banner = () => {
                         initial={{ opacity: 0, y: 25 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="mt-16 pt-8 border-t border-slate-800/80 hidden lg:grid grid-cols-3 gap-8"
+                        className="mt-16 hidden grid-cols-[0.95fr_1.1fr_1.55fr] gap-5 border-t border-slate-800/80 pt-8 lg:grid"
                     >
                         {/* Metric 1 */}
                         <div>
-                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                            <span className="block whitespace-nowrap text-xs font-extrabold uppercase tracking-wide gradient-text xl:text-sm xl:tracking-wider">
                                 Built with Trust & Expertise
                             </span>
                         </div>
 
                         {/* Metric 2 */}
                         <div>
-                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                            <span className="block whitespace-nowrap text-xs font-extrabold uppercase tracking-wide gradient-text xl:text-sm xl:tracking-wider">
                                 Expert Team · Modern Solutions
                             </span>
                         </div>
 
                         {/* Metric 3 */}
                         <div>
-                            <span className="block text-sm font-extrabold gradient-text uppercase tracking-wider">
+                            <span className="block whitespace-nowrap text-xs font-extrabold uppercase tracking-wide gradient-text xl:text-sm xl:tracking-wider">
                                 Quality · Reliability · Long-Term Support
                             </span>
                         </div>

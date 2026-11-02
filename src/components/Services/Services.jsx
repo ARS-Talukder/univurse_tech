@@ -132,8 +132,9 @@ const Services = () => {
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
                         From business websites and mobile apps to custom
-                        software, enterprise systems, SEO, and digital marketing,
-                        we provide the technology businesses need to grow online.
+                        software, enterprise systems, business automation, and
+                        UX design, we provide the technology businesses need to
+                        grow online.
                     </motion.p>
                 </motion.div>
 

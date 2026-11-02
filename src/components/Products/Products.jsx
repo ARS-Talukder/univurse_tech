@@ -150,7 +150,7 @@ const Products = () => {
                 </motion.div>
 
                 {/* Four Category Cards */}
-                <div className="grid gap-6 sm:grid-cols-4">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {productsData.map((category, index) => {
                         const Icon = iconMap[category.icon] || FiGlobe;
                         const colors =
