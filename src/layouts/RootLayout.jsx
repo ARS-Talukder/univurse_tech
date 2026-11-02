@@ -7,7 +7,7 @@ import ScrollToTop from "../components/Shared/ScrollToTop";
 
 const RootLayout = () => {
     return (
-        <>
+        <div className="min-h-screen bg-slate-950 text-slate-100">
             <ScrollToTop />
             <ScrollToHash />
 
@@ -17,7 +17,7 @@ const RootLayout = () => {
 
             <WhatsAppChat />
             <BackToTop />
-        </>
+        </div>
     );
 };
 

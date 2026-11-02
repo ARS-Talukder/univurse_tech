@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from "../../assets/images/logo.png";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -48,24 +49,26 @@ const Header = () => {
                     ))}
                 </nav>
 
-                {/* Button */}
-                <a
-                    href="/#contact"
-                    className="hidden lg:block primary-btn"
-                >
-                    Contact Us →
-                </a>
+                <div className="flex items-center gap-3">
+                    <ThemeToggle />
 
-                {/* Mobile Button */}
-                <button
-                    type="button"
-                    aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-                    aria-expanded={open}
-                    className="lg:hidden text-3xl"
-                    onClick={() => setOpen(!open)}
-                >
-                    {open ? <HiX /> : <HiMenuAlt3 />}
-                </button>
+                    <a
+                        href="/#contact"
+                        className="hidden lg:block primary-btn"
+                    >
+                        Contact Us →
+                    </a>
+
+                    <button
+                        type="button"
+                        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={open}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-3xl text-slate-200 hover:bg-slate-900 lg:hidden"
+                        onClick={() => setOpen(!open)}
+                    >
+                        {open ? <HiX /> : <HiMenuAlt3 />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -83,7 +86,7 @@ const Header = () => {
                             </a>
                         ))}
 
-                        <a href="/#contact" className="primary-btn">
+                        <a href="/#contact" onClick={() => setOpen(false)} className="primary-btn text-center">
                             Contact Us →
                         </a>
                     </div>
