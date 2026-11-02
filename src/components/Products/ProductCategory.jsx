@@ -14,7 +14,10 @@ import {
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 import Loading from "../Shared/Loading";
+import Seo from "../SEO/Seo";
 import { createProductSlug } from "../../utils/productUtils";
+
+const SITE_URL = "https://univursetech.pro.bd";
 
 const categorySlugMap = {
     "digital-commerce-edtech": "1",
@@ -104,6 +107,12 @@ const ProductCategory = () => {
     if (isError) {
         return (
             <>
+                <Seo
+                    title="Products Unavailable | UnivurseTech"
+                    description="The requested UnivurseTech product category is temporarily unavailable."
+                    canonical={`${SITE_URL}/product-categories/${categorySlug || ""}`}
+                    robots="noindex, follow"
+                />
                 <Header />
                 <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100 transition-colors duration-200">
                     <div className="text-center">
@@ -132,6 +141,12 @@ const ProductCategory = () => {
     if (!category) {
         return (
             <>
+                <Seo
+                    title="Product Category Not Found | UnivurseTech"
+                    description="The requested UnivurseTech product category could not be found."
+                    canonical={`${SITE_URL}/product-categories/${categorySlug || ""}`}
+                    robots="noindex, follow"
+                />
                 <Header />
                 <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100 transition-colors duration-200">
                     <div className="text-center">
@@ -157,8 +172,66 @@ const ProductCategory = () => {
         );
     }
 
+    const canonical = `${SITE_URL}/product-categories/${categorySlug}`;
+    const description = `${category.groupDescription} Explore ${category.group.toLowerCase()} software products and solutions from UnivurseTech.`;
+    const categorySchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                name: `${category.group} Software Solutions`,
+                url: canonical,
+                description,
+                isPartOf: {
+                    "@type": "WebSite",
+                    name: "UnivurseTech",
+                    url: `${SITE_URL}/`,
+                },
+            },
+            {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: `${SITE_URL}/`,
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: "Products",
+                        item: `${SITE_URL}/#products`,
+                    },
+                    {
+                        "@type": "ListItem",
+                        position: 3,
+                        name: category.group,
+                        item: canonical,
+                    },
+                ],
+            },
+            {
+                "@type": "ItemList",
+                name: `${category.group} Products`,
+                itemListElement: products.map((product, index) => ({
+                    "@type": "ListItem",
+                    position: index + 1,
+                    name: product.title,
+                    url: `${SITE_URL}/products/${createProductSlug(product.title)}`,
+                })),
+            },
+        ],
+    };
+
     return (
         <>
+            <Seo
+                title={`${category.group} Software Solutions | UnivurseTech`}
+                description={description}
+                canonical={canonical}
+                schema={categorySchema}
+            />
             <Header />
 
             <main className="min-h-screen bg-slate-950 py-16 text-slate-100 transition-colors duration-200 sm:py-20">

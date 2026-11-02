@@ -3,12 +3,13 @@ import RootLayout from "../layouts/RootLayout";
 import Loading from "../components/Shared/Loading";
 import {
     HomePage,
+    NotFoundPage,
     PrivacyPolicyPage,
+    ProductCategoryPage,
     ProductDetailsPage,
     ServiceDetailsPage,
     TermsPage,
 } from "./LazyPages";
-import ProductCategory from "../components/Products/ProductCategory";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/product-categories/:categorySlug",
-                element: <ProductCategory />,
+                element: <ProductCategoryPage />,
             },
             {
                 path: "/services/:slug",
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: "/loading",
                 element: <Loading />,
+            },
+            {
+                path: "*",
+                element: <NotFoundPage />,
             }
         ],
     },

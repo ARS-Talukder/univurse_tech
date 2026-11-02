@@ -64,6 +64,7 @@ const ServiceDetails = () => {
                     title="Service Not Found | Univurse Tech"
                     description="The requested Univurse Tech service page could not be found."
                     canonical={`${SITE_URL}/services/${slug || ""}`}
+                    robots="noindex, follow"
                 />
                 <Header />
                 <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">

@@ -34,6 +34,7 @@ const Seo = ({
     canonical = SITE_URL,
     image = DEFAULT_IMAGE,
     type = "website",
+    robots = "index, follow",
     schema,
 }) => {
     useEffect(() => {
@@ -51,6 +52,10 @@ const Seo = ({
             property: "og:site_name",
             content: "UnivurseTech",
         });
+        updateMeta('meta[property="og:locale"]', {
+            property: "og:locale",
+            content: "en_US",
+        });
         updateMeta('meta[property="og:title"]', {
             property: "og:title",
             content: title,
@@ -66,6 +71,14 @@ const Seo = ({
         updateMeta('meta[property="og:image"]', {
             property: "og:image",
             content: image,
+        });
+        updateMeta('meta[property="og:image:alt"]', {
+            property: "og:image:alt",
+            content: `${title} preview`,
+        });
+        updateMeta('meta[name="robots"]', {
+            name: "robots",
+            content: robots,
         });
         updateMeta('meta[name="twitter:card"]', {
             name: "twitter:card",
@@ -83,6 +96,10 @@ const Seo = ({
             name: "twitter:image",
             content: image,
         });
+        updateMeta('meta[name="twitter:image:alt"]', {
+            name: "twitter:image:alt",
+            content: `${title} preview`,
+        });
         updateLink("canonical", canonical);
 
         const existingSchema = document.getElementById("page-schema");
@@ -95,7 +112,7 @@ const Seo = ({
             script.textContent = JSON.stringify(schema);
             document.head.appendChild(script);
         }
-    }, [canonical, description, image, schema, title, type]);
+    }, [canonical, description, image, robots, schema, title, type]);
 
     return null;
 };

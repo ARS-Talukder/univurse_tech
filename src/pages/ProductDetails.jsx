@@ -62,6 +62,7 @@ const ProductDetails = () => {
                     title="Product Not Found | Univurse Tech"
                     description="The requested Univurse Tech product page could not be found."
                     canonical={`${SITE_URL}/products/${slug || ""}`}
+                    robots="noindex, follow"
                 />
                 <Header />
                 <main className="min-h-screen bg-slate-950 pt-28 text-slate-100 transition-colors duration-200">

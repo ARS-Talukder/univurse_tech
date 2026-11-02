@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/digital-marketing",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/products/company-portfolio-website",
+      "destination": "/product-categories/brand-portfolio-experiences",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

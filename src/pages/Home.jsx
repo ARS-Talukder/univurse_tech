@@ -43,6 +43,7 @@ const homeSchema = {
             },
             sameAs: [
                 "https://www.linkedin.com/company/univurse-tech/",
+                "https://www.goodfirms.co/company/univurse-tech",
             ],
             founder: {
                 "@type": "Person",
@@ -84,7 +85,6 @@ const homeSchema = {
                 "Mobile App Development",
                 "Business Automation",
                 "UX Design",
-                "Digital Marketing",
             ],
         },
         {
@@ -104,7 +104,7 @@ const homeSchema = {
                     name: "What services does Univurse Tech offer?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Univurse Tech provides web development, mobile app development, custom software development, enterprise product development, digital marketing, SEO, and UX design solutions.",
+                        text: "Univurse Tech provides web development, mobile app development, custom software development, enterprise product development, business automation, and UX design solutions.",
                     },
                 },
                 {

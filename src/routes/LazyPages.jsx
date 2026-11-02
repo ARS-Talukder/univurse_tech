@@ -1,12 +1,13 @@
 import { lazy, Suspense } from "react";
 import Loading from "../components/Shared/Loading";
-import ProductCategory from "../components/Products/ProductCategory";
 
 const Home = lazy(() => import("../pages/Home"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const Terms = lazy(() => import("../pages/Terms"));
 const ProductDetails = lazy(() => import("../pages/ProductDetails"));
+const ProductCategory = lazy(() => import("../components/Products/ProductCategory"));
 const ServiceDetails = lazy(() => import("../pages/ServiceDetails"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 const PageLoader = ({ children }) => (
     <Suspense fallback={<Loading />}>
@@ -46,5 +47,11 @@ export const ProductCategoryPage = () => (
 export const ServiceDetailsPage = () => (
     <PageLoader>
         <ServiceDetails />
+    </PageLoader>
+);
+
+export const NotFoundPage = () => (
+    <PageLoader>
+        <NotFound />
     </PageLoader>
 );
